@@ -1,0 +1,21 @@
+{
+  "title": "Should not have some design smell",
+  "type": "VULNERABILITY",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "9min"
+  },
+  "tags": [
+    "cwe",
+    "unpredictable",
+    "cert"
+  ],
+  "standards": [
+    "CWE",
+    "CERT"
+  ],
+  "defaultSeverity": "Minor",
+  "ruleSpecification": "RSPEC-2386123",
+  "sqKey": "S2386123"
+}

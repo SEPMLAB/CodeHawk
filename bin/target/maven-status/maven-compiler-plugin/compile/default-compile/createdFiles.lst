@@ -1,0 +1,15 @@
+org\sonar\samples\java\checks\AvoidUnmodifiableListRule.class
+org\sonar\samples\java\checks\AvoidSuperClassRule.class
+org\sonar\samples\java\checks\AvoidBrandInMethodNamesRule.class
+org\sonar\samples\java\MyJavaRulesDefinition$RuleMetatada.class
+org\sonar\samples\java\MyJavaRulesDefinition.class
+org\sonar\samples\java\MyJavaFileCheckRegistrar.class
+org\sonar\samples\java\checks\AvoidMethodDeclarationRule.class
+org\sonar\samples\java\MyJavaRulesPlugin.class
+org\sonar\samples\java\checks\PrinterVisitor.class
+org\sonar\samples\java\RulesList.class
+org\sonar\samples\java\checks\SecurityAnnotationMandatoryRule.class
+org\sonar\samples\java\checks\MyCustomSubscriptionRule.class
+org\sonar\samples\java\checks\SpringControllerRequestMappingEntityRule.class
+org\sonar\samples\java\checks\AvoidAnnotationRule.class
+org\sonar\samples\java\MyJavaRulesDefinition$Remediation.class

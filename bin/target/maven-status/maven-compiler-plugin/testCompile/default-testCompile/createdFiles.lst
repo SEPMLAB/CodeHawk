@@ -1,0 +1,9 @@
+org\sonar\samples\java\checks\AvoidAnnotationCheckTest.class
+org\sonar\samples\java\checks\MyCustomSubscriptionRuleTest.class
+org\sonar\samples\java\checks\AvoidMethodDeclarationCheckTest.class
+org\sonar\samples\java\checks\AvoidBrandInMethodNamesCheckTest.class
+org\sonar\samples\java\checks\AvoidSuperClassCheckTest.class
+org\sonar\samples\java\MyJavaRulesDefinitionTest.class
+org\sonar\samples\java\checks\SecurityAnnotationMandatoryCheckTest.class
+org\sonar\samples\java\checks\SpringControllerRequestMappingEntityRuleTest.class
+org\sonar\samples\java\checks\AvoidUnmodifiableListTest.class
