@@ -1,12 +1,3 @@
-Sonar Custom Rules Examples [![Build Status](https://travis-ci.org/SonarSource/sonar-custom-rules-examples.svg?branch=master)](https://travis-ci.org/SonarSource/sonar-custom-rules-examples)
-==========
+[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=org.sonarsource.samples%3Ajava-custom-rules&metric=alert_status)](https://sonarcloud.io/dashboard?id=org.sonarsource.samples%3Ajava-custom-rules)
 
-This repository contains project examples you can directly clone to bootstrap your own project to write custom rules for COBOL, Java, JavaScript, PHP, and RPG.
-
-Related documentation is there: http://docs.sonarqube.org/display/DEV/Adding+Coding+Rules+using+Java
-
-### License
-
-Copyright 2016-2018 SonarSource.
-
-Licensed under the [GNU Lesser General Public License, Version 3.0](http://www.gnu.org/licenses/lgpl.txt)
+This example demonstrates how to write **Custom Rules** for SonarJava.
