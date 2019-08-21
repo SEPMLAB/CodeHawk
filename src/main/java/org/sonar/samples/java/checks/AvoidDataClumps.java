@@ -1,12 +1,16 @@
 package org.sonar.samples.java.checks;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.TreeSet;
 
 import org.sonar.check.Rule;
 import org.sonar.plugins.java.api.IssuableSubscriptionVisitor;
+import org.sonar.plugins.java.api.JavaFileScannerContext;
+import org.sonar.plugins.java.api.JavaFileScannerContext.Location;
 import org.sonar.plugins.java.api.tree.ClassTree;
 import org.sonar.plugins.java.api.tree.Tree;
 import org.sonar.plugins.java.api.tree.VariableTree;
@@ -15,7 +19,9 @@ import org.sonar.plugins.java.api.tree.VariableTree;
 
 public class AvoidDataClumps extends IssuableSubscriptionVisitor {
 	private ArrayList<SimplifiedClassTree> classList = new ArrayList<SimplifiedClassTree>();
-	int classAmount = 0;
+	private HashMap<SimplifiedClassTree, JavaFileScannerContext> fileMap = new HashMap<SimplifiedClassTree, JavaFileScannerContext>();
+	private int classCount = 0;
+	private int fileCount = 0;
 	private int alikeThreshold = 2;
 	private int classThreshold = 10;
 	
@@ -29,8 +35,24 @@ public class AvoidDataClumps extends IssuableSubscriptionVisitor {
 	@Override
 	public void visitNode(Tree tree) {
 		/*ver2*/
-		setClassAmount();
+		/*statistic setting sequence*/
+		//set the fileCount for the project
+		if(fileCount == 0) {
+			File sourceFolder;
+			//find the file count in the src folder
+			do {
+				sourceFolder = context.getFile().getParentFile();
+			}while(!(sourceFolder.getName().equals("src")));
+			setFileCount(sourceFolder);
+			System.out.println("fileCount: " + fileCount);
+		}
+		//set the classCount for every file
+		if(classCount == 0) {
+			setClassCount(context.getTree().types());
+			System.out.println("classCount: " + classCount);
+		}
 		
+		/*data input sequence*/
 		ClassTree ct = (ClassTree)tree;
 		SimplifiedClassTree simpTree = new SimplifiedClassTree(ct);
 		
@@ -42,14 +64,46 @@ public class AvoidDataClumps extends IssuableSubscriptionVisitor {
 			}
 		}
 		classList.add(simpTree);
+		fileMap.put(simpTree, context);
+		System.out.println("visit" + context.getTree().types().size());
 		
-		if(classList.size() == classAmount) {
-			startReport();
+		/*issue report sequence*/
+		if(--classCount == 0) {
+			if(--fileCount == 0) {
+				startReport();
+			}
+		}
+	}
+	
+	//count amount of classes in a context
+	public void setClassCount(List<Tree> lt) {
+		for(Tree tree: lt) {
+			if(tree.is(Tree.Kind.CLASS)) {
+				classCount++;
+				ClassTree ct = (ClassTree)tree;
+				setClassCount(ct.members());
+			}
+		}
+	}
+	
+	//count the java files in the denoted directory
+	public void setFileCount(File dir) {
+		File[] fileList = dir.listFiles();
+		for(File f: fileList) {
+			if(f.isDirectory()) {
+				setFileCount(f);
+			}
+			else if(f.isFile()) {
+				if(f.getName().endsWith(".java")) {
+					fileCount ++;
+				}
+			}
 		}
 	}
 	
 	//report every class exceeding treshold
 	public void startReport() {
+		System.out.println("report");
 		for(SimplifiedClassTree sct: classList) {
 			if(sct.getOverThresh().size() >= classThreshold) {
 				String message = "avoid data clump on line ";
@@ -57,21 +111,8 @@ public class AvoidDataClumps extends IssuableSubscriptionVisitor {
 				for(Integer i: sct.getOverThresh()) {
 					message += sct.getMembers().get(i).endToken().line() + " ";
 				}
-				addIssue(sct.getLine(),message);
+				fileMap.get(sct).addIssue(sct.getLine(),this, message);
 			}
-		}
-	}
-	
-	public void setClassAmount() {
-		int amount = 0;
-		if(classAmount == 0 && context != null) {
-			List<Tree> lt = context.getTree().types();
-			for(Tree tree: lt) {
-				if(tree.is(Tree.Kind.CLASS)) {
-					amount ++;
-				}
-			}
-			classAmount = amount;
 		}
 	}
 	
