@@ -1,9 +1,2 @@
-C:\Users\jason\Downloads\sonar-custom-rules-examples-master\java-custom-rules\src\test\java\org\sonar\samples\java\checks\AvoidMethodDeclarationCheckTest.java
-C:\Users\jason\Downloads\sonar-custom-rules-examples-master\java-custom-rules\src\test\java\org\sonar\samples\java\checks\AvoidUnmodifiableListTest.java
-C:\Users\jason\Downloads\sonar-custom-rules-examples-master\java-custom-rules\src\test\java\org\sonar\samples\java\checks\SpringControllerRequestMappingEntityRuleTest.java
-C:\Users\jason\Downloads\sonar-custom-rules-examples-master\java-custom-rules\src\test\java\org\sonar\samples\java\checks\SecurityAnnotationMandatoryCheckTest.java
-C:\Users\jason\Downloads\sonar-custom-rules-examples-master\java-custom-rules\src\test\java\org\sonar\samples\java\checks\AvoidAnnotationCheckTest.java
-C:\Users\jason\Downloads\sonar-custom-rules-examples-master\java-custom-rules\src\test\java\org\sonar\samples\java\checks\AvoidBrandInMethodNamesCheckTest.java
 C:\Users\jason\Downloads\sonar-custom-rules-examples-master\java-custom-rules\src\test\java\org\sonar\samples\java\MyJavaRulesDefinitionTest.java
 C:\Users\jason\Downloads\sonar-custom-rules-examples-master\java-custom-rules\src\test\java\org\sonar\samples\java\checks\MyCustomSubscriptionRuleTest.java
-C:\Users\jason\Downloads\sonar-custom-rules-examples-master\java-custom-rules\src\test\java\org\sonar\samples\java\checks\AvoidSuperClassCheckTest.java

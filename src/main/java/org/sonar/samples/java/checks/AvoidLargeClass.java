@@ -19,13 +19,13 @@
  */
 package org.sonar.samples.java.checks;
 
-import org.sonar.samples.java.functioningClass.treeLines;
 import java.util.Collections;
 import java.util.List;
 import org.sonar.check.Rule;
 import org.sonar.plugins.java.api.IssuableSubscriptionVisitor;
 import org.sonar.plugins.java.api.tree.ClassTree;
 import org.sonar.plugins.java.api.tree.Tree;
+import org.sonar.samples.java.functioningclass.GetLines;
 
 @Rule(key = "AvoidLargeClass")
 /**
@@ -42,9 +42,10 @@ public class AvoidLargeClass extends IssuableSubscriptionVisitor {
 	@Override
 	public void visitNode(Tree tree) {
 		
+		//use the method of GetLines to find the number of ClassTreeLines
 		ClassTree ct = (ClassTree) tree;
-		int line = treeLines.getClassTreeLines(ct);
-		int maxLine =  treeLines.getMaxClassLines();
+		int line = GetLines.getClassTreeLines(ct);
+		int maxLine = GetLines.getMaxClassLines();
 		if (line > maxLine) {
 			reportIssue(ct, "Your class is too big with" + line + "lines");
 		}

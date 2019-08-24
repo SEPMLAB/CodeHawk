@@ -6,7 +6,7 @@ import org.sonar.check.Rule;
 import org.sonar.plugins.java.api.IssuableSubscriptionVisitor;
 import org.sonar.plugins.java.api.tree.MethodTree;
 import org.sonar.plugins.java.api.tree.Tree;
-import org.sonar.samples.java.functioningClass.treeLines;
+import org.sonar.samples.java.functioningclass.GetLines;
 
 @Rule(key = "AvoidLargeMethod")
 /**
@@ -22,9 +22,11 @@ public class AvoidLargeMethod extends IssuableSubscriptionVisitor {
 
 	@Override
 	public void visitNode(Tree tree) {
+		
+		//use the method of GetLines to find the number of MethodTreeLines
 		MethodTree mt = (MethodTree) tree;
-		int line = treeLines.getMethodTreeLines(mt);
-		int maxLine = treeLines.getMaxMethodLines();
+		int line = GetLines.getMethodTreeLines(mt);
+		int maxLine = GetLines.getMaxMethodLines();
 		if (line > maxLine) {
 			reportIssue(mt, "Your method is too big with" + line + "lines");
 		}
