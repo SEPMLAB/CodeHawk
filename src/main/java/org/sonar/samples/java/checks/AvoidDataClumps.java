@@ -18,8 +18,8 @@ import org.sonar.plugins.java.api.tree.VariableTree;
 @Rule(key="avoidDataClumps")
 
 public class AvoidDataClumps extends IssuableSubscriptionVisitor {
-	private ArrayList<SimplifiedClassTree> classList = new ArrayList<SimplifiedClassTree>();
-	private HashMap<SimplifiedClassTree, JavaFileScannerContext> fileMap = new HashMap<SimplifiedClassTree, JavaFileScannerContext>();
+	private ArrayList<SimplifiedClassTree> classList = new ArrayList<>();
+	private HashMap<SimplifiedClassTree, JavaFileScannerContext> fileMap = new HashMap<>();
 	private int classCount = 0;
 	private int fileCount = 0;
 	private int alikeThreshold = 2;
@@ -65,7 +65,7 @@ public class AvoidDataClumps extends IssuableSubscriptionVisitor {
 		}
 		classList.add(simpTree);
 		fileMap.put(simpTree, context);
-		System.out.println("visit" + context.getTree().types().size());
+		System.out.println("visit" + classCount);
 		
 		/*issue report sequence*/
 		if(--classCount == 0) {
@@ -153,12 +153,14 @@ public class AvoidDataClumps extends IssuableSubscriptionVisitor {
 	}
 }
 
+/* for every class tree,simplify it by only storing the vairable members
+ * and the first line of the class*/
 class SimplifiedClassTree{
 	private int startingLine;
-	private ArrayList<VariableTree> dataMembers = new ArrayList<VariableTree>();
-	private ArrayList<Integer> alikes = new ArrayList<Integer>();
+	private ArrayList<VariableTree> dataMembers = new ArrayList<>();
+	private ArrayList<Integer> alikes = new ArrayList<>();
 	//indicates which vriable tree in dataMembers exceeded threshold
-	private TreeSet<Integer> overThreshMembers = new TreeSet<Integer>();
+	private TreeSet<Integer> overThreshMembers = new TreeSet<>();
 	
 	SimplifiedClassTree(ClassTree tree){
 		startingLine = tree.openBraceToken().line();
