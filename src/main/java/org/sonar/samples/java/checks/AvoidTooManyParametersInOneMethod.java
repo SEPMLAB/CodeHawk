@@ -23,6 +23,7 @@ import java.util.Collections;
 import java.util.List;
 import org.sonar.check.Rule;
 import org.sonar.plugins.java.api.IssuableSubscriptionVisitor;
+import org.sonar.plugins.java.api.tree.ClassTree;
 import org.sonar.plugins.java.api.tree.MethodTree;
 import org.sonar.plugins.java.api.tree.Tree;
 import org.sonar.plugins.java.api.tree.VariableTree;
@@ -36,19 +37,23 @@ public class AvoidTooManyParametersInOneMethod extends IssuableSubscriptionVisit
 	@Override
 	public List<Tree.Kind> nodesToVisit() {
 		// Register to the kind of nodes you want to be called upon visit.
-		return Collections.singletonList(Tree.Kind.METHOD);
+		return Collections.singletonList(Tree.Kind.CLASS);//check every class
 	}
 
 	@Override
 	public void visitNode(Tree tree) {
-		MethodTree methodTree = (MethodTree) tree;
-		int count = 0;
-		List<VariableTree> list = methodTree.parameters();
-		if (!list.isEmpty()) 
-			count = list.size();
-		if (count >= 10)
-			reportIssue(methodTree, "There are too many parameters in this method !");
+		ClassTree classTree = (ClassTree) tree;
+		List<Tree> treeList = classTree.members();
+		for (Tree tempTree : treeList) {
+			if (tempTree.is(Tree.Kind.METHOD) || tempTree.is(Tree.Kind.CONSTRUCTOR)) {//check every method(constructor) in this class
+				MethodTree methodTree = (MethodTree) tempTree;
+				List<VariableTree> list = methodTree.parameters();
+				if (!list.isEmpty()) {
+					int count = list.size();
+					if (count >= 10)//if this method has >= 10 parameters 
+						reportIssue(methodTree, "There are too many parameters in this method !");//show this smell
+				}
+			}
+		}
 	}
 }
-
-
