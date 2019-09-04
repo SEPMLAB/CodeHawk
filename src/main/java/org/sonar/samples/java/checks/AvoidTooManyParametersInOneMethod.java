@@ -37,7 +37,7 @@ public class AvoidTooManyParametersInOneMethod extends IssuableSubscriptionVisit
 	@Override
 	public List<Tree.Kind> nodesToVisit() {
 		// Register to the kind of nodes you want to be called upon visit.
-		return Collections.singletonList(Tree.Kind.CLASS);//check every class
+		return Collections.singletonList(Tree.Kind.CLASS);// check every class
 	}
 
 	@Override
@@ -45,13 +45,12 @@ public class AvoidTooManyParametersInOneMethod extends IssuableSubscriptionVisit
 		ClassTree classTree = (ClassTree) tree;
 		List<Tree> treeList = classTree.members();
 		for (Tree tempTree : treeList) {
-			if (tempTree.is(Tree.Kind.METHOD) || tempTree.is(Tree.Kind.CONSTRUCTOR)) {//check every method(constructor) in this class
+			if (tempTree.is(Tree.Kind.METHOD) || tempTree.is(Tree.Kind.CONSTRUCTOR)) {// check every method(constructor) in this class
 				MethodTree methodTree = (MethodTree) tempTree;
 				List<VariableTree> list = methodTree.parameters();
 				if (!list.isEmpty()) {
-					int count = list.size();
-					if (count >= 10)//if this method has >= 10 parameters 
-						reportIssue(methodTree, "There are too many parameters in this method !");//show this smell
+					if (list.size() >= 10)// if this method has >= 10 parameters
+						reportIssue(methodTree, "There are too many parameters in this method !");// show this smell
 				}
 			}
 		}
