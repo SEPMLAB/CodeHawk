@@ -39,7 +39,8 @@ public class AvoidTooManyCasesInOneSwitch extends IssuableSubscriptionVisitor {
 				MethodTree methodTree = (MethodTree) tempTree;
 				BlockTree blockTree = methodTree.block();
 				List<StatementTree> list = blockTree.body();
-				checkStatementTree(list);
+				if(!list.isEmpty())
+					checkStatementTree(list);
 			}
 		}
 	}
@@ -83,9 +84,9 @@ public class AvoidTooManyCasesInOneSwitch extends IssuableSubscriptionVisitor {
 
 			case LABELED_STATEMENT://get labeled statement in this method
 				LabeledStatementTree labeledStatementTree = (LabeledStatementTree) statementTree;
-				List<StatementTree> list2 = new ArrayList<>();
-				list2.add(labeledStatementTree.statement());
-				checkStatementTree(list2);
+				List<StatementTree> StatementTreeList = new ArrayList<>();
+				StatementTreeList.add(labeledStatementTree.statement());
+				checkStatementTree(StatementTreeList);
 				break;
 
 			case SYNCHRONIZED_STATEMENT://get synchronized statement in this method
@@ -95,27 +96,18 @@ public class AvoidTooManyCasesInOneSwitch extends IssuableSubscriptionVisitor {
 
 			case TRY_STATEMENT://get try_catch statement in this method
 				TryStatementTree tryStatementTree = (TryStatementTree) statementTree;//check try part in this try statement
-				checkInnerBlockTree(tryStatementTree.block());
+				if(tryStatementTree.tryKeyword() != null)
+					checkInnerBlockTree(tryStatementTree.block());
 
-				List<CatchTree> list3 = tryStatementTree.catches();//check catch part in this try statement
-				for (CatchTree catchtree : list3) {
+				List<CatchTree> CatchTreeList = tryStatementTree.catches();//check catch part in this try statement
+				for (CatchTree catchtree : CatchTreeList) {
 					checkInnerBlockTree(catchtree.block());
 				}
 
-				checkInnerBlockTree(tryStatementTree.finallyBlock());//check finally part in this try statement
+				if(tryStatementTree.finallyKeyword() != null)
+					checkInnerBlockTree(tryStatementTree.finallyBlock());//check finally part in this try statement
 				break;
-
-			case CLASS://get another class statement in this method
-				ClassTree classTree = (ClassTree) statementTree;
-				List<Tree> list4 = classTree.members();
-				for (Tree tree : list4) {
-					if (tree.is(Tree.Kind.CONSTRUCTOR)) {//check constructor part in this class
-						MethodTree methodTree = (MethodTree) tree;
-						checkInnerBlockTree(methodTree.block());
-					}
-				}
-				break;
-
+				
 			default:
 				break;
 			}
