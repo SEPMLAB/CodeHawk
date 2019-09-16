@@ -49,8 +49,9 @@ public class AvoidTooManyParametersInOneMethod extends IssuableSubscriptionVisit
 				MethodTree methodTree = (MethodTree) tempTree;
 				List<VariableTree> list = methodTree.parameters();
 				if (!list.isEmpty()) {
-					if (list.size() >= 10)// if this method has >= 10 parameters
+					if (list.size() >= 10){// if this method has >= 10 parameters
 						reportIssue(methodTree, "There are too many parameters in this method !");// show this smell
+					}
 				}
 			}
 		}
