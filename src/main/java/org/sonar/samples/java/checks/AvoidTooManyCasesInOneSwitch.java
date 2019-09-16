@@ -59,9 +59,15 @@ public class AvoidTooManyCasesInOneSwitch extends IssuableSubscriptionVisitor {
 
 			case IF_STATEMENT://get if statement in this method
 				IfStatementTree ifStatementTree = (IfStatementTree) statementTree;
-				checkInnerStatementTree(ifStatementTree.thenStatement());
-
-				checkElseIfStatementTree(ifStatementTree);//check else_if part in this if statement
+				if (ifStatementTree.thenStatement().is(Tree.Kind.BLOCK)) {//if this if statement has curly brackets 
+					checkInnerStatementTree(ifStatementTree.thenStatement());
+				}
+				else{//if this if statement doesn't have curly brackets 
+					List<StatementTree> thenStatementTreeList = new ArrayList<>();
+					thenStatementTreeList.add(ifStatementTree.thenStatement());
+					checkStatementTree(thenStatementTreeList);
+				}
+				checkElseIfStatementTree(ifStatementTree);//check elseif part in this if statement
 				break;
 
 			case WHILE_STATEMENT://get while statement in this method
@@ -86,9 +92,9 @@ public class AvoidTooManyCasesInOneSwitch extends IssuableSubscriptionVisitor {
 
 			case LABELED_STATEMENT://get labeled statement in this method
 				LabeledStatementTree labeledStatementTree = (LabeledStatementTree) statementTree;
-				List<StatementTree> StatementTreeList = new ArrayList<>();
-				StatementTreeList.add(labeledStatementTree.statement());
-				checkStatementTree(StatementTreeList);
+				List<StatementTree> labeledStatementTreeList = new ArrayList<>();
+				labeledStatementTreeList.add(labeledStatementTree.statement());
+				checkStatementTree(labeledStatementTreeList);
 				break;
 
 			case SYNCHRONIZED_STATEMENT://get synchronized statement in this method
@@ -102,8 +108,8 @@ public class AvoidTooManyCasesInOneSwitch extends IssuableSubscriptionVisitor {
 					checkInnerBlockTree(tryStatementTree.block());
 				}
 
-				List<CatchTree> CatchTreeList = tryStatementTree.catches();//check catch part in this try statement
-				for (CatchTree catchtree : CatchTreeList) {
+				List<CatchTree> catchTreeList = tryStatementTree.catches();//check catch part in this try statement
+				for (CatchTree catchtree : catchTreeList) {
 					checkInnerBlockTree(catchtree.block());
 				}
 
@@ -124,7 +130,13 @@ public class AvoidTooManyCasesInOneSwitch extends IssuableSubscriptionVisitor {
 			if (statementTree.is(Tree.Kind.IF_STATEMENT)) {
 				IfStatementTree ifStatementTree = (IfStatementTree) statementTree;
 				checkElseIfStatementTree(ifStatementTree);
-				checkInnerStatementTree(ifStatementTree.thenStatement());
+				if (ifStatementTree.thenStatement().is(Tree.Kind.BLOCK)) {//if this elseif statement has curly brackets 
+					checkInnerStatementTree(ifStatementTree.thenStatement());
+				}else{//if this elseif statement doesn't have curly brackets 
+					List<StatementTree> thenStatementTreeList = new ArrayList<>();
+					thenStatementTreeList.add(ifStatementTree.thenStatement());
+					checkStatementTree(thenStatementTreeList);	
+				}				
 			} else {
 				checkInnerStatementTree(statementTree);
 			}
