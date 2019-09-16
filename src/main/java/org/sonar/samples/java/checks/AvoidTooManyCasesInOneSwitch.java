@@ -124,7 +124,7 @@ public class AvoidTooManyCasesInOneSwitch extends IssuableSubscriptionVisitor {
 		}
 	}
 
-	private void checkElseIfStatementTree(IfStatementTree tree) {//check inner else_if statement method
+	private void checkElseIfStatementTree(IfStatementTree tree) {//check inner elseif statement method
 		if (tree.elseKeyword() != null) {
 			StatementTree statementTree = tree.elseStatement();
 			if (statementTree.is(Tree.Kind.IF_STATEMENT)) {
