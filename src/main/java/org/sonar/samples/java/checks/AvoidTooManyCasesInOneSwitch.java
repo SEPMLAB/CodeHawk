@@ -39,8 +39,9 @@ public class AvoidTooManyCasesInOneSwitch extends IssuableSubscriptionVisitor {
 				MethodTree methodTree = (MethodTree) tempTree;
 				BlockTree blockTree = methodTree.block();
 				List<StatementTree> list = blockTree.body();
-				if(!list.isEmpty())
+				if(!list.isEmpty()){
 					checkStatementTree(list);
+				}
 			}
 		}
 	}
@@ -51,8 +52,9 @@ public class AvoidTooManyCasesInOneSwitch extends IssuableSubscriptionVisitor {
 
 			case SWITCH_STATEMENT://get switch statement in this method
 				SwitchStatementTree switchStatementTree = (SwitchStatementTree) statementTree;
-				if (countSwitch(switchStatementTree) >= 10)//check this switch statement, if >= 10 cases(default)
+				if (countSwitch(switchStatementTree) >= 10){//check this switch statement, if >= 10 cases(default)
 					reportIssue(switchStatementTree, "Too many cases in this switch statement !");//show this smell
+				}
 				break;
 
 			case IF_STATEMENT://get if statement in this method
@@ -96,16 +98,18 @@ public class AvoidTooManyCasesInOneSwitch extends IssuableSubscriptionVisitor {
 
 			case TRY_STATEMENT://get try_catch statement in this method
 				TryStatementTree tryStatementTree = (TryStatementTree) statementTree;//check try part in this try statement
-				if(tryStatementTree.tryKeyword() != null)
+				if(tryStatementTree.tryKeyword() != null){
 					checkInnerBlockTree(tryStatementTree.block());
+				}
 
 				List<CatchTree> CatchTreeList = tryStatementTree.catches();//check catch part in this try statement
 				for (CatchTree catchtree : CatchTreeList) {
 					checkInnerBlockTree(catchtree.block());
 				}
 
-				if(tryStatementTree.finallyKeyword() != null)
+				if(tryStatementTree.finallyKeyword() != null){
 					checkInnerBlockTree(tryStatementTree.finallyBlock());//check finally part in this try statement
+				}
 				break;
 				
 			default:
