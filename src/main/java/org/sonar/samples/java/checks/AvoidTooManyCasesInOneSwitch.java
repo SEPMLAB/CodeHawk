@@ -107,12 +107,10 @@ public class AvoidTooManyCasesInOneSwitch extends IssuableSubscriptionVisitor {
 				if(tryStatementTree.tryKeyword() != null){
 					checkInnerBlockTree(tryStatementTree.block());
 				}
-
 				List<CatchTree> catchTreeList = tryStatementTree.catches();//check catch part in this try statement
 				for (CatchTree catchtree : catchTreeList) {
 					checkInnerBlockTree(catchtree.block());
 				}
-
 				if(tryStatementTree.finallyKeyword() != null){
 					checkInnerBlockTree(tryStatementTree.finallyBlock());//check finally part in this try statement
 				}
