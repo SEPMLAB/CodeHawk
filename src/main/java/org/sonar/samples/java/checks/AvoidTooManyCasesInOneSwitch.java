@@ -53,14 +53,14 @@ public class AvoidTooManyCasesInOneSwitch extends IssuableSubscriptionVisitor {
 			case SWITCH_STATEMENT://get switch statement in this method
 				SwitchStatementTree switchStatementTree = (SwitchStatementTree) statementTree;
 				if (countSwitch(switchStatementTree) >= 10){//check this switch statement, if >= 10 cases(default)
-					reportIssue(switchStatementTree, "Too many cases in this switch statement !");//show this smell
+					reportIssue(switchStatementTree, "Too many cases in this switch statement !");//show this bed smell
 				}
 				break;
 
 			case IF_STATEMENT://get if statement in this method
 				IfStatementTree ifStatementTree = (IfStatementTree) statementTree;
-				checkInnerStatementTree(ifStatementTree.thenStatement());
-				checkElseIfStatementTree(ifStatementTree);//check elseif part in this if statement
+				checkInnerStatementTree(ifStatementTree.thenStatement());//check if part in this if statement
+				checkElseIfStatementTree(ifStatementTree);//check elseif and else parts in this if statement
 				break;
 
 			case WHILE_STATEMENT://get while statement in this method
@@ -115,35 +115,35 @@ public class AvoidTooManyCasesInOneSwitch extends IssuableSubscriptionVisitor {
 		}
 	}
 
-	private void checkElseIfStatementTree(IfStatementTree tree) {//check inner elseif statement method
-		if (tree.elseKeyword() != null) {
-			StatementTree statementTree = tree.elseStatement();
-			if (statementTree.is(Tree.Kind.IF_STATEMENT)) {
-				IfStatementTree ifStatementTree = (IfStatementTree) statementTree;
-				checkElseIfStatementTree(ifStatementTree);
-				checkInnerStatementTree(ifStatementTree.thenStatement());			
+	private void checkElseIfStatementTree(IfStatementTree ifStatementTree) {//check elseif and else parts in if statement method
+		if (ifStatementTree.elseKeyword() != null) {
+			StatementTree elseStatementTree = ifStatementTree.elseStatement();
+			if (elseStatementTree.is(Tree.Kind.IF_STATEMENT)) {
+				IfStatementTree elseifStatementTree = (IfStatementTree) elseStatementTree;
+				checkElseIfStatementTree(elseifStatementTree);//check next part is elseif or else statement
+				checkInnerStatementTree(elseifStatementTree.thenStatement());//check elseif part in if statement 			
 			} else {
-				checkInnerStatementTree(statementTree);
+				checkInnerStatementTree(elseStatementTree);//check else part in if statement 
 			}
 		}
 	}
 
-	private void checkInnerStatementTree(StatementTree tree) {//check inner statementtree method
-		if (tree.is(Tree.Kind.BLOCK)) {
-			BlockTree blockTree = (BlockTree) tree;
-			List<StatementTree> list = blockTree.body();
-			checkStatementTree(list);
+	private void checkInnerStatementTree(StatementTree statementTree) {//check inner statement method
+		if (statementTree.is(Tree.Kind.BLOCK)) {
+			BlockTree blockTree = (BlockTree) statementTree;
+			List<StatementTree> statementTreeList = blockTree.body();
+			checkStatementTree(statementTreeList);
 		}
 	}
 
-	private void checkInnerBlockTree(BlockTree tree) {//check inner blocktree method
-		List<StatementTree> list = tree.body();
-		checkStatementTree(list);
+	private void checkInnerBlockTree(BlockTree blockTree) {//check inner block method
+		List<StatementTree> statementTreeList = blockTree.body();
+		checkStatementTree(statementTreeList);
 	}
 
-	private int countSwitch(SwitchStatementTree temp) {//count how many cases in this switch statement method 
-		List<CaseGroupTree> tempList = temp.cases();
-		return tempList.size();
+	private int countSwitch(SwitchStatementTree switchStatementTree) {//count how many cases in this switch statement method 
+		List<CaseGroupTree> caseGroupTreeList = switchStatementTree.cases();
+		return caseGroupTreeList.size();
 	}
 
 }
