@@ -59,14 +59,7 @@ public class AvoidTooManyCasesInOneSwitch extends IssuableSubscriptionVisitor {
 
 			case IF_STATEMENT://get if statement in this method
 				IfStatementTree ifStatementTree = (IfStatementTree) statementTree;
-				if (ifStatementTree.thenStatement().is(Tree.Kind.BLOCK)) {//if this if statement has curly brackets 
-					checkInnerStatementTree(ifStatementTree.thenStatement());
-				}
-				else{//if this if statement doesn't have curly brackets 
-					List<StatementTree> thenStatementTreeList = new ArrayList<>();
-					thenStatementTreeList.add(ifStatementTree.thenStatement());
-					checkStatementTree(thenStatementTreeList);
-				}
+				checkInnerStatementTree(ifStatementTree.thenStatement());
 				checkElseIfStatementTree(ifStatementTree);//check elseif part in this if statement
 				break;
 
@@ -128,13 +121,7 @@ public class AvoidTooManyCasesInOneSwitch extends IssuableSubscriptionVisitor {
 			if (statementTree.is(Tree.Kind.IF_STATEMENT)) {
 				IfStatementTree ifStatementTree = (IfStatementTree) statementTree;
 				checkElseIfStatementTree(ifStatementTree);
-				if (ifStatementTree.thenStatement().is(Tree.Kind.BLOCK)) {//if this elseif statement has curly brackets 
-					checkInnerStatementTree(ifStatementTree.thenStatement());
-				}else{//if this elseif statement doesn't have curly brackets 
-					List<StatementTree> thenStatementTreeList = new ArrayList<>();
-					thenStatementTreeList.add(ifStatementTree.thenStatement());
-					checkStatementTree(thenStatementTreeList);	
-				}				
+				checkInnerStatementTree(ifStatementTree.thenStatement());			
 			} else {
 				checkInnerStatementTree(statementTree);
 			}
@@ -142,9 +129,11 @@ public class AvoidTooManyCasesInOneSwitch extends IssuableSubscriptionVisitor {
 	}
 
 	private void checkInnerStatementTree(StatementTree tree) {//check inner statementtree method
-		BlockTree blockTree = (BlockTree) tree;
-		List<StatementTree> list = blockTree.body();
-		checkStatementTree(list);
+		if (tree.is(Tree.Kind.BLOCK)) {
+			BlockTree blockTree = (BlockTree) tree;
+			List<StatementTree> list = blockTree.body();
+			checkStatementTree(list);
+		}
 	}
 
 	private void checkInnerBlockTree(BlockTree tree) {//check inner blocktree method
