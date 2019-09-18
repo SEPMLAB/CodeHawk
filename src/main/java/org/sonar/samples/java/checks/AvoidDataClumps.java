@@ -21,7 +21,7 @@ public class AvoidDataClumps extends IssuableSubscriptionVisitor {
 	private ArrayList<SimplifiedClassTree> classList = new ArrayList<>();
 	private HashMap<SimplifiedClassTree, JavaFileScannerContext> fileMap = new HashMap<>();
 	private int classCount = 0;
-	private int fileCount = 0;
+	private int fileCount = 18;
 	private int alikeThreshold = 2;
 	private int classThreshold = 10;
 	
@@ -34,18 +34,19 @@ public class AvoidDataClumps extends IssuableSubscriptionVisitor {
 
 	@Override
 	public void visitNode(Tree tree) {
+		System.out.println("test");
 		/*ver2*/
 		/*statistic setting sequence*/
 		//set the fileCount for the project
-		if(fileCount == 0) {
-			File sourceFolder;
-			//find the file count in the src folder
-			do {
-				sourceFolder = context.getFile().getParentFile();
-			}while(!(sourceFolder.getName().equals("src")));
-			setFileCount(sourceFolder);
-			System.out.println("fileCount: " + fileCount);
-		}
+//		if(fileCount == 0) {
+//			File sourceFolder;
+//			//find the file count in the src folder
+//			do {
+//				sourceFolder = context.getFile().getParentFile();
+//			}while(!(sourceFolder.getName().equals("src")));
+//			setFileCount(sourceFolder);
+//			System.out.println("fileCount: " + fileCount);
+//		}
 		//set the classCount for every file
 		if(classCount == 0) {
 			setClassCount(context.getTree().types());
@@ -54,13 +55,17 @@ public class AvoidDataClumps extends IssuableSubscriptionVisitor {
 		
 		/*data input sequence*/
 		ClassTree ct = (ClassTree)tree;
+		System.out.println("class name: " + ct.simpleName().name());
 		SimplifiedClassTree simpTree = new SimplifiedClassTree(ct);
-		
+
+		System.out.println("start: ");
 		for(Tree t: ct.members()) {
 			if(t.is(Tree.Kind.VARIABLE)) {
 				VariableTree vt = (VariableTree)t;
 				simpTree.addMember(vt);
+				System.out.println("added: " + simpTree.getMembers().size());
 				checkMembers(simpTree, vt);
+				System.out.println("checked: " + simpTree.getMembers().size());
 			}
 		}
 		classList.add(simpTree);
@@ -144,9 +149,13 @@ public class AvoidDataClumps extends IssuableSubscriptionVisitor {
 	
 	//return the index of the variable tree in vtList which vt1 is the same as
 	public int findSame(ArrayList<VariableTree> vtList, VariableTree vt1) {
+		System.out.println("finding...");
+		int i = 0;
 		for(VariableTree vt2: vtList) {
-			if(vt1.simpleName().name().equals(vt2.simpleName().name()) && vt1.type().symbolType().fullyQualifiedName().equals(vt2.type().symbolType().fullyQualifiedName())) {
-				return vtList.indexOf(vt2);
+			if(vt1.simpleName().name().equals(vt2.simpleName().name())) {
+				if(vt1.type().symbolType().fullyQualifiedName().equals(vt2.type().symbolType().fullyQualifiedName())) {
+					return vtList.indexOf(vt2);
+				}
 			}
 		}
 		return -1;
