@@ -88,13 +88,20 @@ public class GetLines {
 			lines += treeLines(((SynchronizedStatementTree) st).block().body());
 		}  else if (((Tree) st).is(Tree.Kind.TRY_STATEMENT)) {
 			lines += treeLines(((TryStatementTree) st).block().body());
-			lines += treeLines(((TryStatementTree) st).finallyBlock().body());
+			if (((TryStatementTree) st).catches() != null) {
+				lines += treeLines(((TryStatementTree) st).catches());
+			}
+			if (((TryStatementTree) st).finallyBlock() != null) {
+				lines += 1 + treeLines(((TryStatementTree) st).finallyBlock().body());
+			}
 		} else if (((Tree) st).is(Tree.Kind.WHILE_STATEMENT)) {
 			lines += recursiveLines(((WhileStatementTree) st).statement());
 		} else if (((Tree) st).is(Tree.Kind.CONSTRUCTOR)) {
 			lines += recursiveLines(((MethodTree) st).block());
 		} else if (((Tree) st).is(Tree.Kind.METHOD)) {
 			lines += recursiveLines(((MethodTree) st).block());
+		} else if (((Tree) st).is(Tree.Kind.CATCH)) {
+			lines += recursiveLines(((CatchTree) st).block());
 		}
 		return lines;
 	}
