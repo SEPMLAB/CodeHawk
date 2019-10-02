@@ -90,6 +90,11 @@ public class GetLines {
 			lines += treeLines(((TryStatementTree) st).block().body());
 			if(((TryStatementTree) st).finallyBlock() != null) {
 				lines += treeLines(((TryStatementTree) st).finallyBlock().body()) +1;
+			if (((TryStatementTree) st).catches() != null) {
+				lines += treeLines(((TryStatementTree) st).catches());
+			}
+			if (((TryStatementTree) st).finallyBlock() != null) {
+				lines += 1 + treeLines(((TryStatementTree) st).finallyBlock().body());
 			}
 		} else if (((Tree) st).is(Tree.Kind.WHILE_STATEMENT)) {
 			lines += recursiveLines(((WhileStatementTree) st).statement());
@@ -97,6 +102,8 @@ public class GetLines {
 			lines += recursiveLines(((MethodTree) st).block());
 		} else if (((Tree) st).is(Tree.Kind.METHOD)) {
 			lines += recursiveLines(((MethodTree) st).block());
+		} else if (((Tree) st).is(Tree.Kind.CATCH)) {
+			lines += recursiveLines(((CatchTree) st).block());
 		}
 		return lines;
 	}
