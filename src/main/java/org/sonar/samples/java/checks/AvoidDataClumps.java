@@ -7,6 +7,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.TreeSet;
 
+import org.sonar.api.batch.fs.FileSystem;
+import org.sonar.api.batch.fs.InputFile;
+import org.sonar.api.batch.sensor.Sensor;
+import org.sonar.api.batch.sensor.SensorContext;
+import org.sonar.api.batch.sensor.SensorDescriptor;
 import org.sonar.check.Rule;
 import org.sonar.plugins.java.api.IssuableSubscriptionVisitor;
 import org.sonar.plugins.java.api.JavaFileScannerContext;
@@ -17,11 +22,11 @@ import org.sonar.plugins.java.api.tree.VariableTree;
 
 @Rule(key="avoidDataClumps")
 
-public class AvoidDataClumps extends IssuableSubscriptionVisitor {
+public class AvoidDataClumps extends IssuableSubscriptionVisitor implements Sensor{
 	private ArrayList<SimplifiedClassTree> classList = new ArrayList<>();
 	private HashMap<SimplifiedClassTree, JavaFileScannerContext> fileMap = new HashMap<>();
 	private int classCount = 0;
-	private int fileCount = 18;
+	private int fileCount = 0;
 	private int alikeThreshold = 2;
 	private int classThreshold = 10;
 	
@@ -34,7 +39,6 @@ public class AvoidDataClumps extends IssuableSubscriptionVisitor {
 
 	@Override
 	public void visitNode(Tree tree) {
-		System.out.println("test");
 		/*ver2*/
 		/*statistic setting sequence*/
 		//set the fileCount for the project
@@ -50,7 +54,7 @@ public class AvoidDataClumps extends IssuableSubscriptionVisitor {
 		//set the classCount for every file
 		if(classCount == 0) {
 			setClassCount(context.getTree().types());
-			System.out.println("classCount: " + classCount);
+//			System.out.println("classCount: " + classCount);
 		}
 		
 		/*data input sequence*/
@@ -58,7 +62,6 @@ public class AvoidDataClumps extends IssuableSubscriptionVisitor {
 		System.out.println("class name: " + ct.simpleName().name());
 		SimplifiedClassTree simpTree = new SimplifiedClassTree(ct);
 
-		System.out.println("start: ");
 		for(Tree t: ct.members()) {
 			if(t.is(Tree.Kind.VARIABLE)) {
 				VariableTree vt = (VariableTree)t;
@@ -70,10 +73,11 @@ public class AvoidDataClumps extends IssuableSubscriptionVisitor {
 		}
 		classList.add(simpTree);
 		fileMap.put(simpTree, context);
-		System.out.println("visit" + classCount);
+		System.out.println("visited" + classCount);
 		
 		/*issue report sequence*/
 		if(--classCount == 0) {
+			System.out.println("files left: " + fileCount);
 			if(--fileCount == 0) {
 				startReport();
 			}
@@ -149,7 +153,7 @@ public class AvoidDataClumps extends IssuableSubscriptionVisitor {
 	
 	//return the index of the variable tree in vtList which vt1 is the same as
 	public int findSame(ArrayList<VariableTree> vtList, VariableTree vt1) {
-		System.out.println("finding...");
+//		System.out.println("finding...");
 		int i = 0;
 		for(VariableTree vt2: vtList) {
 			if(vt1.simpleName().name().equals(vt2.simpleName().name())) {
@@ -159,6 +163,22 @@ public class AvoidDataClumps extends IssuableSubscriptionVisitor {
 			}
 		}
 		return -1;
+	}
+
+	@Override
+	public void describe(SensorDescriptor descriptor) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void execute(SensorContext context) {
+		System.out.println("filecounted");
+		FileSystem fs = context.fileSystem();
+	    Iterable<InputFile> javaFiles = fs.inputFiles(fs.predicates().hasLanguage("java"));
+	    for(InputFile f: javaFiles) {
+	    	fileCount++;
+	    }
 	}
 }
 

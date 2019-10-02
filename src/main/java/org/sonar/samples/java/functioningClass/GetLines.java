@@ -1,4 +1,4 @@
-package org.sonar.samples.java.functioningclass;
+package org.sonar.samples.java.functioningClass;
 
 import java.util.List;
 
@@ -88,7 +88,9 @@ public class GetLines {
 			lines += treeLines(((SynchronizedStatementTree) st).block().body());
 		}  else if (((Tree) st).is(Tree.Kind.TRY_STATEMENT)) {
 			lines += treeLines(((TryStatementTree) st).block().body());
-			lines += treeLines(((TryStatementTree) st).finallyBlock().body());
+			if(((TryStatementTree) st).finallyBlock() != null) {
+				lines += treeLines(((TryStatementTree) st).finallyBlock().body()) +1;
+			}
 		} else if (((Tree) st).is(Tree.Kind.WHILE_STATEMENT)) {
 			lines += recursiveLines(((WhileStatementTree) st).statement());
 		} else if (((Tree) st).is(Tree.Kind.CONSTRUCTOR)) {

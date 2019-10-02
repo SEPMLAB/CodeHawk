@@ -21,11 +21,12 @@ package org.sonar.samples.java.checks;
 
 import java.util.Collections;
 import java.util.List;
+
 import org.sonar.check.Rule;
 import org.sonar.plugins.java.api.IssuableSubscriptionVisitor;
 import org.sonar.plugins.java.api.tree.ClassTree;
 import org.sonar.plugins.java.api.tree.Tree;
-import org.sonar.samples.java.functioningclass.GetLines;
+import org.sonar.samples.java.functioningClass.GetLines;
 
 @Rule(key = "AvoidLargeClass")
 /**
