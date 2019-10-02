@@ -96,6 +96,7 @@ public class GetLines {
 			if (((TryStatementTree) st).finallyBlock() != null) {
 				lines += 1 + treeLines(((TryStatementTree) st).finallyBlock().body());
 			}
+		}
 		} else if (((Tree) st).is(Tree.Kind.WHILE_STATEMENT)) {
 			lines += recursiveLines(((WhileStatementTree) st).statement());
 		} else if (((Tree) st).is(Tree.Kind.CONSTRUCTOR)) {
