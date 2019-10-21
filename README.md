@@ -1,4 +1,5 @@
-[![CodeHawk]
+CodeHawk [![Build Status](https://travis-ci.org/SonarSource/sonarqube.svg?branch=master)](https://github.com/sipilab/CodeHawk) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=org.sonarsource.sonarqube%3Asonarqube&metric=alert_status)]
+=========
 
 CodeHawk is an extension of SonarQube which can analyze software smells for Java souce code. 
 
