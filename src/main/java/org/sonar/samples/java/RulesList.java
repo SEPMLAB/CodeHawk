@@ -34,7 +34,7 @@ import org.sonar.samples.java.checks.TestRule;
 =======
 >>>>>>> 2aa38c9e29a232c4ac23effe890c312120239d07
 import org.sonar.samples.java.checks.AvoidLargeMethod;
-import org.sonar.samples.java.checks.AvoidTooManyParametersInOneMethod;
+import org.sonar.samples.java.checks.AvoidShotgunSurgery;
 import org.sonar.samples.java.checks.RefusedBequest;
 
 public final class RulesList {
@@ -58,7 +58,7 @@ public final class RulesList {
 	public static List<Class<? extends JavaCheck>> getJavaChecks() {
 		return Collections.unmodifiableList(Arrays.asList(AvoidLargeClass.class, RefusedBequest.class,
 				AvoidLazyClass.class, AvoidLargeMethod.class, AvoidTooManyParametersInOneMethod.class,
-				AvoidDataClumps.class, AvoidTooManyCasesInOneSwitch.class));
+				AvoidDataClumps.class, AvoidTooManyCasesInOneSwitch.class, AvoidShotgunSurgery.class));
 	}
 >>>>>>> 2aa38c9e29a232c4ac23effe890c312120239d07
 
