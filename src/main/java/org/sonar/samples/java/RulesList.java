@@ -28,28 +28,41 @@ import org.sonar.samples.java.checks.AvoidDataClumps;
 import org.sonar.samples.java.checks.AvoidLargeClass;
 import org.sonar.samples.java.checks.AvoidLazyClass;
 import org.sonar.samples.java.checks.AvoidTooManyCasesInOneSwitch;
+<<<<<<< HEAD
 import org.sonar.samples.java.checks.AvoidTooManyParametersInOneMethod;
 import org.sonar.samples.java.checks.TestRule;
+=======
+>>>>>>> 2aa38c9e29a232c4ac23effe890c312120239d07
 import org.sonar.samples.java.checks.AvoidLargeMethod;
+import org.sonar.samples.java.checks.AvoidTooManyParametersInOneMethod;
+import org.sonar.samples.java.checks.RefusedBequest;
 
 public final class RulesList {
 
-  private RulesList() {
-  }
+	private RulesList() {
+	}
 
-  public static List<Class<? extends JavaCheck>> getChecks() {
-    List<Class<? extends JavaCheck>> checks = new ArrayList<>();
-    checks.addAll(getJavaChecks());
-    checks.addAll(getJavaTestChecks());
-    return Collections.unmodifiableList(checks);
-  }
+	public static List<Class<? extends JavaCheck>> getChecks() {
+		List<Class<? extends JavaCheck>> checks = new ArrayList<>();
+		checks.addAll(getJavaChecks());
+		checks.addAll(getJavaTestChecks());
+		return Collections.unmodifiableList(checks);
+	}
 
+<<<<<<< HEAD
   public static List<Class<? extends JavaCheck>> getJavaChecks() {
     return Collections.unmodifiableList(Arrays.asList(
       AvoidLargeClass.class,AvoidLazyClass.class,AvoidLargeMethod.class,AvoidDataClumps.class,AvoidTooManyParametersInOneMethod.class,AvoidTooManyCasesInOneSwitch.class,TestRule.class));
   }
+=======
+	public static List<Class<? extends JavaCheck>> getJavaChecks() {
+		return Collections.unmodifiableList(Arrays.asList(AvoidLargeClass.class, RefusedBequest.class,
+				AvoidLazyClass.class, AvoidLargeMethod.class, AvoidTooManyParametersInOneMethod.class,
+				AvoidDataClumps.class, AvoidTooManyCasesInOneSwitch.class));
+	}
+>>>>>>> 2aa38c9e29a232c4ac23effe890c312120239d07
 
-  public static List<Class<? extends JavaCheck>> getJavaTestChecks() {
-    return Collections.emptyList();
-  }
+	public static List<Class<? extends JavaCheck>> getJavaTestChecks() {
+		return Collections.emptyList();
+	}
 }
