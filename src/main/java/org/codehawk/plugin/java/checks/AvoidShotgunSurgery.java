@@ -38,7 +38,6 @@ import org.sonar.plugins.java.api.tree.WhileStatementTree;
 
 @Rule(key = "AvoidShotgunSurgery")
 public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
-	private int totalFile = 0,totalClass = 0;
 	private Map<String, Map<String, List<String>>> usedInMethod = new HashMap<String, Map<String, List<String>>>();
 	private Map<String, Map<String, List<String>>> usedInVariable = new HashMap<String, Map<String, List<String>>>();
 	private Map<String, Map<String, List<String>>> classCount = new HashMap<String, Map<String, List<String>>>();
@@ -366,7 +365,7 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 				for (String className2 : location.keySet()) {
 					for (MethodTree methodtree : location.get(className2).keySet()) {
 						String methodName2 = methodtree.simpleName().name();
-						if (methodCount.get(className).get(methodName).size() > 0 || classCount.get(className).get(methodName).size() > 0) {
+						if (methodCount.get(className).get(methodName).size() >= 7 || classCount.get(className).get(methodName).size() >= 10) {
 							if (className.equals(className2) && methodName.equals(methodName2)) {
 								if (!hasShowed.containsKey(className)) {
 									location.get(className2).get(methodtree).addIssue(methodtree.openParenToken().line(),this, "Shotgun Surgery happened in \"" + methodName2 + "\" method !");
@@ -383,30 +382,4 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 			}
 		}
 	}
-	
-	public void setTotalFile(File dir) {
-		File[] fileList = dir.listFiles();
-		for(File f: fileList) {
-			if(f.isDirectory()) {
-				setTotalFile(f);
-			}
-			else if(f.isFile()) {
-				if(f.getName().endsWith(".java")) {
-					totalFile ++;
-				}
-			}
-		}
-	}
-	
-	
-	public void setTotalClass(List<Tree> lt) {
-		for(Tree tree: lt) {
-			if(tree.is(Tree.Kind.CLASS)) {
-				totalClass++;
-				ClassTree ct = (ClassTree)tree;
-				setTotalClass(ct.members());
-			}
-		}
-	}
-
 }
