@@ -19,10 +19,11 @@ import org.sonar.plugins.java.api.JavaFileScannerContext.Location;
 import org.sonar.plugins.java.api.tree.ClassTree;
 import org.sonar.plugins.java.api.tree.Tree;
 import org.sonar.plugins.java.api.tree.VariableTree;
+import org.sonar.samples.java.functioningClass.FileCounts;
 
 @Rule(key="avoidDataClumps")
 
-public class AvoidDataClumps extends IssuableSubscriptionVisitor implements Sensor{
+public class AvoidDataClumps extends IssuableSubscriptionVisitor{
 	private ArrayList<SimplifiedClassTree> classList = new ArrayList<>();
 	private HashMap<SimplifiedClassTree, JavaFileScannerContext> fileMap = new HashMap<>();
 	private int classCount = 0;
@@ -165,21 +166,6 @@ public class AvoidDataClumps extends IssuableSubscriptionVisitor implements Sens
 		return -1;
 	}
 
-	@Override
-	public void describe(SensorDescriptor descriptor) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void execute(SensorContext context) {
-		System.out.println("filecounted");
-		FileSystem fs = context.fileSystem();
-	    Iterable<InputFile> javaFiles = fs.inputFiles(fs.predicates().hasLanguage("java"));
-	    for(InputFile f: javaFiles) {
-	    	fileCount++;
-	    }
-	}
 }
 
 /* for every class tree,simplify it by only storing the vairable members

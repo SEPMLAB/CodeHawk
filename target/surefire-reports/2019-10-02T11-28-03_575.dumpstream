@@ -1,4 +1,0 @@
-# Created at 2019-10-02T11:28:03.856
-Boot Manifest-JAR contains absolute paths in classpath 'D:\專題\sonarqube\sonar-custom-rules-examples-master\java-custom-rules\target\test-classes'
-Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
-

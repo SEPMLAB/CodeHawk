@@ -20,6 +20,7 @@
 package org.sonar.samples.java;
 
 import org.sonar.api.Plugin;
+import org.sonar.samples.java.functioningClass.FileCounts;
 
 /**
  * Entry point of your plugin containing your custom rules
@@ -34,7 +35,9 @@ public class MyJavaRulesPlugin implements Plugin {
 
     // batch extensions -> objects are instantiated during code analysis
     context.addExtension(MyJavaFileCheckRegistrar.class);
-
+    
+    //context.addExtension(FileCounts.class);
+    
   }
 
 }

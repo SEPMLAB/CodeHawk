@@ -8,7 +8,9 @@ public interface Duplications {
 	public String type();
 }
 
+//chain of exact clones
 class DuplicationChain implements Duplications {
+	//id of an individual chain, same as the id of the first clone in this chain
 	int chainId;
 	SmellMetrics m = new SmellMetrics();
 	private ArrayList<DuplicateClones> cloneChain = new ArrayList<>();
@@ -21,7 +23,8 @@ class DuplicationChain implements Duplications {
 	public ArrayList<DuplicateClones> chain() {
 		return cloneChain;
 	}
-
+	
+	//try to add a duplicate clone into this chain, do so if the clone meets the condidtion
 	public boolean addChain(DuplicateClones dc) {
 		if (dc.size() > m.FEW) {
 			if (dc.startingLine - cloneChain.get(cloneChain.size() - 1).endingLine <= m.FEW) {
@@ -34,7 +37,6 @@ class DuplicationChain implements Duplications {
 	}
 
 	public int size() {
-
 		return cloneChain.get(cloneChain.size() - 1).endingLine - cloneChain.get(0).startingLine;
 	}
 

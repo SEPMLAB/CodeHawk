@@ -13,8 +13,10 @@ org\sonar\samples\java\functioningClass\GetLines.class
 org\sonar\samples\java\checks\AvoidLargeMethod.class
 org\sonar\samples\java\checks\SimplifiedClassTree.class
 org\sonar\samples\java\checks\AvoidLargeClass.class
+org\sonar\samples\java\functioningClass\FileCounts.class
 org\sonar\samples\java\functioningClass\DuplicateClones.class
 org\sonar\samples\java\functioningClass\DuplicationJuding.class
+org\sonar\samples\java\checks\TestRule.class
 org\sonar\samples\java\checks\AvoidDataClumps.class
 org\sonar\samples\java\checks\AvoidLazyClass.class
 org\sonar\samples\java\MyJavaRulesDefinition$Remediation.class

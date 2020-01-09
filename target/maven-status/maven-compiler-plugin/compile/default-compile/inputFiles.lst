@@ -1,9 +1,11 @@
 D:\專題\sonarqube\sonar-custom-rules-examples-master\java-custom-rules\src\main\java\org\sonar\samples\java\checks\AvoidLazyClass.java
 D:\專題\sonarqube\sonar-custom-rules-examples-master\java-custom-rules\src\main\java\org\sonar\samples\java\MyJavaFileCheckRegistrar.java
+D:\專題\sonarqube\sonar-custom-rules-examples-master\java-custom-rules\src\main\java\org\sonar\samples\java\functioningClass\FileCounts.java
 D:\專題\sonarqube\sonar-custom-rules-examples-master\java-custom-rules\src\main\java\org\sonar\samples\java\functioningClass\SmellMetrics.java
 D:\專題\sonarqube\sonar-custom-rules-examples-master\java-custom-rules\src\main\java\org\sonar\samples\java\functioningClass\DuplicationJuding.java
 D:\專題\sonarqube\sonar-custom-rules-examples-master\java-custom-rules\src\main\java\org\sonar\samples\java\checks\AvoidDataClumps.java
 D:\專題\sonarqube\sonar-custom-rules-examples-master\java-custom-rules\src\main\java\org\sonar\samples\java\functioningClass\GetLines.java
+D:\專題\sonarqube\sonar-custom-rules-examples-master\java-custom-rules\src\main\java\org\sonar\samples\java\checks\TestRule.java
 D:\專題\sonarqube\sonar-custom-rules-examples-master\java-custom-rules\src\main\java\org\sonar\samples\java\checks\AvoidTooManyParametersInOneMethod.java
 D:\專題\sonarqube\sonar-custom-rules-examples-master\java-custom-rules\src\main\java\org\sonar\samples\java\MyJavaRulesPlugin.java
 D:\專題\sonarqube\sonar-custom-rules-examples-master\java-custom-rules\src\main\java\org\sonar\samples\java\MyJavaRulesDefinition.java
