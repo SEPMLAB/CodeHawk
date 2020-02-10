@@ -6,10 +6,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.codehawk.plugin.java.functioningClass.GetClass;
 import org.sonar.check.Rule;
 import org.sonar.plugins.java.api.IssuableSubscriptionVisitor;
 import org.sonar.plugins.java.api.tree.BinaryExpressionTree;
 import org.sonar.plugins.java.api.tree.BlockTree;
+import org.sonar.plugins.java.api.tree.CaseGroupTree;
 import org.sonar.plugins.java.api.tree.ClassTree;
 import org.sonar.plugins.java.api.tree.DoWhileStatementTree;
 import org.sonar.plugins.java.api.tree.ExpressionTree;
@@ -27,7 +29,6 @@ import org.sonar.plugins.java.api.tree.Tree;
 import org.sonar.plugins.java.api.tree.TryStatementTree;
 import org.sonar.plugins.java.api.tree.VariableTree;
 import org.sonar.plugins.java.api.tree.WhileStatementTree;
-import org.codehawk.plugin.java.functioningClass.GetClass;
 
 @Rule(key = "refused bequest")
 /**
@@ -181,9 +182,15 @@ public class RefusedBequest extends IssuableSubscriptionVisitor {
 		switch (statementTree.kind()) {
 
 		case SWITCH_STATEMENT:
-			num += 5;
 			SwitchStatementTree switchStatementTree = (SwitchStatementTree) statementTree;
-			num = cycleCheck(num, switchStatementTree);
+			List<CaseGroupTree> switchList = switchStatementTree.cases();
+			num += switchList.size();
+			for(CaseGroupTree caseT: switchList) {
+				List<StatementTree> switchSList = caseT.body();
+				for(StatementTree st: switchSList) {
+					num = cycleCheck(num, st);
+				}
+			}
 			break;
 
 		case IF_STATEMENT:
@@ -234,7 +241,7 @@ public class RefusedBequest extends IssuableSubscriptionVisitor {
 
 	public int expressionTreeCheck(ExpressionTree expt, int conditionNum) {
 		if (expt.is(Tree.Kind.STRING_LITERAL) || expt.is(Tree.Kind.NULL_LITERAL) || expt.is(Tree.Kind.INT_LITERAL) || expt.is(Tree.Kind.BOOLEAN_LITERAL)) {
-			conditionNum += 10;
+			conditionNum ++;
 		}
 		else if (expt.is(Tree.Kind.CONDITIONAL_AND) || expt.is(Tree.Kind.CONDITIONAL_OR)) {
 			conditionNum++;

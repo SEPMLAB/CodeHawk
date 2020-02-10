@@ -26,7 +26,7 @@ import org.sonar.check.Rule;
 import org.sonar.plugins.java.api.IssuableSubscriptionVisitor;
 import org.sonar.plugins.java.api.tree.ClassTree;
 import org.sonar.plugins.java.api.tree.Tree;
-import org.codehawk.plugin.java.functioningClass.GetLines;
+import org.codehawk.smell.metricruler.GetLines;
 
 @Rule(key = "AvoidLargeClass")
 /**

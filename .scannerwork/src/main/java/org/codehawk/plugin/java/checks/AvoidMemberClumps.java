@@ -1,17 +1,10 @@
 package org.codehawk.plugin.java.checks;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
-import org.smell.astmodler.DataClumpDetector;
-import org.smell.astmodler.DataMember;
-import org.smell.astmodler.StringGroup;
-import org.smell.smellruler.DataClump;
-import org.smell.smellruler.Smell;
+import org.codehawk.smell.modler.DataClumpDetector;
+import org.codehawk.smell.modler.DataMember;
 import org.sonar.check.Rule;
 import org.sonar.plugins.java.api.IssuableSubscriptionVisitor;
 import org.sonar.plugins.java.api.tree.ClassTree;
@@ -49,7 +42,7 @@ public class AvoidMemberClumps extends IssuableSubscriptionVisitor {
 				String name = vt.simpleName().name(); // name of the variable
 				nameToNode.put(name, classMembers);
 				
-				classMembers.addParam(vt);
+				classMembers.addmember(vt);
 			}
 		}
 		
