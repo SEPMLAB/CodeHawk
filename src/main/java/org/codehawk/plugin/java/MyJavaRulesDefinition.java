@@ -54,7 +54,7 @@ public class MyJavaRulesDefinition implements RulesDefinition {
   public void define(Context context) {
     NewRepository repository = context
       .createRepository(REPOSITORY_KEY, Java.KEY)
-      .setName("Wtlab Custom Repository");
+      .setName("Codehawk plugin Repository");
 
     for (Class<? extends JavaCheck> check : RulesList.getChecks()) {
       new RulesDefinitionAnnotationLoader().load(repository, check);

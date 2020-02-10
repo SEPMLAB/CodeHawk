@@ -34,10 +34,6 @@ public class MyJavaRulesPlugin implements Plugin {
 
     // batch extensions -> objects are instantiated during code analysis
     context.addExtension(MyJavaFileCheckRegistrar.class);
-    
-    //context.addExtension(FileCounts.class);
-    
-//    context.addExtension(AvoidDataClumps.class);
   }
 
 }
