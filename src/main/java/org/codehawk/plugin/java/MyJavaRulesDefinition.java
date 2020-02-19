@@ -46,7 +46,7 @@ public class MyJavaRulesDefinition implements RulesDefinition {
   // don't change that because the path is hard coded in CheckVerifier
   private static final String RESOURCE_BASE_PATH = "/org/sonar/l10n/java/rules/squid";
 
-  public static final String REPOSITORY_KEY = "wtlab-java";
+  public static final String REPOSITORY_KEY = "CodeHawk";
 
   private final Gson gson = new Gson();
 
