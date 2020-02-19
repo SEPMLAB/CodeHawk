@@ -8,9 +8,9 @@
 	<version>1.0-SNAPSHOT</version>
 	<packaging>sonar-plugin</packaging>
 
-	<name>Custom Java rules new</name>
-	<description>new java custom rules with interface smell</description>
-	<inceptionYear>2019</inceptionYear>
+	<name>codehawk java plugin</name>
+	<description>codehawk plugin for java smells</description>
+	<inceptionYear>2020</inceptionYear>
 
 	<properties>
 		<sslr.version>1.21</sslr.version>
