@@ -12,14 +12,6 @@
 	<description>codehawk plugin for java smells</description>
 	<inceptionYear>2020</inceptionYear>
 
-	<properties>
-		<sslr.version>1.21</sslr.version>
-		<gson.version>2.6.2</gson.version>
-
-		<sonar.version>7.7</sonar.version>
-		<sonarjava.version>5.12.1.17771</sonarjava.version>
-	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.sonarsource.sonarqube</groupId>
