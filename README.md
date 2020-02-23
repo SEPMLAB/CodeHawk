@@ -1,3 +1,15 @@
-[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=org.sonarsource.samples%3Ajava-custom-rules&metric=alert_status)](https://sonarcloud.io/dashboard?id=org.sonarsource.samples%3Ajava-custom-rules)
+[![Quality Gate](https://sonarcloud.io/dashboard?id=jason30704_CodeHawk&metric=alert_status)](https://sonarcloud.io/dashboard?id=jason30704_CodeHawk)
 
-This example demonstrates how to write **Custom Rules** for SonarJava.
+This plugin is allow you to analyze Java code and find code smells. 
+
+List of smells:
+
+* Large Class
+* Large Method
+* Lazy Class
+* Data Clump (class members)
+* Data Clump (method parameters)
+* Shotgun Surgery
+* Refused Bequest
+* Long Switch Statements
+* Long Parameter List
