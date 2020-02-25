@@ -3,4 +3,4 @@
 This SonarQube plugin adds additional Java rules.
 It can be installed via the Marketplace (pending) or by downloading the plugin.
 
-[visit our website](https://codehawk.org/)
+visit [our website](https://codehawk.org/)
