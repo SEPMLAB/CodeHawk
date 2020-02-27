@@ -1,9 +1,20 @@
-<p>This rule detects data clumps between methods</p>
+<p>This rule detects data clumps between methods. When ever three or more of the same parameters appear in two or more
+ methods as a group, <br>they will be detected as data clump. This rule uses parameter name for detection.</p>
 <h2>Noncompliant Code Example</h2>
 <pre>
-TO DO 
+	m1(int a, int b, int c){}
+	
+	m2(int a, int b, int d){}
 </pre>
-<h2>Compliant Solution</h2>
+<h2>Compliant Code Example</h2>
 <pre>
-TO DO 
+	void m1(int a, int b, int c, int d){}
+	
+	void m2(int a, int b, int c){}
+	
+	void m3(int b, int c, int d){}
 </pre>
+<p>m2 will be marked as data clump twice, once for group(a,b,c) and once for group(b,c,d)<br>
+m2 and m3 will be marked once.</p>
+<h2>Recommended Solution</h2>
+<p>Declare a new class with the clumped parameters as class variable. Pass the class object as parameter instead.</p>

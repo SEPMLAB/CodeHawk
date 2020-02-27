@@ -1,9 +1,18 @@
-<p>This rule detects data clumps in two or more classes</p>
-<h2>Noncompliant Code Example</h2>
+<p>This rule detects data clumps between classes. When ever 10 or more of the same variables appear in two or more classes
+ as a group, <br>they will be detected as data clump. This rule uses variable name for detection.</p>
+<h2>Compliant Code Example</h2>
 <pre>
-TO DO 
+	class A{
+		int a=0, b=0, c=0, d=0, e=0, f=0, g=0, h=0, i=0, j=0;
+	}
+	class B{
+		int a=0, b=1, c=2, d=3, e=0, f=0, g=0, h=0, i=0, j=0;
+	}
+	class C{
+		int a=0, b=0, c=0, d=0, e=0, f=0, g=0, h=0;
+	}
 </pre>
-<h2>Compliant Solution</h2>
-<pre>
-TO DO 
-</pre>
+<p>class A and B will be marked as member clump for group(a,b,c,d,e,f,g,h,i,j), while class C will not.<br>
+the value of variables does not matter.</p>
+<h2>Recommended Solution</h2>
+<p>Declare a new class with the clumped variables as class variable and replace those variables with the class object.</p>
