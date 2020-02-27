@@ -363,14 +363,14 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 				for (String className2 : location.keySet()) {
 					for (MethodTree methodtree : location.get(className2).keySet()) {
 						String methodName2 = methodtree.simpleName().name();
-						if (methodCount.get(className).get(methodName).size() >= 7 || classCount.get(className).get(methodName).size() >= 10) {
+						if (methodCount.get(className).get(methodName).size() > 7 && classCount.get(className).get(methodName).size() > 10) {
 							if (className.equals(className2) && methodName.equals(methodName2)) {
 								if (!hasShowed.containsKey(className)) {
-									location.get(className2).get(methodtree).addIssue(methodtree.openParenToken().line(),this, "Shotgun Surgery happened in \"" + methodName2 + "\" method !");
+									location.get(className2).get(methodtree).addIssue(methodtree.openParenToken().line(),this, "Code smell \"Shotgun Surgery\" occurred in method \"" + methodName + "\" !");
 									hasShowed.put(className, new ArrayList<String>());
 									hasShowed.get(className).add(methodName);
 								} else if (hasShowed.get(className).indexOf(methodName) == -1) {
-									location.get(className2).get(methodtree).addIssue(methodtree.openParenToken().line(),this, "Shotgun Surgery happened in \"" + methodName2 + "\" method !");
+									location.get(className2).get(methodtree).addIssue(methodtree.openParenToken().line(),this, "Code smell \"Shotgun Surgery\" occurred in method \"" + methodName + "\" !");
 									hasShowed.get(className).add(methodName);
 								}
 							}
