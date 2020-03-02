@@ -54,7 +54,7 @@ public class RefusedBequest extends IssuableSubscriptionVisitor {
 		// to count the number of classTrees
 		if (classCount == 0) {
 			classCount = GetClass.setClassCount(context.getTree().types());
-			System.out.println("classCount: " + classCount);
+			//System.out.println("classCount: " + classCount);
 		}
 
 		/*
@@ -70,7 +70,7 @@ public class RefusedBequest extends IssuableSubscriptionVisitor {
 			extendTree = new ExtendClassTree(ct, checkAMW(ct));
 		}
 		classList.put(ct.simpleName().name(), extendTree);
-		System.out.println(extendTree.getName() + " " + extendTree.getExtendClassName() + " " + extendTree.getAMV());
+		//System.out.println(extendTree.getName() + " " + extendTree.getExtendClassName() + " " + extendTree.getAMV());
 
 		// save the method & members of classtree into extendTree
 		for (Tree t : ct.members()) {
@@ -90,18 +90,21 @@ public class RefusedBequest extends IssuableSubscriptionVisitor {
 			}
 		}
 
-		System.out.println(extendTree.getMembers().size() + " " + extendTree.getMethod().size());
+		//System.out.println(extendTree.getMembers().size() + " " + extendTree.getMethod().size());
 
 		if (--classCount == 0) {
 			// System.out.println(classList.size() + " " + extendList.size());
 			if (extendList.size() != 0) {
 				for (int i = 0; i < extendList.size(); i += 2) {
 					// System.out.println(extendList.get(i) + " " + extendList.get(i + 1));
-					if (classList.get(extendList.get(i)).getAMV() && classList.get(extendList.get(i + 1)).getAMV()) {
-						if (extendUse(classList.get(extendList.get(i)), classList.get(extendList.get(i + 1)))) {
-							addIssue(classList.get(extendList.get(i)).getLine(), "this class refuse bequest");
+					if (classList.get(extendList.get(i)) != null && classList.get(extendList.get(i + 1)) != null) {
+						if (classList.get(extendList.get(i)).getAMV()
+								&& classList.get(extendList.get(i + 1)).getAMV()) {
+							if (extendUse(classList.get(extendList.get(i)), classList.get(extendList.get(i + 1)))) {
+								addIssue(classList.get(extendList.get(i)).getLine(), "this class refuse bequest");
+							}
+							//System.out.println("extendUse close");
 						}
-						System.out.println("extendUse close");
 					}
 				}
 			}
@@ -109,7 +112,7 @@ public class RefusedBequest extends IssuableSubscriptionVisitor {
 	}
 
 	public boolean extendUse(ExtendClassTree classT, ExtendClassTree extendT) {
-		System.out.println("extendUse start");
+		//System.out.println("extendUse start");
 		int BOvrThreshold = 0;
 		int BURThreshold = 0;
 
@@ -132,7 +135,7 @@ public class RefusedBequest extends IssuableSubscriptionVisitor {
 					while (true) {
 						// System.out.println(target2);
 						if (target2.is(Tree.Kind.CLASS)) {
-							System.out.println("the vt uses on " + ((ClassTree) target2).simpleName().name());
+							//System.out.println("the vt uses on " + ((ClassTree) target2).simpleName().name());
 							if (((ClassTree) target2).simpleName().name().equals(classT.getName())) {
 								BURThreshold++;
 							}
@@ -144,10 +147,10 @@ public class RefusedBequest extends IssuableSubscriptionVisitor {
 			}
 		}
 
-		System.out.println("methoduse: " + BOvrThreshold);
-		System.out.println(classT.getMethod().size());
-		System.out.println("Memberuse: " + BURThreshold);
-		System.out.println(classT.getMembers().size());
+//		System.out.println("methoduse: " + BOvrThreshold);
+//		System.out.println(classT.getMethod().size());
+//		System.out.println("Memberuse: " + BURThreshold);
+//		System.out.println(classT.getMembers().size());
 		if (classT.getMethod().size() > 7 && extendT.getMethod().size() > 7) {
 			if (BOvrThreshold * 3 < extendT.getMethod().size() && BURThreshold * 3 < extendT.getMembers().size()) {
 				return true;
@@ -185,9 +188,9 @@ public class RefusedBequest extends IssuableSubscriptionVisitor {
 			SwitchStatementTree switchStatementTree = (SwitchStatementTree) statementTree;
 			List<CaseGroupTree> switchList = switchStatementTree.cases();
 			num += switchList.size();
-			for(CaseGroupTree caseT: switchList) {
+			for (CaseGroupTree caseT : switchList) {
 				List<StatementTree> switchSList = caseT.body();
-				for(StatementTree st: switchSList) {
+				for (StatementTree st : switchSList) {
 					num = cycleCheck(num, st);
 				}
 			}
@@ -240,10 +243,10 @@ public class RefusedBequest extends IssuableSubscriptionVisitor {
 	}
 
 	public int expressionTreeCheck(ExpressionTree expt, int conditionNum) {
-		if (expt.is(Tree.Kind.STRING_LITERAL) || expt.is(Tree.Kind.NULL_LITERAL) || expt.is(Tree.Kind.INT_LITERAL) || expt.is(Tree.Kind.BOOLEAN_LITERAL)) {
-			conditionNum ++;
-		}
-		else if (expt.is(Tree.Kind.CONDITIONAL_AND) || expt.is(Tree.Kind.CONDITIONAL_OR)) {
+		if (expt.is(Tree.Kind.STRING_LITERAL) || expt.is(Tree.Kind.NULL_LITERAL) || expt.is(Tree.Kind.INT_LITERAL)
+				|| expt.is(Tree.Kind.BOOLEAN_LITERAL)) {
+			conditionNum++;
+		} else if (expt.is(Tree.Kind.CONDITIONAL_AND) || expt.is(Tree.Kind.CONDITIONAL_OR)) {
 			conditionNum++;
 			conditionNum = expressionTreeCheck(((BinaryExpressionTree) expt).leftOperand(), conditionNum);
 			conditionNum = expressionTreeCheck(((BinaryExpressionTree) expt).rightOperand(), conditionNum);

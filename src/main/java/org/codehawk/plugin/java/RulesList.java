@@ -49,8 +49,7 @@ public final class RulesList {
 
   public static List<Class<? extends JavaCheck>> getJavaChecks() {
     return Collections.unmodifiableList(Arrays.asList(AvoidLargeClass.class, RefusedBequest.class,
-			AvoidLazyClass.class, AvoidLargeMethod.class, AvoidTooManyParametersInOneMethod.class,
-			AvoidParamClumps.class, AvoidTooManyCasesInOneSwitch.class,AvoidMemberClumps.class,AvoidShotgunSurgery.class));
+			AvoidLazyClass.class, AvoidParamClumps.class, AvoidMemberClumps.class, AvoidShotgunSurgery.class));
   }
 
   public static List<Class<? extends JavaCheck>> getJavaTestChecks() {
