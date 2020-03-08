@@ -21,9 +21,8 @@ public class AvoidParamClumps extends IssuableSubscriptionVisitor{
 	
 	@Override
 	public List<Tree.Kind> nodesToVisit() {
-		List<Tree.Kind> visitList = Collections.singletonList(Tree.Kind.METHOD);
 		// Register to the kind of nodes you want to be called upon visit.
-		return visitList;
+		return Collections.singletonList(Tree.Kind.METHOD);
 	}
 
 	@Override

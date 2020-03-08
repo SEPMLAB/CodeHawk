@@ -18,13 +18,12 @@ import com.google.common.collect.Multimap;
 @Rule(key = "avoidMemberClumps")
 public class AvoidMemberClumps extends IssuableSubscriptionVisitor {
 	DataClumpDetector detector = new DataClumpDetector();
-	public final int clumpThresh = 10;
+	public static final int clumpThresh = 10;
 
 	@Override
 	public List<Kind> nodesToVisit() {
-		List<Tree.Kind> visitList = Collections.singletonList(Tree.Kind.CLASS);
 		// Register to the kind of nodes you want to be called upon visit.
-		return visitList;
+		return Collections.singletonList(Tree.Kind.CLASS);
 	}
 
 	@Override

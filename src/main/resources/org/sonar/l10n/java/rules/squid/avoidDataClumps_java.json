@@ -1,5 +1,5 @@
 {
-  "title": "Data clump detection",
+  "title": "Data clump detection(method parameters)",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {
