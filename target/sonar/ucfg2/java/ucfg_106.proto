@@ -1,0 +1,33 @@
+
+Porg.codehawk.plugin.java.checks.AvoidMemberClumps#nodesToVisit()Ljava/util/List;q
+gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java ("1*Õ
+1q
+gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java ()µ
+²
+q
+gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java8 (A/
+%0)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""µ
+²
+q
+gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java8 (G/
+%1)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""£
+ 
+q
+gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java (H
+%2java.util.List"Gjava.util.Collections#singletonList(Ljava/lang/Object;)Ljava/util/List;*"
+java.util.Collections*1
+/
+%1)org.sonar.plugins.java.api.tree.Tree$Kind±
+®
+q
+gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java (I
+	visitListjava.util.List"__id*
+
+%2java.util.List"’
+q
+gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java (
+
+	visitListjava.util.ListB53
+1org.codehawk.plugin.java.checks.AvoidMemberClumps

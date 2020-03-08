@@ -1,0 +1,27 @@
+
+Norg.codehawk.plugin.java.checks.AvoidLargeClass#nodesToVisit()Ljava/util/List;o
+eC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidLargeClass.java& &($"1*ê
+1o
+eC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidLargeClass.java(	 ((≥
+∞
+o
+eC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidLargeClass.java(# ((,/
+%0)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""≥
+∞
+o
+eC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidLargeClass.java(# ((2/
+%1)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""°
+û
+o
+eC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidLargeClass.java(	 ((3
+%2java.util.List"Gjava.util.Collections#singletonList(Ljava/lang/Object;)Ljava/util/List;*"
+java.util.Collections*1
+/
+%1)org.sonar.plugins.java.api.tree.Tree$Kind"â
+o
+eC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidLargeClass.java( ((4
+
+%2java.util.ListB31
+/org.codehawk.plugin.java.checks.AvoidLargeClass

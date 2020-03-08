@@ -1,0 +1,16 @@
+
+dorg.codehawk.smell.modler.DataMember#getContext()Lorg/sonar/plugins/java/api/JavaFileScannerContext;d
+ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java4 4()"1*ó
+1d
+ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java5	 5(ã
+à
+d
+ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java5	 5(7
+%01org.sonar.plugins.java.api.JavaFileScannerContext"__id*9*7&
+$org.codehawk.smell.modler.DataMember"
+locatedFile"¡
+d
+ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java5 5(9
+7
+%01org.sonar.plugins.java.api.JavaFileScannerContextB(&
+$org.codehawk.smell.modler.DataMember

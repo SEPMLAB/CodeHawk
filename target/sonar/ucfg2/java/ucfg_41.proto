@@ -1,0 +1,16 @@
+
+?org.codehawk.smell.modler.DataMember#getGroups()Ljava/util/Set;d
+ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java8 8(""1*¥
+1d
+ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java9	 9(º
+·
+d
+ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java9	 9(
+%0java.util.Set"__id*4*2&
+$org.codehawk.smell.modler.DataMember"
+groups"}
+d
+ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java9 9(
+
+%0java.util.SetB(&
+$org.codehawk.smell.modler.DataMember

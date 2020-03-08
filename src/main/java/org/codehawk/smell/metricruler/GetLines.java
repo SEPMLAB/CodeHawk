@@ -103,8 +103,6 @@ public class GetLines {
 			lines += recursiveLines(((MethodTree) st).block());
 		} else if (((Tree) st).is(Tree.Kind.METHOD)) {
 			lines += recursiveLines(((MethodTree) st).block());
-		} else if (((Tree) st).is(Tree.Kind.CATCH)) {
-			lines += recursiveLines(((CatchTree) st).block());
 		}
 		return lines;
 	}

@@ -1,0 +1,16 @@
+
+?org.codehawk.smell.modler.SmellableNode#getFile()Ljava/io/File;g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SmellableNode.java   ("1*­
+1g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SmellableNode.java!	 !(½
+º
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SmellableNode.java!	 !(
+%0java.io.File"__id*5*3)
+'org.codehawk.smell.modler.SmellableNode"
+file"
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SmellableNode.java! !(
+
+%0java.io.FileB+)
+'org.codehawk.smell.modler.SmellableNode

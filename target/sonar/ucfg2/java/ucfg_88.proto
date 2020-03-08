@@ -1,0 +1,74 @@
+
+gorg.codehawk.plugin.java.checks.AvoidShotgunSurgery#checkIsObject(Ljava/lang/String;)Ljava/lang/String;u
+iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.java± ±("5*±
+3u
+iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.java¥ ¥(ﬂ
+‹
+u
+iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.java¥ ¥(
+%5java.util.List"__id*G*E5
+3org.codehawk.plugin.java.checks.AvoidShotgunSurgery"
+
+objectListæ
+ª
+u
+iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.java¥ ¥( 
+%6java.lang.String"
+__arrayGet*
+
+%5java.util.List*
+"""ë
+u
+iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.java¥ ¥(!
+
+%6java.lang.String*±
+4u
+iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.java≥ ≥(ﬂ
+‹
+u
+iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.java≥ ≥(
+%2java.util.List"__id*G*E5
+3org.codehawk.plugin.java.checks.AvoidShotgunSurgery"
+
+objectListæ
+ª
+u
+iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.java≥ ≥($
+%3java.lang.String"
+__arrayGet*
+
+%2java.util.List*
+""âÜ
+u
+iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.java≥ ≥(%
+%4boolean",java.lang.String#equals(Ljava/lang/Object;)Z*
+
+namejava.lang.String*
+
+%3java.lang.String2equals(Ljava/lang/Object;)*
+3
+5*§
+5u
+iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.java≤ ≤(ﬂ
+‹
+u
+iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.java≤ ≤($
+%0java.util.List"__id*G*E5
+3org.codehawk.plugin.java.checks.AvoidShotgunSurgery"
+
+objectListΩ∫
+u
+iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.java≤ ≤(+	
+%1int"java.util.List#size()I*
+
+%0java.util.List2size()*
+4
+1*ê
+1u
+iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.java∑	 ∑("ì
+u
+iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.java∑ ∑(
+
+namejava.lang.String:
+namejava.lang.StringB75
+3org.codehawk.plugin.java.checks.AvoidShotgunSurgery

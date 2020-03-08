@@ -1,0 +1,9 @@
+
+Oorg.codehawk.smell.smellruler.TooManyParameters#smellDetail()Ljava/lang/String;o
+eC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/TooManyParameters.java ("1*‘
+1o
+eC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/TooManyParameters.java	 (."š
+o
+eC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/TooManyParameters.java (/'%
+#Avoid TOO MANY CASES IN ONE SWITCH!B31
+/org.codehawk.smell.smellruler.TooManyParameters

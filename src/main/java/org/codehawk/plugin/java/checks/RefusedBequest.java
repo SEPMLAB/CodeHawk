@@ -36,9 +36,9 @@ import org.sonar.plugins.java.api.tree.WhileStatementTree;
  */
 public class RefusedBequest extends IssuableSubscriptionVisitor {
 	// save two classNames which have Inheritance relationship
-	private ArrayList<String> extendList = new ArrayList<String>();
+	private ArrayList<String> extendList = new ArrayList<>();
 	// save classTree in ExtendClassTree
-	Map<String, ExtendClassTree> classList = new HashMap<String, ExtendClassTree>();
+	Map<String, ExtendClassTree> classList = new HashMap<>();
 	private int classCount = 0;
 	ExtendClassTree extendTree;
 
@@ -54,7 +54,6 @@ public class RefusedBequest extends IssuableSubscriptionVisitor {
 		// to count the number of classTrees
 		if (classCount == 0) {
 			classCount = GetClass.setClassCount(context.getTree().types());
-			//System.out.println("classCount: " + classCount);
 		}
 
 		/*
@@ -70,7 +69,6 @@ public class RefusedBequest extends IssuableSubscriptionVisitor {
 			extendTree = new ExtendClassTree(ct, checkAMW(ct));
 		}
 		classList.put(ct.simpleName().name(), extendTree);
-		//System.out.println(extendTree.getName() + " " + extendTree.getExtendClassName() + " " + extendTree.getAMV());
 
 		// save the method & members of classtree into extendTree
 		for (Tree t : ct.members()) {
@@ -80,7 +78,6 @@ public class RefusedBequest extends IssuableSubscriptionVisitor {
 				List<ModifierKeywordTree> modifiers = modifiersOfVT.modifiers();
 				for (ModifierKeywordTree mtkt : modifiers) {
 					if (mtkt.modifier().equals(Modifier.PROTECTED)) {
-						// System.out.println("get variable");
 						extendTree.addMember(vt);
 					}
 				}
@@ -90,20 +87,16 @@ public class RefusedBequest extends IssuableSubscriptionVisitor {
 			}
 		}
 
-		//System.out.println(extendTree.getMembers().size() + " " + extendTree.getMethod().size());
 
 		if (--classCount == 0) {
-			// System.out.println(classList.size() + " " + extendList.size());
 			if (extendList.size() != 0) {
 				for (int i = 0; i < extendList.size(); i += 2) {
-					// System.out.println(extendList.get(i) + " " + extendList.get(i + 1));
 					if (classList.get(extendList.get(i)) != null && classList.get(extendList.get(i + 1)) != null) {
 						if (classList.get(extendList.get(i)).getAMV()
 								&& classList.get(extendList.get(i + 1)).getAMV()) {
 							if (extendUse(classList.get(extendList.get(i)), classList.get(extendList.get(i + 1)))) {
 								addIssue(classList.get(extendList.get(i)).getLine(), "this class refuse bequest");
 							}
-							//System.out.println("extendUse close");
 						}
 					}
 				}
@@ -112,7 +105,6 @@ public class RefusedBequest extends IssuableSubscriptionVisitor {
 	}
 
 	public boolean extendUse(ExtendClassTree classT, ExtendClassTree extendT) {
-		//System.out.println("extendUse start");
 		int BOvrThreshold = 0;
 		int BURThreshold = 0;
 
@@ -133,9 +125,7 @@ public class RefusedBequest extends IssuableSubscriptionVisitor {
 				for (IdentifierTree target : lit) {
 					Tree target2 = target.parent();
 					while (true) {
-						// System.out.println(target2);
 						if (target2.is(Tree.Kind.CLASS)) {
-							//System.out.println("the vt uses on " + ((ClassTree) target2).simpleName().name());
 							if (((ClassTree) target2).simpleName().name().equals(classT.getName())) {
 								BURThreshold++;
 							}
@@ -147,10 +137,6 @@ public class RefusedBequest extends IssuableSubscriptionVisitor {
 			}
 		}
 
-//		System.out.println("methoduse: " + BOvrThreshold);
-//		System.out.println(classT.getMethod().size());
-//		System.out.println("Memberuse: " + BURThreshold);
-//		System.out.println(classT.getMembers().size());
 		if (classT.getMethod().size() > 7 && extendT.getMethod().size() > 7) {
 			if (BOvrThreshold * 3 < extendT.getMethod().size() && BURThreshold * 3 < extendT.getMembers().size()) {
 				return true;

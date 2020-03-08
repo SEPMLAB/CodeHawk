@@ -1,0 +1,27 @@
+
+Rorg.codehawk.plugin.java.checks.AvoidShotgunSurgery#nodesToVisit()Ljava/util/List;s
+iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.java2 2($"1*§
+1s
+iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.java3	 3(∑
+¥
+s
+iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.java3# 3(,/
+%0)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""∑
+¥
+s
+iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.java3# 3(2/
+%1)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""•
+¢
+s
+iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.java3	 3(3
+%2java.util.List"Gjava.util.Collections#singletonList(Ljava/lang/Object;)Ljava/util/List;*"
+java.util.Collections*1
+/
+%1)org.sonar.plugins.java.api.tree.Tree$Kind"ç
+s
+iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.java3 3(4
+
+%2java.util.ListB75
+3org.codehawk.plugin.java.checks.AvoidShotgunSurgery
