@@ -1,15 +1,33 @@
 
-forg.codehawk.smell.smellruler.TooManyCasesInOneSwitch#type()Lorg/codehawk/smell/smellruler/Smell$Type;u
-kC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/TooManyCasesInOneSwitch.java ("1*á
+eorg.codehawk.smell.smellruler.TooManyCasesInOneSwitch#is(Lorg/codehawk/smell/smellruler/Smell$Type;)Zu
+kC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/TooManyCasesInOneSwitch.java ("paramAnnotations*®
+paramAnnotationsu
+kC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/TooManyCasesInOneSwitch.java (Ø
+Õ
+u
+kC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/TooManyCasesInOneSwitch.java (
+
+%1"
+__annotate*
+java.lang.Override*2
+0
+type(org.codehawk.smell.smellruler.Smell$TypeÂ
+¿
+u
+kC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/TooManyCasesInOneSwitch.java (0
+type(org.codehawk.smell.smellruler.Smell$Type"__annotation*
+
+%1*
+1*¶
 1u
-kC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/TooManyCasesInOneSwitch.java	 (¸
+kC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/TooManyCasesInOneSwitch.java	 (¸
 µ
 u
-kC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/TooManyCasesInOneSwitch.java	 (.
+kC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/TooManyCasesInOneSwitch.java	 (.
 %0(org.codehawk.smell.smellruler.Smell$Type"__id*
-"""©
+"""
 u
-kC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/TooManyCasesInOneSwitch.java (0
-.
-%0(org.codehawk.smell.smellruler.Smell$TypeB97
+kC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/TooManyCasesInOneSwitch.java (
+"":0
+type(org.codehawk.smell.smellruler.Smell$TypeB97
 5org.codehawk.smell.smellruler.TooManyCasesInOneSwitch

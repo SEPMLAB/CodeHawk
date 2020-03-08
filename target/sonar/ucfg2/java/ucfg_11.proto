@@ -1,27 +1,29 @@
 
-Norg.codehawk.plugin.java.checks.AvoidLargeClass#nodesToVisit()Ljava/util/List;o
-eC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidLargeClass.java& &($"1*ê
-1o
-eC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidLargeClass.java(	 ((≥
-∞
-o
-eC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidLargeClass.java(# ((,/
-%0)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
-""≥
-∞
-o
-eC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidLargeClass.java(# ((2/
-%1)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
-""°
-û
-o
-eC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidLargeClass.java(	 ((3
-%2java.util.List"Gjava.util.Collections#singletonList(Ljava/lang/Object;)Ljava/util/List;*"
-java.util.Collections*1
-/
-%1)org.sonar.plugins.java.api.tree.Tree$Kind"â
-o
-eC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidLargeClass.java( ((4
-
-%2java.util.ListB31
-/org.codehawk.plugin.java.checks.AvoidLargeClass
+Dorg.codehawk.smell.metricruler.GetLines#treeLines(Ljava/util/List;)Ig
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javao o( "2*˙
+2g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaq q(É
+Ä
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaq q(
+stE"__id*
+""*
+3
+1*
+3g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javar r(¸
+˘
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javar r(	
+%0int"Korg.codehawk.smell.metricruler.GetLines#recursiveLines(Ljava/lang/Object;)I*+")
+'org.codehawk.smell.metricruler.GetLines*	
+
+stE*
+2*ﬂ
+1g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javat	 t("q
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javat t(
+"":
+lstjava.util.ListB+")
+'org.codehawk.smell.metricruler.GetLines

@@ -1,27 +1,16 @@
 
-Morg.codehawk.plugin.java.checks.AvoidLazyClass#nodesToVisit()Ljava/util/List;n
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidLazyClass.java ($"1*ã
-1n
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidLazyClass.java	 (≤
-Ø
-n
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidLazyClass.java# (,/
-%0)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
-""≤
-Ø
-n
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidLazyClass.java# (2/
-%1)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
-""†
-ù
-n
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidLazyClass.java	 (3
-%2java.util.List"Gjava.util.Collections#singletonList(Ljava/lang/Object;)Ljava/util/List;*"
-java.util.Collections*1
-/
-%1)org.sonar.plugins.java.api.tree.Tree$Kind"à
-n
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidLazyClass.java (4
-
-%2java.util.ListB20
-.org.codehawk.plugin.java.checks.AvoidLazyClass
+Korg.codehawk.plugin.java.checks.ExtendClassTree#getMethod()Ljava/util/List;p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java£ £("1*Ê
+1p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java§	 §(‹
+Ÿ
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java§	 §(
+%0java.util.ArrayList"__id*D*B1
+/org.codehawk.plugin.java.checks.ExtendClassTree"
+classMethod"è
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java§ §(
+
+%0java.util.ArrayListB31
+/org.codehawk.plugin.java.checks.ExtendClassTree

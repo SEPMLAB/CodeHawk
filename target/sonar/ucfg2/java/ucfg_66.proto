@@ -1,27 +1,15 @@
 
-[org.codehawk.plugin.java.checks.AvoidTooManyCasesInOneSwitch#nodesToVisit()Ljava/util/List;|
-rC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidTooManyCasesInOneSwitch.java ($"1*Ñ
-1|
-rC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidTooManyCasesInOneSwitch.java	 (À
-½
-|
-rC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidTooManyCasesInOneSwitch.java# (,/
-%0)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
-""À
-½
-|
-rC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidTooManyCasesInOneSwitch.java# (2/
-%1)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
-""®
-«
-|
-rC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidTooManyCasesInOneSwitch.java	 (3
-%2java.util.List"Gjava.util.Collections#singletonList(Ljava/lang/Object;)Ljava/util/List;*"
-java.util.Collections*1
-/
-%1)org.sonar.plugins.java.api.tree.Tree$Kind"–
-|
-rC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidTooManyCasesInOneSwitch.java (4
+Forg.codehawk.plugin.java.RulesList#getJavaTestChecks()Ljava/util/List;b
+XC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/RulesList.java41 4(B"1*³
+1b
+XC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/RulesList.java5 5(Ë
+È
+b
+XC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/RulesList.java5 5("
+%0java.util.List"1java.util.Collections#emptyList()Ljava/util/List;*"
+java.util.Collections"|
+b
+XC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/RulesList.java5 5(#
 
-%2java.util.ListB@>
-<org.codehawk.plugin.java.checks.AvoidTooManyCasesInOneSwitch
+%0java.util.ListB&"$
+"org.codehawk.plugin.java.RulesList

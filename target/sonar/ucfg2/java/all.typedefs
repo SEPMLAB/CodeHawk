@@ -43,7 +43,53 @@ hashCode()java.lang.Enum#hashCode()Iö
 <init>(Ljava/lang/String;I)Eorg.codehawk.smell.smellruler.Smell$Type#<init>(Ljava/lang/String;I)Và
 2org.codehawk.plugin.java.functioningClass.GetClassjava.lang.Objectv
 setClassCount(Ljava/util/List;)Sorg.codehawk.plugin.java.functioningClass.GetClass#setClassCount(Ljava/util/List;)IH
-<init>()<org.codehawk.plugin.java.functioningClass.GetClass#<init>()V8
+<init>()<org.codehawk.plugin.java.functioningClass.GetClass#<init>()VÎ
+java.lang.Throwablejava.lang.Objectjava.io.Serializable;
+printStackTrace()&java.lang.Throwable#printStackTrace()Vc
+getStackTraceElement(I)Hjava.lang.Throwable#getStackTraceElement(I)Ljava/lang/StackTraceElement;¡
+ìprintEnclosedStackTrace(Ljava/lang/Throwable$PrintStreamOrWriter;[Ljava/lang/StackTraceElement;Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;)®java.lang.Throwable#printEnclosedStackTrace(Ljava/lang/Throwable$PrintStreamOrWriter;[Ljava/lang/StackTraceElement;Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;)Vw
+/<init>(Ljava/lang/String;Ljava/lang/Throwable;)Djava.lang.Throwable#<init>(Ljava/lang/String;Ljava/lang/Throwable;)VB
+getMessage()2java.lang.Throwable#getMessage()Ljava/lang/String;)
+<init>()java.lang.Throwable#<init>()Vg
+'readObject(Ljava/io/ObjectInputStream;)<java.lang.Throwable#readObject(Ljava/io/ObjectInputStream;)VM
+<init>(Ljava/lang/String;)/java.lang.Throwable#<init>(Ljava/lang/String;)VT
+getLocalizedMessage();java.lang.Throwable#getLocalizedMessage()Ljava/lang/String;e
+&printStackTrace(Ljava/io/PrintWriter;);java.lang.Throwable#printStackTrace(Ljava/io/PrintWriter;)VA
+getStackTraceDepth())java.lang.Throwable#getStackTraceDepth()IZ
+getOurStackTrace()Djava.lang.Throwable#getOurStackTrace()[Ljava/lang/StackTraceElement;>
+
+toString()0java.lang.Throwable#toString()Ljava/lang/String;Q
+fillInStackTrace();java.lang.Throwable#fillInStackTrace()Ljava/lang/Throwable;s
+-setStackTrace([Ljava/lang/StackTraceElement;)Bjava.lang.Throwable#setStackTrace([Ljava/lang/StackTraceElement;)Va
+$addSuppressed(Ljava/lang/Throwable;)9java.lang.Throwable#addSuppressed(Ljava/lang/Throwable;)Vç
+:printStackTrace(Ljava/lang/Throwable$PrintStreamOrWriter;)Ojava.lang.Throwable#printStackTrace(Ljava/lang/Throwable$PrintStreamOrWriter;)Vm
+ initCause(Ljava/lang/Throwable;)Ijava.lang.Throwable#initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;T
+getStackTrace()Ajava.lang.Throwable#getStackTrace()[Ljava/lang/StackTraceElement;A
+
+getCause()3java.lang.Throwable#getCause()Ljava/lang/Throwable;e
+&printStackTrace(Ljava/io/PrintStream;);java.lang.Throwable#printStackTrace(Ljava/io/PrintStream;)V{
+1<init>(Ljava/lang/String;Ljava/lang/Throwable;ZZ)Fjava.lang.Throwable#<init>(Ljava/lang/String;Ljava/lang/Throwable;ZZ)VS
+fillInStackTrace(I)<java.lang.Throwable#fillInStackTrace(I)Ljava/lang/Throwable;S
+<init>(Ljava/lang/Throwable;)2java.lang.Throwable#<init>(Ljava/lang/Throwable;)Vk
+)writeObject(Ljava/io/ObjectOutputStream;)>java.lang.Throwable#writeObject(Ljava/io/ObjectOutputStream;)VL
+getSuppressed()9java.lang.Throwable#getSuppressed()[Ljava/lang/Throwable;Ô
+java.lang.Exceptionjava.lang.Throwable)
+<init>()java.lang.Exception#<init>()VM
+<init>(Ljava/lang/String;)/java.lang.Exception#<init>(Ljava/lang/String;)Vw
+/<init>(Ljava/lang/String;Ljava/lang/Throwable;)Djava.lang.Exception#<init>(Ljava/lang/String;Ljava/lang/Throwable;)V{
+1<init>(Ljava/lang/String;Ljava/lang/Throwable;ZZ)Fjava.lang.Exception#<init>(Ljava/lang/String;Ljava/lang/Throwable;ZZ)VS
+<init>(Ljava/lang/Throwable;)2java.lang.Exception#<init>(Ljava/lang/Throwable;)Vö
+java.lang.RuntimeExceptionjava.lang.Exception0
+<init>()$java.lang.RuntimeException#<init>()VT
+<init>(Ljava/lang/String;)6java.lang.RuntimeException#<init>(Ljava/lang/String;)V~
+/<init>(Ljava/lang/String;Ljava/lang/Throwable;)Kjava.lang.RuntimeException#<init>(Ljava/lang/String;Ljava/lang/Throwable;)VÇ
+1<init>(Ljava/lang/String;Ljava/lang/Throwable;ZZ)Mjava.lang.RuntimeException#<init>(Ljava/lang/String;Ljava/lang/Throwable;ZZ)VZ
+<init>(Ljava/lang/Throwable;)9java.lang.RuntimeException#<init>(Ljava/lang/Throwable;)V∂
+java.lang.IllegalStateExceptionjava.lang.RuntimeException5
+<init>())java.lang.IllegalStateException#<init>()VY
+<init>(Ljava/lang/String;);java.lang.IllegalStateException#<init>(Ljava/lang/String;)VÉ
+/<init>(Ljava/lang/String;Ljava/lang/Throwable;)Pjava.lang.IllegalStateException#<init>(Ljava/lang/String;Ljava/lang/Throwable;)V_
+<init>(Ljava/lang/Throwable;)>java.lang.IllegalStateException#<init>(Ljava/lang/Throwable;)V8
 $org.sonar.plugins.java.api.tree.Treejava.lang.Objectg
 -org.sonar.plugins.java.api.tree.StatementTreejava.lang.Object$org.sonar.plugins.java.api.tree.Treel
 )org.sonar.plugins.java.api.tree.ClassTreejava.lang.Object-org.sonar.plugins.java.api.tree.StatementTreeÓ
@@ -340,15 +386,15 @@ FexpressionTreeCheck(Lorg/sonar/plugins/java/api/tree/ExpressionTree;I)vorg.cod
 mextendUse(Lorg/codehawk/plugin/java/checks/ExtendClassTree;Lorg/codehawk/plugin/java/checks/ExtendClassTree;)ùorg.codehawk.plugin.java.checks.RefusedBequest#extendUse(Lorg/codehawk/plugin/java/checks/ExtendClassTree;Lorg/codehawk/plugin/java/checks/ExtendClassTree;)ZE
 1org.sonar.plugins.java.api.JavaFileScannerContextjava.lang.Objectm
 3org.sonar.plugins.java.api.tree.CompilationUnitTreejava.lang.Object$org.sonar.plugins.java.api.tree.Tree<
-(org.sonar.plugins.java.api.semantic.Typejava.lang.Objectï
+(org.sonar.plugins.java.api.semantic.Typejava.lang.Objectã
 
 /org.codehawk.plugin.java.checks.ExtendClassTreejava.lang.ObjectX
 	getName()Korg.codehawk.plugin.java.checks.ExtendClassTree#getName()Ljava/lang/String;ù
 4<init>(Lorg/sonar/plugins/java/api/tree/ClassTree;Z)eorg.codehawk.plugin.java.checks.ExtendClassTree#<init>(Lorg/sonar/plugins/java/api/tree/ClassTree;Z)VG
-	getLine():org.codehawk.plugin.java.checks.ExtendClassTree#getLine()I_
-getMethod()Porg.codehawk.plugin.java.checks.ExtendClassTree#getMethod()Ljava/util/ArrayList;n
-getExtendClassName()Vorg.codehawk.plugin.java.checks.ExtendClassTree#getExtendClassName()Ljava/lang/String;a
-getMembers()Qorg.codehawk.plugin.java.checks.ExtendClassTree#getMembers()Ljava/util/ArrayList;£
+	getLine():org.codehawk.plugin.java.checks.ExtendClassTree#getLine()IZ
+getMethod()Korg.codehawk.plugin.java.checks.ExtendClassTree#getMethod()Ljava/util/List;n
+getExtendClassName()Vorg.codehawk.plugin.java.checks.ExtendClassTree#getExtendClassName()Ljava/lang/String;\
+getMembers()Lorg.codehawk.plugin.java.checks.ExtendClassTree#getMembers()Ljava/util/List;£
 7addMethod(Lorg/sonar/plugins/java/api/tree/MethodTree;)horg.codehawk.plugin.java.checks.ExtendClassTree#addMethod(Lorg/sonar/plugins/java/api/tree/MethodTree;)VE
 getAMV()9org.codehawk.plugin.java.checks.ExtendClassTree#getAMV()Zß
 9addMember(Lorg/sonar/plugins/java/api/tree/VariableTree;)jorg.codehawk.plugin.java.checks.ExtendClassTree#addMember(Lorg/sonar/plugins/java/api/tree/VariableTree;)V¡
@@ -571,81 +617,7 @@ $regionMatches(ILjava/lang/String;II)6java.lang.String#regionMatches(ILjava/lan
 valueOf(J)-java.lang.String#valueOf(J)Ljava/lang/String;X
 !<init>(Ljava/lang/StringBuilder;)3java.lang.String#<init>(Ljava/lang/StringBuilder;)V`
 %regionMatches(ZILjava/lang/String;II)7java.lang.String#regionMatches(ZILjava/lang/String;II)Z>
-*org.sonar.plugins.java.api.semantic.Symboljava.lang.Object(
-java.lang.Appendablejava.lang.Object+
-java.lang.AutoCloseablejava.lang.Object>
-java.io.Closeablejava.lang.Objectjava.lang.AutoCloseable%
-java.io.Flushablejava.lang.ObjectÆ
-java.io.OutputStreamjava.io.Closeablejava.lang.Objectjava.io.Flushable,
-	write([B)java.io.OutputStream#write([B)V*
-<init>()java.io.OutputStream#<init>()V(
-flush()java.io.OutputStream#flush()V0
-write([BII)!java.io.OutputStream#write([BII)V(
-close()java.io.OutputStream#close()Vé
-java.io.FilterOutputStreamjava.io.OutputStream2
-	write([B)%java.io.FilterOutputStream#write([B)V\
-<init>(Ljava/io/OutputStream;):java.io.FilterOutputStream#<init>(Ljava/io/OutputStream;)V.
-flush()#java.io.FilterOutputStream#flush()V0
-write(I)$java.io.FilterOutputStream#write(I)V6
-write([BII)'java.io.FilterOutputStream#write([BII)V.
-close()#java.io.FilterOutputStream#close()VÜ
-java.io.PrintStreamjava.lang.Appendablejava.io.Closeablejava.io.FilterOutputStream+
-	write([C)java.io.PrintStream#write([C)V)
-print(J)java.io.PrintStream#print(J)V-
-
-println(J)java.io.PrintStream#println(J)V-
-
-println(D)java.io.PrintStream#println(D)V)
-print(F)java.io.PrintStream#print(F)V-
-
-println(F)java.io.PrintStream#println(F)VO
-println(Ljava/lang/String;)0java.io.PrintStream#println(Ljava/lang/String;)VW
-<init>(Ljava/io/OutputStream;Z)4java.io.PrintStream#<init>(Ljava/io/OutputStream;Z)VE
-<init>(Ljava/io/File;)+java.io.PrintStream#<init>(Ljava/io/File;)V1
-ensureOpen()!java.io.PrintStream#ensureOpen()V´
-?printf(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)hjava.io.PrintStream#printf(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;/
-write([BII) java.io.PrintStream#write([BII)V)
-print(Z)java.io.PrintStream#print(Z)V-
-
-setError()java.io.PrintStream#setError()V1
-clearError()!java.io.PrintStream#clearError()V-
-
-println(Z)java.io.PrintStream#println(Z)Vá
--printf(Ljava/lang/String;[Ljava/lang/Object;)Vjava.io.PrintStream#printf(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;i
-(<init>(Ljava/io/File;Ljava/lang/String;)=java.io.PrintStream#<init>(Ljava/io/File;Ljava/lang/String;)V?
-	append(C)2java.io.PrintStream#append(C)Ljava/io/PrintStream;M
-<init>(Ljava/lang/String;)/java.io.PrintStream#<init>(Ljava/lang/String;)V)
-write(I)java.io.PrintStream#write(I)Vá
--format(Ljava/lang/String;[Ljava/lang/Object;)Vjava.io.PrintStream#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;+
-	newLine()java.io.PrintStream#newLine()V)
-print(C)java.io.PrintStream#print(C)V1
-checkError()!java.io.PrintStream#checkError()ZO
-println(Ljava/lang/Object;)0java.io.PrintStream#println(Ljava/lang/Object;)V+
-	println()java.io.PrintStream#println()VK
-print(Ljava/lang/String;).java.io.PrintStream#print(Ljava/lang/String;)V'
-close()java.io.PrintStream#close()Ví
-4requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Zjava.io.PrintStream#requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;)
-print(I)java.io.PrintStream#print(I)V-
-
-println(I)java.io.PrintStream#println(I)V-
-
-println(C)java.io.PrintStream#println(C)V'
-flush()java.io.PrintStream#flush()VK
-write(Ljava/lang/String;).java.io.PrintStream#write(Ljava/lang/String;)V´
-?format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)hjava.io.PrintStream#format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;ã
-9<init>(ZLjava/io/OutputStream;Ljava/nio/charset/Charset;)Njava.io.PrintStream#<init>(ZLjava/io/OutputStream;Ljava/nio/charset/Charset;)VK
-print(Ljava/lang/Object;).java.io.PrintStream#print(Ljava/lang/Object;)V{
-1<init>(Ljava/io/OutputStream;ZLjava/lang/String;)Fjava.io.PrintStream#<init>(Ljava/io/OutputStream;ZLjava/lang/String;)Vm
- append(Ljava/lang/CharSequence;)Ijava.io.PrintStream#append(Ljava/lang/CharSequence;)Ljava/io/PrintStream;l
-toCharset(Ljava/lang/String;)Kjava.io.PrintStream#toCharset(Ljava/lang/String;)Ljava/nio/charset/Charset;W
-<init>(ZLjava/io/OutputStream;)4java.io.PrintStream#<init>(ZLjava/io/OutputStream;)V+
-	print([C)java.io.PrintStream#print([C)Vq
-"append(Ljava/lang/CharSequence;II)Kjava.io.PrintStream#append(Ljava/lang/CharSequence;II)Ljava/io/PrintStream;U
-<init>(Ljava/io/OutputStream;)3java.io.PrintStream#<init>(Ljava/io/OutputStream;)V)
-print(D)java.io.PrintStream#print(D)Vq
-,<init>(Ljava/lang/String;Ljava/lang/String;)Ajava.io.PrintStream#<init>(Ljava/lang/String;Ljava/lang/String;)V/
-println([C) java.io.PrintStream#println([C)Vã
-9<init>(ZLjava/nio/charset/Charset;Ljava/io/OutputStream;)Njava.io.PrintStream#<init>(ZLjava/nio/charset/Charset;Ljava/io/OutputStream;)Vx
+*org.sonar.plugins.java.api.semantic.Symboljava.lang.Objectx
 4org.sonar.plugins.java.api.tree.BinaryExpressionTreejava.lang.Object.org.sonar.plugins.java.api.tree.ExpressionTree®
 .org.codehawk.plugin.java.checks.AvoidLazyClass6org.sonar.plugins.java.api.IssuableSubscriptionVisitorD
 <init>()8org.codehawk.plugin.java.checks.AvoidLazyClass#<init>()Vñ
@@ -1108,48 +1080,7 @@ rloadRule(Lorg/sonar/api/server/rule/RulesDefinition$NewExtendedRepository;Ljava
 #org.sonar.api.utils.AnnotationUtilsjava.lang.Object9
 <init>()-org.sonar.api.utils.AnnotationUtils#<init>()V®
 7getClassAnnotation(Ljava/lang/Object;Ljava/lang/Class;)morg.sonar.api.utils.AnnotationUtils#getClassAnnotation(Ljava/lang/Object;Ljava/lang/Class;)Ljava/lang/Object;≠
-2getAnnotation(Ljava/lang/Object;Ljava/lang/Class;)worg.sonar.api.utils.AnnotationUtils#getAnnotation(Ljava/lang/Object;Ljava/lang/Class;)Ljava/lang/annotation/Annotation;Î
-java.lang.Throwablejava.lang.Objectjava.io.Serializable;
-printStackTrace()&java.lang.Throwable#printStackTrace()Vc
-getStackTraceElement(I)Hjava.lang.Throwable#getStackTraceElement(I)Ljava/lang/StackTraceElement;¡
-ìprintEnclosedStackTrace(Ljava/lang/Throwable$PrintStreamOrWriter;[Ljava/lang/StackTraceElement;Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;)®java.lang.Throwable#printEnclosedStackTrace(Ljava/lang/Throwable$PrintStreamOrWriter;[Ljava/lang/StackTraceElement;Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;)Vw
-/<init>(Ljava/lang/String;Ljava/lang/Throwable;)Djava.lang.Throwable#<init>(Ljava/lang/String;Ljava/lang/Throwable;)VB
-getMessage()2java.lang.Throwable#getMessage()Ljava/lang/String;)
-<init>()java.lang.Throwable#<init>()Vg
-'readObject(Ljava/io/ObjectInputStream;)<java.lang.Throwable#readObject(Ljava/io/ObjectInputStream;)VM
-<init>(Ljava/lang/String;)/java.lang.Throwable#<init>(Ljava/lang/String;)VT
-getLocalizedMessage();java.lang.Throwable#getLocalizedMessage()Ljava/lang/String;e
-&printStackTrace(Ljava/io/PrintWriter;);java.lang.Throwable#printStackTrace(Ljava/io/PrintWriter;)VA
-getStackTraceDepth())java.lang.Throwable#getStackTraceDepth()IZ
-getOurStackTrace()Djava.lang.Throwable#getOurStackTrace()[Ljava/lang/StackTraceElement;>
-
-toString()0java.lang.Throwable#toString()Ljava/lang/String;Q
-fillInStackTrace();java.lang.Throwable#fillInStackTrace()Ljava/lang/Throwable;s
--setStackTrace([Ljava/lang/StackTraceElement;)Bjava.lang.Throwable#setStackTrace([Ljava/lang/StackTraceElement;)Va
-$addSuppressed(Ljava/lang/Throwable;)9java.lang.Throwable#addSuppressed(Ljava/lang/Throwable;)Vç
-:printStackTrace(Ljava/lang/Throwable$PrintStreamOrWriter;)Ojava.lang.Throwable#printStackTrace(Ljava/lang/Throwable$PrintStreamOrWriter;)Vm
- initCause(Ljava/lang/Throwable;)Ijava.lang.Throwable#initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;T
-getStackTrace()Ajava.lang.Throwable#getStackTrace()[Ljava/lang/StackTraceElement;A
-
-getCause()3java.lang.Throwable#getCause()Ljava/lang/Throwable;e
-&printStackTrace(Ljava/io/PrintStream;);java.lang.Throwable#printStackTrace(Ljava/io/PrintStream;)V{
-1<init>(Ljava/lang/String;Ljava/lang/Throwable;ZZ)Fjava.lang.Throwable#<init>(Ljava/lang/String;Ljava/lang/Throwable;ZZ)VS
-fillInStackTrace(I)<java.lang.Throwable#fillInStackTrace(I)Ljava/lang/Throwable;S
-<init>(Ljava/lang/Throwable;)2java.lang.Throwable#<init>(Ljava/lang/Throwable;)Vk
-)writeObject(Ljava/io/ObjectOutputStream;)>java.lang.Throwable#writeObject(Ljava/io/ObjectOutputStream;)VL
-getSuppressed()9java.lang.Throwable#getSuppressed()[Ljava/lang/Throwable;Ô
-java.lang.Exceptionjava.lang.Throwable)
-<init>()java.lang.Exception#<init>()VM
-<init>(Ljava/lang/String;)/java.lang.Exception#<init>(Ljava/lang/String;)Vw
-/<init>(Ljava/lang/String;Ljava/lang/Throwable;)Djava.lang.Exception#<init>(Ljava/lang/String;Ljava/lang/Throwable;)V{
-1<init>(Ljava/lang/String;Ljava/lang/Throwable;ZZ)Fjava.lang.Exception#<init>(Ljava/lang/String;Ljava/lang/Throwable;ZZ)VS
-<init>(Ljava/lang/Throwable;)2java.lang.Exception#<init>(Ljava/lang/Throwable;)Vö
-java.lang.RuntimeExceptionjava.lang.Exception0
-<init>()$java.lang.RuntimeException#<init>()VT
-<init>(Ljava/lang/String;)6java.lang.RuntimeException#<init>(Ljava/lang/String;)V~
-/<init>(Ljava/lang/String;Ljava/lang/Throwable;)Kjava.lang.RuntimeException#<init>(Ljava/lang/String;Ljava/lang/Throwable;)VÇ
-1<init>(Ljava/lang/String;Ljava/lang/Throwable;ZZ)Mjava.lang.RuntimeException#<init>(Ljava/lang/String;Ljava/lang/Throwable;ZZ)VZ
-<init>(Ljava/lang/Throwable;)9java.lang.RuntimeException#<init>(Ljava/lang/Throwable;)V≈
+2getAnnotation(Ljava/lang/Object;Ljava/lang/Class;)worg.sonar.api.utils.AnnotationUtils#getAnnotation(Ljava/lang/Object;Ljava/lang/Class;)Ljava/lang/annotation/Annotation;≈
 "java.lang.IllegalArgumentExceptionjava.lang.RuntimeException8
 <init>(),java.lang.IllegalArgumentException#<init>()V\
 <init>(Ljava/lang/String;)>java.lang.IllegalArgumentException#<init>(Ljava/lang/String;)VÜ
@@ -1334,12 +1265,7 @@ DreplaceChars(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)zorg.apach
 8endsWithIgnoreCase(Ljava/lang/String;Ljava/lang/String;)]org.apache.commons.lang.StringUtils#endsWithIgnoreCase(Ljava/lang/String;Ljava/lang/String;)Zx
 abbreviate(Ljava/lang/String;I)Uorg.apache.commons.lang.StringUtils#abbreviate(Ljava/lang/String;I)Ljava/lang/String;¡
 CsplitByWholeSeparatorWorker(Ljava/lang/String;Ljava/lang/String;IZ)zorg.apache.commons.lang.StringUtils#splitByWholeSeparatorWorker(Ljava/lang/String;Ljava/lang/String;IZ)[Ljava/lang/String;ù
-1splitByCharacterTypeCamelCase(Ljava/lang/String;)horg.apache.commons.lang.StringUtils#splitByCharacterTypeCamelCase(Ljava/lang/String;)[Ljava/lang/String;∂
-java.lang.IllegalStateExceptionjava.lang.RuntimeException5
-<init>())java.lang.IllegalStateException#<init>()VY
-<init>(Ljava/lang/String;);java.lang.IllegalStateException#<init>(Ljava/lang/String;)VÉ
-/<init>(Ljava/lang/String;Ljava/lang/Throwable;)Pjava.lang.IllegalStateException#<init>(Ljava/lang/String;Ljava/lang/Throwable;)V_
-<init>(Ljava/lang/Throwable;)>java.lang.IllegalStateException#<init>(Ljava/lang/Throwable;)VÍ'
+1splitByCharacterTypeCamelCase(Ljava/lang/String;)horg.apache.commons.lang.StringUtils#splitByCharacterTypeCamelCase(Ljava/lang/String;)[Ljava/lang/String;Í'
 1org.sonar.api.server.rule.RulesDefinition$NewRulejava.lang.Objectƒ
 -setEffortToFixDescription(Ljava/lang/String;)íorg.sonar.api.server.rule.RulesDefinition$NewRule#setEffortToFixDescription(Ljava/lang/String;)Lorg/sonar/api/server/rule/RulesDefinition$NewRule;æ
 *setMarkdownDescription(Ljava/lang/String;)èorg.sonar.api.server.rule.RulesDefinition$NewRule#setMarkdownDescription(Ljava/lang/String;)Lorg/sonar/api/server/rule/RulesDefinition$NewRule;Ø
@@ -1605,7 +1531,9 @@ toString())java.net.URL#toString()Ljava/lang/String;ú
 openConnection()5java.net.URL#openConnection()Ljava/net/URLConnection;z
 'getURLStreamHandler(Ljava/lang/String;)Ojava.net.URL#getURLStreamHandler(Ljava/lang/String;)Ljava/net/URLStreamHandler;$
 	getPort()java.net.URL#getPort()I&
-java.lang.Readablejava.lang.Objectë
+java.lang.Readablejava.lang.Object+
+java.lang.AutoCloseablejava.lang.Object>
+java.io.Closeablejava.lang.Objectjava.lang.AutoCloseableë
 java.io.Readerjava.io.Closeablejava.lang.Readablejava.lang.Object"
 ready()java.io.Reader#ready()Z 
 read()java.io.Reader#read()I"

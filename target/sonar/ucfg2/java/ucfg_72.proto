@@ -1,16 +1,24 @@
 
-@org.codehawk.smell.modler.StringGroup#getNames()Ljava/util/List;e
-[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java ("1*™
+Corg.codehawk.smell.modler.StringGroup#getString()Ljava/lang/String;e
+[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java ("1*ø
 1e
-[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java	 (º
+[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java	 (º
 π
 e
-[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java	 (
+[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java ( 
 %0java.util.List"__id*4*2'
 %org.codehawk.smell.modler.StringGroup"
-names"
+namesè
+å
 e
-[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java (
+[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java	 (!
+%1java.lang.String"Ujava.lang.String#join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;*"
+java.lang.String*
+, *
 
-%0java.util.ListB)'
+%0java.util.List"Å
+e
+[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java ("
+
+%1java.lang.StringB)'
 %org.codehawk.smell.modler.StringGroup

@@ -1,33 +1,9 @@
 
-iorg.codehawk.smell.metricruler.GetLines#getMethodTreeLines(Lorg/sonar/plugins/java/api/tree/MethodTree;)Ig
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java* *(%"1*ý	
+;org.codehawk.smell.metricruler.GetLines#getMaxClassLines()Ig
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java% %(#"1*ß
 1g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java+ +(»¸
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java&	 &("q
 g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java+ +(/
-%0)org.sonar.plugins.java.api.tree.BlockTree"]org.sonar.plugins.java.api.tree.MethodTree#block()Lorg/sonar/plugins/java/api/tree/BlockTree;*4
-2
-tree*org.sonar.plugins.java.api.tree.MethodTree2block()Ö
-Ó
-g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java+ +(/
-bt)org.sonar.plugins.java.api.tree.BlockTree"__id*1
-/
-%0)org.sonar.plugins.java.api.tree.BlockTreeÿü
-g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java, ,(
-%1java.util.List"@org.sonar.plugins.java.api.tree.BlockTree#body()Ljava/util/List;*1
-/
-bt)org.sonar.plugins.java.api.tree.BlockTree2body()‚
-ÿ
-g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java,	 ,(	
-%2int"Dorg.codehawk.smell.metricruler.GetLines#treeLines(Ljava/util/List;)I*+")
-'org.codehawk.smell.metricruler.GetLines*
-
-%1java.util.List"q
-g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java, ,(
-"":2
-tree*org.sonar.plugins.java.api.tree.MethodTreeB+")
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java& &(
+""B+")
 'org.codehawk.smell.metricruler.GetLines

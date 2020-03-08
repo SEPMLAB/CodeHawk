@@ -1,9 +1,9 @@
 
-7org.codehawk.smell.modler.SmellableNode#getStartLine()Ig
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SmellableNode.java ("1*ﬂ
-1g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SmellableNode.java	 ("q
-g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SmellableNode.java (
-""B+)
-'org.codehawk.smell.modler.SmellableNode
+Uorg.codehawk.smell.smellruler.TooManyCasesInOneSwitch#smellDetail()Ljava/lang/String;u
+kC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/TooManyCasesInOneSwitch.java ("1*ù
+1u
+kC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/TooManyCasesInOneSwitch.java	 (."†
+u
+kC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/TooManyCasesInOneSwitch.java (/'%
+#Avoid TOO MANY CASES IN ONE SWITCH!B97
+5org.codehawk.smell.smellruler.TooManyCasesInOneSwitch

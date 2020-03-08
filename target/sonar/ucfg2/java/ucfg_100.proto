@@ -1,33 +1,139 @@
 
-Worg.codehawk.smell.smellruler.LazyClass#is(Lorg/codehawk/smell/smellruler/Smell$Type;)Zg
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LazyClass.java ("paramAnnotations*„
-paramAnnotationsg
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LazyClass.java (Ê
-Ç
-g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LazyClass.java (
-
-%1"
-__annotate*
-java.lang.Override*2
-0
-type(org.codehawk.smell.smellruler.Smell$Type´
-±
-g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LazyClass.java (0
-type(org.codehawk.smell.smellruler.Smell$Type"__annotation*
-
-%1*
-1*Œ
-1g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LazyClass.java (ª
-§
-g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LazyClass.java		 	(.
-%0(org.codehawk.smell.smellruler.Smell$Type"__id*
-"""q
-g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LazyClass.java	 	(
-"":0
-type(org.codehawk.smell.smellruler.Smell$TypeB+)
-'org.codehawk.smell.smellruler.LazyClass
+Çorg.codehawk.plugin.java.MyJavaRulesDefinition$Remediation#remediationFunction(Lorg/sonar/api/server/rule/RulesDefinition$DebtRemediationFunctions;)Lorg/sonar/api/server/debt/DebtRemediationFunction;p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.javaŒ# Œ(6"5*¨
+
+2p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.java‘ ‘(å
+â
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.java‘ ‘(&
+%7java.lang.String"__id*P*N<
+:org.codehawk.plugin.java.MyJavaRulesDefinition$Remediation"
+linearFactorÑÎ
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.java‘ ‘(;
+%8java.lang.String"\java.lang.String#replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;*
+
+%7java.lang.String*
+mn*
+min29replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)ÄÁ
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.java‘ ‘(<7
+%91org.sonar.api.server.debt.DebtRemediationFunction"org.sonar.api.server.rule.RulesDefinition$DebtRemediationFunctions#linear(Ljava/lang/String;)Lorg/sonar/api/server/debt/DebtRemediationFunction;*K
+I
+drfBorg.sonar.api.server.rule.RulesDefinition$DebtRemediationFunctions*
+
+%8java.lang.String2linear(Ljava/lang/String;)"­
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.java‘ ‘(=9
+7
+%91org.sonar.api.server.debt.DebtRemediationFunction*Ô
+3p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.java
+ (Ý
+Ú
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.java (
+%5java.lang.String"__id*H*F<
+:org.codehawk.plugin.java.MyJavaRulesDefinition$Remediation"
+funcôñ
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.java
+ (
+%6boolean",java.lang.String#equals(Ljava/lang/Object;)Z*
+
+Linear*
+
+%5java.lang.String2equals(Ljava/lang/Object;)*
+2
+1*¼
+
+4p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.javaŽ Ž(å
+â
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.javaŽ$ Ž(0
+%2java.lang.String"__id*P*N<
+:org.codehawk.plugin.java.MyJavaRulesDefinition$Remediation"
+constantCostÑÎ
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.javaŽ$ Ž(E
+%3java.lang.String"\java.lang.String#replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;*
+
+%2java.lang.String*
+mn*
+min29replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)ØÕ
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.javaŽ Ž(F7
+%41org.sonar.api.server.debt.DebtRemediationFunction"šorg.sonar.api.server.rule.RulesDefinition$DebtRemediationFunctions#constantPerIssue(Ljava/lang/String;)Lorg/sonar/api/server/debt/DebtRemediationFunction;*K
+I
+drfBorg.sonar.api.server.rule.RulesDefinition$DebtRemediationFunctions*
+
+%3java.lang.String2$constantPerIssue(Ljava/lang/String;)"­
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.javaŽ Ž(G9
+7
+%41org.sonar.api.server.debt.DebtRemediationFunction*Þ
+5p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.java
+ (Ý
+Ú
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.java
+ (
+%0java.lang.String"__id*H*F<
+:org.codehawk.plugin.java.MyJavaRulesDefinition$Remediation"
+funcþû
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.java
+ (%
+%1boolean"0java.lang.String#startsWith(Ljava/lang/String;)Z*
+
+%0java.lang.String*
+
+Constant2startsWith(Ljava/lang/String;)*
+3
+4*À
+1p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.java“ “(æ
+ã
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.java“" “(.
+%10java.lang.String"__id*P*N<
+:org.codehawk.plugin.java.MyJavaRulesDefinition$Remediation"
+linearFactorÓÐ
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.java“" “(C
+%11java.lang.String"\java.lang.String#replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;*
+
+%10java.lang.String*
+mn*
+min29replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)æ
+ã
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.java“E “(Q
+%12java.lang.String"__id*P*N<
+:org.codehawk.plugin.java.MyJavaRulesDefinition$Remediation"
+linearOffsetÓÐ
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.java“E “(f
+%13java.lang.String"\java.lang.String#replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;*
+
+%12java.lang.String*
+mn*
+min29replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)™–
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.java“ “(g8
+%141org.sonar.api.server.debt.DebtRemediationFunction"¬org.sonar.api.server.rule.RulesDefinition$DebtRemediationFunctions#linearWithOffset(Ljava/lang/String;Ljava/lang/String;)Lorg/sonar/api/server/debt/DebtRemediationFunction;*K
+I
+drfBorg.sonar.api.server.rule.RulesDefinition$DebtRemediationFunctions*
+
+%11java.lang.String*
+
+%13java.lang.String26linearWithOffset(Ljava/lang/String;Ljava/lang/String;)"®
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.java“ “(h:
+8
+%141org.sonar.api.server.debt.DebtRemediationFunction:I
+drfBorg.sonar.api.server.rule.RulesDefinition$DebtRemediationFunctionsB><
+:org.codehawk.plugin.java.MyJavaRulesDefinition$Remediation

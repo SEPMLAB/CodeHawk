@@ -1,22 +1,68 @@
 
-1org.codehawk.smell.modler.StringGroup#hashCode()Ie
-[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java% %("1*ï
+Aorg.codehawk.smell.modler.StringGroup#equals(Ljava/lang/Object;)Ze
+[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java ("paramAnnotations*Û
+2e
+[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java
+ ("o
+e
+[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java (
+""*Û
+4e
+[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java
+ ("o
+e
+[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java (
+""*Î
+paramAnnotationse
+[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java ( ­
+ª
+e
+[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java (
+
+%0"
+__annotate*
+java.lang.Override*
+
+ojava.lang.Object—
+”
+e
+[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java (
+ojava.lang.Object"__annotation*
+
+%0*	
+2
+4
+1*ˆ
 1e
-[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java&	 &(¼
+[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java  (!µ
+²
+e
+[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java ("*
+g%org.codehawk.smell.modler.StringGroup"__id*
+
+ojava.lang.Object¿
+¼
+e
+[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java!	 !(
+%1java.util.List"__id*7*5
+*
+g%org.codehawk.smell.modler.StringGroup"
+names¼
 ¹
 e
-[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java& &(
-%0java.util.List"__id*4*2'
+[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java! !(
+%2java.util.List"__id*4*2'
 %org.codehawk.smell.modler.StringGroup"
-namesÒ
-Ï
+namesñî
 e
-[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java&	 &(	
-%1int",java.util.Objects#hash([Ljava/lang/Object;)I*"
-java.util.Objects*
+[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java!	 !(
+%3boolean"*java.util.List#equals(Ljava/lang/Object;)Z*
 
-%0java.util.List"o
+%1java.util.List*
+
+%2java.util.List2equals(Ljava/lang/Object;)"o
 e
-[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java& &(
-""B)'
+[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java! !(
+"":
+ojava.lang.ObjectB)'
 %org.codehawk.smell.modler.StringGroup

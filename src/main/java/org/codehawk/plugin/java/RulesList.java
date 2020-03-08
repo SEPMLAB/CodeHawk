@@ -27,11 +27,8 @@ import java.util.List;
 import org.codehawk.plugin.java.checks.AvoidParamClumps;
 import org.codehawk.plugin.java.checks.AvoidShotgunSurgery;
 import org.codehawk.plugin.java.checks.AvoidLargeClass;
-import org.codehawk.plugin.java.checks.AvoidLargeMethod;
 import org.codehawk.plugin.java.checks.AvoidLazyClass;
 import org.codehawk.plugin.java.checks.AvoidMemberClumps;
-import org.codehawk.plugin.java.checks.AvoidTooManyCasesInOneSwitch;
-import org.codehawk.plugin.java.checks.AvoidTooManyParametersInOneMethod;
 import org.sonar.plugins.java.api.JavaCheck;
 import org.codehawk.plugin.java.checks.RefusedBequest;
 

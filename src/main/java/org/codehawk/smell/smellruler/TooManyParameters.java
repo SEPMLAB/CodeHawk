@@ -5,7 +5,6 @@ public class TooManyParameters implements Smell{
 
 	@Override
 	public boolean is(Type type) {
-		;
 		return smellType == type;
 	}
 

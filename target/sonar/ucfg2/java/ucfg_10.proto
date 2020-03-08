@@ -1,29 +1,823 @@
 
-Dorg.codehawk.smell.metricruler.GetLines#treeLines(Ljava/util/List;)Ig
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaq q( "2*˙
-2g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javas s(É
-Ä
+Korg.codehawk.smell.metricruler.GetLines#recursiveLines(Ljava/lang/Object;)Ig
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java5 5(%"45*ù
+24g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaN N(¨
+©
 g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javas s(
-stE"__id*
-""*
-3
-1*
-3g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javat t(¸
-˘
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaN N(%0
+%57)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""¨
+©
 g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javat t(	
-%0int"Korg.codehawk.smell.metricruler.GetLines#recursiveLines(Ljava/lang/Object;)I*+")
-'org.codehawk.smell.metricruler.GetLines*	
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaN N(70
+%58)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""≈¬
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaN N(8
+%59boolean"Vorg.sonar.plugins.java.api.tree.Tree#is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)Z*	
 
-stE*
-2*ﬂ
-1g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javav	 v("q
+stE*2
+0
+%58)org.sonar.plugins.java.api.tree.Tree$Kind20is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)*
+22
+23*–
+25g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaL L(	Æ´
 g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javav v(
-"":
-lstjava.util.ListB+")
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaL L(B4
+%55-org.sonar.plugins.java.api.tree.StatementTree"norg.sonar.plugins.java.api.tree.IfStatementTree#elseStatement()Lorg/sonar/plugins/java/api/tree/StatementTree;*	
+
+stE2elseStatement()™
+ß
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaL L(C
+
+%56int"Korg.codehawk.smell.metricruler.GetLines#recursiveLines(Ljava/lang/Object;)I*+")
+'org.codehawk.smell.metricruler.GetLines*6
+4
+%55-org.sonar.plugins.java.api.tree.StatementTree*
+1*Ö
+26g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaJ J(Æ´
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaJ! J(G4
+%52-org.sonar.plugins.java.api.tree.StatementTree"norg.sonar.plugins.java.api.tree.IfStatementTree#thenStatement()Lorg/sonar/plugins/java/api/tree/StatementTree;*	
+
+stE2thenStatement()™
+ß
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaJ J(H
+
+%53int"Korg.codehawk.smell.metricruler.GetLines#recursiveLines(Ljava/lang/Object;)I*+")
+'org.codehawk.smell.metricruler.GetLines*6
+4
+%52-org.sonar.plugins.java.api.tree.StatementTreeÆ´
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaK K(-4
+%54-org.sonar.plugins.java.api.tree.StatementTree"norg.sonar.plugins.java.api.tree.IfStatementTree#elseStatement()Lorg/sonar/plugins/java/api/tree/StatementTree;*	
+
+stE2elseStatement()*
+25
+1*ù
+27g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaI I(¨
+©
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaI I(%0
+%49)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""¨
+©
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaI I(20
+%50)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""≈¬
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaI I(3
+%51boolean"Vorg.sonar.plugins.java.api.tree.Tree#is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)Z*	
+
+stE*2
+0
+%50)org.sonar.plugins.java.api.tree.Tree$Kind20is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)*
+24
+26*…
+28g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaH H(ß§
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaH! H(D4
+%47-org.sonar.plugins.java.api.tree.StatementTree"korg.sonar.plugins.java.api.tree.ForStatementTree#statement()Lorg/sonar/plugins/java/api/tree/StatementTree;*	
+
+stE2statement()™
+ß
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaH H(E
+
+%48int"Korg.codehawk.smell.metricruler.GetLines#recursiveLines(Ljava/lang/Object;)I*+")
+'org.codehawk.smell.metricruler.GetLines*6
+4
+%47-org.sonar.plugins.java.api.tree.StatementTree*
+1*ù
+29g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaG G(¨
+©
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaG G(%0
+%44)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""¨
+©
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaG G(30
+%45)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""≈¬
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaG G(4
+%46boolean"Vorg.sonar.plugins.java.api.tree.Tree#is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)Z*	
+
+stE*2
+0
+%45)org.sonar.plugins.java.api.tree.Tree$Kind20is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)*
+27
+28*…
+30g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaF F(ß§
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaF! F(D4
+%42-org.sonar.plugins.java.api.tree.StatementTree"korg.sonar.plugins.java.api.tree.ForEachStatement#statement()Lorg/sonar/plugins/java/api/tree/StatementTree;*	
+
+stE2statement()™
+ß
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaF F(E
+
+%43int"Korg.codehawk.smell.metricruler.GetLines#recursiveLines(Ljava/lang/Object;)I*+")
+'org.codehawk.smell.metricruler.GetLines*6
+4
+%42-org.sonar.plugins.java.api.tree.StatementTree*
+1*ù
+31g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaE E(¨
+©
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaE E(%0
+%39)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""¨
+©
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaE E(80
+%40)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""≈¬
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaE E(9
+%41boolean"Vorg.sonar.plugins.java.api.tree.Tree#is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)Z*	
+
+stE*2
+0
+%40)org.sonar.plugins.java.api.tree.Tree$Kind20is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)*
+29
+30*Õ
+32g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaD D(´®
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaD! D(H4
+%37-org.sonar.plugins.java.api.tree.StatementTree"oorg.sonar.plugins.java.api.tree.DoWhileStatementTree#statement()Lorg/sonar/plugins/java/api/tree/StatementTree;*	
+
+stE2statement()™
+ß
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaD D(I
+
+%38int"Korg.codehawk.smell.metricruler.GetLines#recursiveLines(Ljava/lang/Object;)I*+")
+'org.codehawk.smell.metricruler.GetLines*6
+4
+%37-org.sonar.plugins.java.api.tree.StatementTree*
+1*·
+10g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java^ ^(	Â‚
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java^ ^(8
+%90java.util.List"Jorg.sonar.plugins.java.api.tree.TryStatementTree#catches()Ljava/util/List;*	
+
+stE2	catches()Ñ
+Å
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java^ ^(9
+
+%91int"Dorg.codehawk.smell.metricruler.GetLines#treeLines(Ljava/util/List;)I*+")
+'org.codehawk.smell.metricruler.GetLines*
+
+%90java.util.List*
+9*ù
+33g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaC C(¨
+©
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaC C(%0
+%34)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""¨
+©
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaC C(20
+%35)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""≈¬
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaC C(3
+%36boolean"Vorg.sonar.plugins.java.api.tree.Tree#is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)Z*	
+
+stE*2
+0
+%35)org.sonar.plugins.java.api.tree.Tree$Kind20is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)*
+31
+32*ë	
+11g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java\ \(	•¢
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java\ \(=0
+%86)org.sonar.plugins.java.api.tree.BlockTree"jorg.sonar.plugins.java.api.tree.TryStatementTree#finallyBlock()Lorg/sonar/plugins/java/api/tree/BlockTree;*	
+
+stE2finallyBlock()Å˛
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java\ \(D
+%87java.util.List"@org.sonar.plugins.java.api.tree.BlockTree#body()Ljava/util/List;*2
+0
+%86)org.sonar.plugins.java.api.tree.BlockTree2body()Ñ
+Å
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java\ \(E
+
+%88int"Dorg.codehawk.smell.metricruler.GetLines#treeLines(Ljava/util/List;)I*+")
+'org.codehawk.smell.metricruler.GetLines*
+
+%87java.util.ListÂ‚
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java] ]((
+%89java.util.List"Jorg.sonar.plugins.java.api.tree.TryStatementTree#catches()Ljava/util/List;*	
+
+stE2	catches()*
+9
+10*¢	
+34g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaB B(®•
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaB B(.2
+%30+org.sonar.plugins.java.api.tree.SyntaxToken"horg.sonar.plugins.java.api.tree.ClassTree#closeBraceToken()Lorg/sonar/plugins/java/api/tree/SyntaxToken;*	
+
+stE2closeBraceToken()ÎË
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaB B(5
+
+%31int"3org.sonar.plugins.java.api.tree.SyntaxToken#line()I*4
+2
+%30+org.sonar.plugins.java.api.tree.SyntaxToken2line()¶£
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaB8 B(Y2
+%32+org.sonar.plugins.java.api.tree.SyntaxToken"gorg.sonar.plugins.java.api.tree.ClassTree#openBraceToken()Lorg/sonar/plugins/java/api/tree/SyntaxToken;*	
+
+stE2openBraceToken()ÎË
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaB8 B(`
+
+%33int"3org.sonar.plugins.java.api.tree.SyntaxToken#line()I*4
+2
+%32+org.sonar.plugins.java.api.tree.SyntaxToken2line()*
+1*√	
+12g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaZ Z(óî
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaZ Z(50
+%82)org.sonar.plugins.java.api.tree.BlockTree"corg.sonar.plugins.java.api.tree.TryStatementTree#block()Lorg/sonar/plugins/java/api/tree/BlockTree;*	
+
+stE2block()Å˛
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaZ Z(<
+%83java.util.List"@org.sonar.plugins.java.api.tree.BlockTree#body()Ljava/util/List;*2
+0
+%82)org.sonar.plugins.java.api.tree.BlockTree2body()Ñ
+Å
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaZ Z(=
+
+%84int"Dorg.codehawk.smell.metricruler.GetLines#treeLines(Ljava/util/List;)I*+")
+'org.codehawk.smell.metricruler.GetLines*
+
+%83java.util.List•¢
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java[ [(,0
+%85)org.sonar.plugins.java.api.tree.BlockTree"jorg.sonar.plugins.java.api.tree.TryStatementTree#finallyBlock()Lorg/sonar/plugins/java/api/tree/BlockTree;*	
+
+stE2finallyBlock()*
+11
+1*ù
+35g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaA A(¨
+©
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaA A(%0
+%27)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""¨
+©
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaA A(+0
+%28)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""≈¬
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaA A(,
+%29boolean"Vorg.sonar.plugins.java.api.tree.Tree#is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)Z*	
+
+stE*2
+0
+%28)org.sonar.plugins.java.api.tree.Tree$Kind20is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)*
+33
+34*ú
+13g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaY Y(¨
+©
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaY Y(&0
+%79)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""¨
+©
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaY Y(40
+%80)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""≈¬
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaY Y(5
+%81boolean"Vorg.sonar.plugins.java.api.tree.Tree#is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)Z*	
+
+stE*2
+0
+%80)org.sonar.plugins.java.api.tree.Tree$Kind20is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)*
+7
+12*Æ
+36g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java@ @(êç
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java@ @(30
+%25)org.sonar.plugins.java.api.tree.BlockTree"\org.sonar.plugins.java.api.tree.CatchTree#block()Lorg/sonar/plugins/java/api/tree/BlockTree;*	
+
+stE2block()¶
+£
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java@ @(4
+
+%26int"Korg.codehawk.smell.metricruler.GetLines#recursiveLines(Ljava/lang/Object;)I*+")
+'org.codehawk.smell.metricruler.GetLines*2
+0
+%25)org.sonar.plugins.java.api.tree.BlockTree*
+1*†
+14g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaX X(†ù
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaX X(>0
+%76)org.sonar.plugins.java.api.tree.BlockTree"lorg.sonar.plugins.java.api.tree.SynchronizedStatementTree#block()Lorg/sonar/plugins/java/api/tree/BlockTree;*	
+
+stE2block()Å˛
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaX X(E
+%77java.util.List"@org.sonar.plugins.java.api.tree.BlockTree#body()Ljava/util/List;*2
+0
+%76)org.sonar.plugins.java.api.tree.BlockTree2body()Ñ
+Å
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaX X(F
+
+%78int"Dorg.codehawk.smell.metricruler.GetLines#treeLines(Ljava/util/List;)I*+")
+'org.codehawk.smell.metricruler.GetLines*
+
+%77java.util.List*
+1*ù
+37g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java? ?(¨
+©
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java? ?(%0
+%22)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""¨
+©
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java? ?(+0
+%23)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""≈¬
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java? ?(,
+%24boolean"Vorg.sonar.plugins.java.api.tree.Tree#is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)Z*	
+
+stE*2
+0
+%23)org.sonar.plugins.java.api.tree.Tree$Kind20is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)*
+35
+36*ù
+15g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaW W(¨
+©
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaW W(%0
+%73)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""¨
+©
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaW W(<0
+%74)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""≈¬
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaW W(=
+%75boolean"Vorg.sonar.plugins.java.api.tree.Tree#is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)Z*	
+
+stE*2
+0
+%74)org.sonar.plugins.java.api.tree.Tree$Kind20is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)*
+13
+14*ÿ
+38g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java> >(‹Ÿ
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java> >(1
+%20java.util.List"Dorg.sonar.plugins.java.api.tree.CaseGroupTree#body()Ljava/util/List;*	
+
+stE2body()Ñ
+Å
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java> >(2
+
+%21int"Dorg.codehawk.smell.metricruler.GetLines#treeLines(Ljava/util/List;)I*+")
+'org.codehawk.smell.metricruler.GetLines*
+
+%20java.util.List*
+1*®
+16g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaT T(Ø
+¨
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaT T(3
+ct-org.sonar.plugins.java.api.tree.CaseGroupTree"__id*
+""*
+17
+1*ù
+39g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java= =(¨
+©
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java= =(%0
+%17)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""¨
+©
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java= =(00
+%18)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""≈¬
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java= =(1
+%19boolean"Vorg.sonar.plugins.java.api.tree.Tree#is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)Z*	
+
+stE*2
+0
+%18)org.sonar.plugins.java.api.tree.Tree$Kind20is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)*
+37
+38*Ö
+17g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaU U(	àÖ
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaU U($
+%71java.util.List"Dorg.sonar.plugins.java.api.tree.CaseGroupTree#body()Ljava/util/List;*5
+3
+ct-org.sonar.plugins.java.api.tree.CaseGroupTree2body()Ñ
+Å
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaU U(%
+
+%72int"Dorg.codehawk.smell.metricruler.GetLines#treeLines(Ljava/util/List;)I*+")
+'org.codehawk.smell.metricruler.GetLines*
+
+%71java.util.List*
+16*ˇ
+19g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaS4 S(6‰·
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaS S(?
+%70java.util.List"Korg.sonar.plugins.java.api.tree.SwitchStatementTree#cases()Ljava/util/List;*	
+
+stE2cases()¢
+ü
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaS S(@
+lctjava.util.List"__id*
+
+%70java.util.List*
+16*ﬂ
+1g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javak	 k("q
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javak k(
+""*±
+2g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javai i(íè
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javai i(41
+%109)org.sonar.plugins.java.api.tree.BlockTree"]org.sonar.plugins.java.api.tree.MethodTree#block()Lorg/sonar/plugins/java/api/tree/BlockTree;*	
+
+stE2block()®
+•
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javai i(5
+%110int"Korg.codehawk.smell.metricruler.GetLines#recursiveLines(Ljava/lang/Object;)I*+")
+'org.codehawk.smell.metricruler.GetLines*3
+1
+%109)org.sonar.plugins.java.api.tree.BlockTree*
+1*û
+3g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javah h(≠
+™
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javah h(%1
+%106)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""≠
+™
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javah h(,1
+%107)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""«ƒ
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javah h(-
+%108boolean"Vorg.sonar.plugins.java.api.tree.Tree#is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)Z*	
+
+stE*3
+1
+%107)org.sonar.plugins.java.api.tree.Tree$Kind20is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)*
+2
+1*±
+4g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javag g(íè
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javag g(41
+%104)org.sonar.plugins.java.api.tree.BlockTree"]org.sonar.plugins.java.api.tree.MethodTree#block()Lorg/sonar/plugins/java/api/tree/BlockTree;*	
+
+stE2block()®
+•
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javag g(5
+%105int"Korg.codehawk.smell.metricruler.GetLines#recursiveLines(Ljava/lang/Object;)I*+")
+'org.codehawk.smell.metricruler.GetLines*3
+1
+%104)org.sonar.plugins.java.api.tree.BlockTree*
+1*û
+5g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaf f(≠
+™
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaf f(%1
+%101)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""≠
+™
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaf f(11
+%102)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""«ƒ
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaf f(2
+%103boolean"Vorg.sonar.plugins.java.api.tree.Tree#is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)Z*	
+
+stE*3
+1
+%102)org.sonar.plugins.java.api.tree.Tree$Kind20is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)*
+3
+4*À
+6g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javae e(©¶
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javae e(@4
+%99-org.sonar.plugins.java.api.tree.StatementTree"morg.sonar.plugins.java.api.tree.WhileStatementTree#statement()Lorg/sonar/plugins/java/api/tree/StatementTree;*	
+
+stE2statement()´
+®
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javae e(A
+%100int"Korg.codehawk.smell.metricruler.GetLines#recursiveLines(Ljava/lang/Object;)I*+")
+'org.codehawk.smell.metricruler.GetLines*6
+4
+%99-org.sonar.plugins.java.api.tree.StatementTree*
+1*ö
+7g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javad d(¨
+©
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javad d(%0
+%96)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""¨
+©
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javad d(50
+%97)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""≈¬
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javad d(6
+%98boolean"Vorg.sonar.plugins.java.api.tree.Tree#is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)Z*	
+
+stE*2
+0
+%97)org.sonar.plugins.java.api.tree.Tree$Kind20is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)*
+5
+6*§
+8g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaa a(	•¢
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaa a(A0
+%93)org.sonar.plugins.java.api.tree.BlockTree"jorg.sonar.plugins.java.api.tree.TryStatementTree#finallyBlock()Lorg/sonar/plugins/java/api/tree/BlockTree;*	
+
+stE2finallyBlock()Å˛
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaa a(H
+%94java.util.List"@org.sonar.plugins.java.api.tree.BlockTree#body()Ljava/util/List;*2
+0
+%93)org.sonar.plugins.java.api.tree.BlockTree2body()Ñ
+Å
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaa a(I
+
+%95int"Dorg.codehawk.smell.metricruler.GetLines#treeLines(Ljava/util/List;)I*+")
+'org.codehawk.smell.metricruler.GetLines*
+
+%94java.util.List*
+1*ú
+9g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java` `(•¢
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java` `(-0
+%92)org.sonar.plugins.java.api.tree.BlockTree"jorg.sonar.plugins.java.api.tree.TryStatementTree#finallyBlock()Lorg/sonar/plugins/java/api/tree/BlockTree;*	
+
+stE2finallyBlock()*
+8
+1*‘
+40g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java< <(ÿ’
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java< <(-
+%15java.util.List"@org.sonar.plugins.java.api.tree.BlockTree#body()Ljava/util/List;*	
+
+stE2body()Ñ
+Å
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java< <(.
+
+%16int"Dorg.codehawk.smell.metricruler.GetLines#treeLines(Ljava/util/List;)I*+")
+'org.codehawk.smell.metricruler.GetLines*
+
+%15java.util.List*
+1*ù
+41g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java; ;(¨
+©
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java; ;(%0
+%12)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""¨
+©
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java; ;(+0
+%13)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""≈¬
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java; ;(,
+%14boolean"Vorg.sonar.plugins.java.api.tree.Tree#is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)Z*	
+
+stE*2
+0
+%13)org.sonar.plugins.java.api.tree.Tree$Kind20is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)*
+39
+40*ü	
+42g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java: :(ß§
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java: :(.1
+%8+org.sonar.plugins.java.api.tree.SyntaxToken"horg.sonar.plugins.java.api.tree.Arguments#closeParenToken()Lorg/sonar/plugins/java/api/tree/SyntaxToken;*	
+
+stE2closeParenToken()ÈÊ
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java: :(5	
+%9int"3org.sonar.plugins.java.api.tree.SyntaxToken#line()I*3
+1
+%8+org.sonar.plugins.java.api.tree.SyntaxToken2line()¶£
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java:8 :(Y2
+%10+org.sonar.plugins.java.api.tree.SyntaxToken"gorg.sonar.plugins.java.api.tree.Arguments#openParenToken()Lorg/sonar/plugins/java/api/tree/SyntaxToken;*	
+
+stE2openParenToken()ÎË
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java:8 :(`
+
+%11int"3org.sonar.plugins.java.api.tree.SyntaxToken#line()I*4
+2
+%10+org.sonar.plugins.java.api.tree.SyntaxToken2line()*
+1*ù
+20g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaR R(¨
+©
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaR R(%0
+%67)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""¨
+©
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaR R(60
+%68)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""≈¬
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaR R(7
+%69boolean"Vorg.sonar.plugins.java.api.tree.Tree#is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)Z*	
+
+stE*2
+0
+%68)org.sonar.plugins.java.api.tree.Tree$Kind20is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)*
+15
+19*ô
+43g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java9 9(´
+®
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java9 9(%/
+%5)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""´
+®
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java9 9(//
+%6)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""√¿
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java9 9(0
+%7boolean"Vorg.sonar.plugins.java.api.tree.Tree#is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)Z*	
+
+stE*1
+/
+%6)org.sonar.plugins.java.api.tree.Tree$Kind20is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)*
+41
+42*¡
+21g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaQ Q(£†
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaQ Q(B0
+%65)org.sonar.plugins.java.api.tree.Arguments"korg.sonar.plugins.java.api.tree.MethodInvocationTree#arguments()Lorg/sonar/plugins/java/api/tree/Arguments;*	
+
+stE2arguments()¶
+£
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaQ Q(C
+
+%66int"Korg.codehawk.smell.metricruler.GetLines#recursiveLines(Ljava/lang/Object;)I*+")
+'org.codehawk.smell.metricruler.GetLines*2
+0
+%65)org.sonar.plugins.java.api.tree.Arguments*
+1*∏
+44g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java8 8(úô
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java8 8(</
+%3)org.sonar.plugins.java.api.tree.Arguments"eorg.sonar.plugins.java.api.tree.AnnotationTree#arguments()Lorg/sonar/plugins/java/api/tree/Arguments;*	
+
+stE2arguments()§
+°
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java8 8(=	
+%4int"Korg.codehawk.smell.metricruler.GetLines#recursiveLines(Ljava/lang/Object;)I*+")
+'org.codehawk.smell.metricruler.GetLines*1
+/
+%3)org.sonar.plugins.java.api.tree.Arguments*
+1*ù
+22g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaP P(¨
+©
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaP P(%0
+%62)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""¨
+©
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaP P(70
+%63)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""≈¬
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaP P(8
+%64boolean"Vorg.sonar.plugins.java.api.tree.Tree#is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)Z*	
+
+stE*2
+0
+%63)org.sonar.plugins.java.api.tree.Tree$Kind20is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)*
+20
+21*ô
+45g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java6 6(´
+®
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java7 7(/
+%0)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""´
+®
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java7 7()/
+%1)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""√¿
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.java7 7(*
+%2boolean"Vorg.sonar.plugins.java.api.tree.Tree#is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)Z*	
+
+stE*1
+/
+%1)org.sonar.plugins.java.api.tree.Tree$Kind20is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)*
+43
+44*Õ
+23g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaO O(´®
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaO O(B4
+%60-org.sonar.plugins.java.api.tree.StatementTree"oorg.sonar.plugins.java.api.tree.LabeledStatementTree#statement()Lorg/sonar/plugins/java/api/tree/StatementTree;*	
+
+stE2statement()™
+ß
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaO O(C
+
+%61int"Korg.codehawk.smell.metricruler.GetLines#recursiveLines(Ljava/lang/Object;)I*+")
+'org.codehawk.smell.metricruler.GetLines*6
+4
+%60-org.sonar.plugins.java.api.tree.StatementTree*
+1:
+stEB+")
 'org.codehawk.smell.metricruler.GetLines

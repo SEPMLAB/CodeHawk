@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.codehawk.plugin.java.functioningClass.GetClass;
+import org.codehawk.plugin.java.functioningclass.GetClass;
 import org.sonar.check.Rule;
 import org.sonar.plugins.java.api.IssuableSubscriptionVisitor;
 import org.sonar.plugins.java.api.tree.BinaryExpressionTree;
@@ -87,16 +87,12 @@ public class RefusedBequest extends IssuableSubscriptionVisitor {
 			}
 		}
 
-
-		if (--classCount == 0) {
-			if (extendList.size() != 0) {
-				for (int i = 0; i < extendList.size(); i += 2) {
-					if (classList.get(extendList.get(i)) != null && classList.get(extendList.get(i + 1)) != null) {
-						if (classList.get(extendList.get(i)).getAMV()
-								&& classList.get(extendList.get(i + 1)).getAMV()) {
-							if (extendUse(classList.get(extendList.get(i)), classList.get(extendList.get(i + 1)))) {
-								addIssue(classList.get(extendList.get(i)).getLine(), "this class refuse bequest");
-							}
+		if (--classCount == 0 && !extendList.isEmpty()) {
+			for (int i = 0; i < extendList.size(); i += 2) {
+				if (classList.get(extendList.get(i)) != null && classList.get(extendList.get(i + 1)) != null) {
+					if (classList.get(extendList.get(i)).getAMV() && classList.get(extendList.get(i + 1)).getAMV()) {
+						if (extendUse(classList.get(extendList.get(i)), classList.get(extendList.get(i + 1)))) {
+							addIssue(classList.get(extendList.get(i)).getLine(), "this class refuse bequest");
 						}
 					}
 				}
@@ -105,14 +101,14 @@ public class RefusedBequest extends IssuableSubscriptionVisitor {
 	}
 
 	public boolean extendUse(ExtendClassTree classT, ExtendClassTree extendT) {
-		int BOvrThreshold = 0;
-		int BURThreshold = 0;
+		int bovrthreshold = 0;
+		int burthreshold = 0;
 
 		// check MethodUse
 		for (String str1 : classT.getMethod()) {
 			for (String str2 : extendT.getMethod()) {
 				if (str1.equals(str2)) {
-					BOvrThreshold++;
+					bovrthreshold++;
 					break;
 				}
 			}
@@ -127,7 +123,7 @@ public class RefusedBequest extends IssuableSubscriptionVisitor {
 					while (true) {
 						if (target2.is(Tree.Kind.CLASS)) {
 							if (((ClassTree) target2).simpleName().name().equals(classT.getName())) {
-								BURThreshold++;
+								burthreshold++;
 							}
 							break;
 						}
@@ -138,7 +134,7 @@ public class RefusedBequest extends IssuableSubscriptionVisitor {
 		}
 
 		if (classT.getMethod().size() > 7 && extendT.getMethod().size() > 7) {
-			if (BOvrThreshold * 3 < extendT.getMethod().size() && BURThreshold * 3 < extendT.getMembers().size()) {
+			if (bovrthreshold * 3 < extendT.getMethod().size() && burthreshold * 3 < extendT.getMembers().size()) {
 				return true;
 			}
 		}
@@ -160,7 +156,7 @@ public class RefusedBequest extends IssuableSubscriptionVisitor {
 				}
 			}
 		}
-		System.out.println(sum + " " + methodNum);
+		
 		if (2 * methodNum <= sum) {
 			return true;
 		}
@@ -248,20 +244,20 @@ class ExtendClassTree {
 	private String extendClassName;
 	private boolean classAMV;
 	private int startingLine;
-	private ArrayList<VariableTree> classMembers = new ArrayList<VariableTree>();
-	private ArrayList<String> classMethod = new ArrayList<String>();
+	private ArrayList<VariableTree> classMembers = new ArrayList<>();
+	private ArrayList<String> classMethod = new ArrayList<>();
 
-	ExtendClassTree(ClassTree tree, String extendName, boolean AMV) {
+	ExtendClassTree(ClassTree tree, String extendName, boolean amv) {
 		className = tree.simpleName().name();
 		startingLine = tree.openBraceToken().line();
 		extendClassName = extendName;
-		classAMV = AMV;
+		classAMV = amv;
 	}
 
-	ExtendClassTree(ClassTree tree, boolean AMV) {
+	ExtendClassTree(ClassTree tree, boolean amv) {
 		className = tree.simpleName().name();
 		startingLine = tree.openBraceToken().line();
-		classAMV = AMV;
+		classAMV = amv;
 	}
 
 	public int getLine() {
@@ -284,7 +280,7 @@ class ExtendClassTree {
 		classMembers.add(vt);
 	}
 
-	public ArrayList<VariableTree> getMembers() {
+	public List<VariableTree> getMembers() {
 		return classMembers;
 	}
 
@@ -292,7 +288,7 @@ class ExtendClassTree {
 		classMethod.add(mt.simpleName().name());
 	}
 
-	public ArrayList<String> getMethod() {
+	public List<String> getMethod() {
 		return classMethod;
 	}
 

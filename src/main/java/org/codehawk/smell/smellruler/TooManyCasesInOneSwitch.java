@@ -5,7 +5,6 @@ public class TooManyCasesInOneSwitch implements Smell{
 
 	@Override
 	public boolean is(Type type) {
-		;
 		return smellType == type;
 	}
 

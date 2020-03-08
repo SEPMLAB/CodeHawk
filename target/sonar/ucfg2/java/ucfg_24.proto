@@ -1,16 +1,9 @@
 
-Korg.codehawk.plugin.java.checks.ExtendClassTree#getName()Ljava/lang/String;p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javaù ù("1*ﬁ
+:org.codehawk.plugin.java.checks.ExtendClassTree#getLine()Ip
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javaá á("1*Ò
 1p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javaû	 û(◊
-‘
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javaà	 à("z
 p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javaû	 û(
-%0java.lang.String"__id*B*@1
-/org.codehawk.plugin.java.checks.ExtendClassTree"
-	className"å
-p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javaû û(
-
-%0java.lang.StringB31
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javaà à(
+""B31
 /org.codehawk.plugin.java.checks.ExtendClassTree

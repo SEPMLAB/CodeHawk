@@ -1,15 +1,33 @@
 
-Xorg.codehawk.smell.smellruler.LazyClass#type()Lorg/codehawk/smell/smellruler/Smell$Type;g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LazyClass.java ("1*·
+Worg.codehawk.smell.smellruler.LazyClass#is(Lorg/codehawk/smell/smellruler/Smell$Type;)Zg
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LazyClass.java ("paramAnnotations*„
+paramAnnotationsg
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LazyClass.java (Ê
+Ç
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LazyClass.java (
+
+%1"
+__annotate*
+java.lang.Override*2
+0
+type(org.codehawk.smell.smellruler.Smell$Type´
+±
+g
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LazyClass.java (0
+type(org.codehawk.smell.smellruler.Smell$Type"__annotation*
+
+%1*
+1*Œ
 1g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LazyClass.java	 (ª
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LazyClass.java	 (ª
 §
 g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LazyClass.java	 (.
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LazyClass.java	 (.
 %0(org.codehawk.smell.smellruler.Smell$Type"__id*
-"""›
+"""q
 g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LazyClass.java (0
-.
-%0(org.codehawk.smell.smellruler.Smell$TypeB+)
+]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LazyClass.java (
+"":0
+type(org.codehawk.smell.smellruler.Smell$TypeB+)
 'org.codehawk.smell.smellruler.LazyClass

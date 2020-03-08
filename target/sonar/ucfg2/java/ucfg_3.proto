@@ -1,9 +1,15 @@
 
-Horg.codehawk.smell.smellruler.LargeClass#smellDetail()Ljava/lang/String;h
-^C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LargeClass.java ("1*ô
+Yorg.codehawk.smell.smellruler.LargeClass#type()Lorg/codehawk/smell/smellruler/Smell$Type;h
+^C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LargeClass.java ("1*º
 1h
-^C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LargeClass.java	 ("„
+^C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LargeClass.java	 («
+¨
 h
-^C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LargeClass.java ( 
-Avoid large classes!B,*
+^C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LargeClass.java	 (.
+%0(org.codehawk.smell.smellruler.Smell$Type"__id*
+"""œ
+h
+^C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LargeClass.java (0
+.
+%0(org.codehawk.smell.smellruler.Smell$TypeB,*
 (org.codehawk.smell.smellruler.LargeClass

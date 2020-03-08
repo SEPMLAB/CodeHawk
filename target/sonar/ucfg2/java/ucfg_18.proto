@@ -1,134 +1,259 @@
 
-eorg.codehawk.plugin.java.checks.RefusedBequest#checkAMW(Lorg/sonar/plugins/java/api/tree/ClassTree;)Zp
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java£ £("10*ñ
-2p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java³
- ³("z
-p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java³ ³(
-""*Ž
-3p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java± ±(ž
-›
-p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java± ±(
-%7java.io.PrintStream"__id*
-""¦
-£
-p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java± ±(
-%8java.lang.String"__concat*
-""*
- ¹
-¶
-p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java± ±(*
-%9java.lang.String"__concat*
-
-%8java.lang.String*
-""ˆ…
-p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java± ±(+
-%10void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%7java.io.PrintStream*
-
-%9java.lang.String2println(Ljava/lang/String;)*
-2
-1*®
-4p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java¦ ¦(®
-«
-p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java¦ ¦()
-t$org.sonar.plugins.java.api.tree.Tree"__id*
-""*
-3
-9*¸
-5p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java¬	 ¬(¸
-µ
-p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java¬	 ¬(3
-st-org.sonar.plugins.java.api.tree.StatementTree"__id*
-""*
-4
-6*œ
-6p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java­ ­(Ÿœ
-p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java­ ­(	
-%6int"lorg.codehawk.plugin.java.checks.RefusedBequest#cycleCheck(ILorg/sonar/plugins/java/api/tree/StatementTree;)I*20
-.org.codehawk.plugin.java.checks.RefusedBequest*
-""*5
-3
-st-org.sonar.plugins.java.api.tree.StatementTree2<cycleCheck(ILorg/sonar/plugins/java/api/tree/StatementTree;)*
-5*¶
-
-8p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java¨ ¨(Ú
-×
-p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java© ©(#0
-mt*org.sonar.plugins.java.api.tree.MethodTree"__id*+
-)
-t$org.sonar.plugins.java.api.tree.TreeÂ¿
-p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javaª ª(/
-%4)org.sonar.plugins.java.api.tree.BlockTree"]org.sonar.plugins.java.api.tree.MethodTree#block()Lorg/sonar/plugins/java/api/tree/BlockTree;*2
+org.codehawk.plugin.java.checks.RefusedBequest#extendUse(Lorg/codehawk/plugin/java/checks/ExtendClassTree;Lorg/codehawk/plugin/java/checks/ExtendClassTree;)Zn
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javag g("25*ž
+24n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javam m(¡ž
+n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javam m()
+%1java.util.List"Korg.codehawk.plugin.java.checks.ExtendClassTree#getMethod()Ljava/util/List;*<
+:
+extendT/org.codehawk.plugin.java.checks.ExtendClassTree2getMethod()*
+21*ß
+13n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java|
+ |(²
+¯
+n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java| |(/
+%9)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""³
+°
+n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java| |($0
+%10)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""ôñ
+n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java|
+ |(%
+%11boolean"Vorg.sonar.plugins.java.api.tree.Tree#is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)Z*1
+/
+target2$org.sonar.plugins.java.api.tree.Tree*2
 0
-mt*org.sonar.plugins.java.api.tree.MethodTree2block()ß
-Ü
-p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javaª ª(/
-bt)org.sonar.plugins.java.api.tree.BlockTree"__id*1
-/
-%4)org.sonar.plugins.java.api.tree.BlockTreeˆ…
-p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java« «('
-%5java.util.List"@org.sonar.plugins.java.api.tree.BlockTree#body()Ljava/util/List;*1
-/
-bt)org.sonar.plugins.java.api.tree.BlockTree2body()ª
-§
-p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java« «((
-lstjava.util.List"__id*
+%10)org.sonar.plugins.java.api.tree.Tree$Kind20is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)*
+9
+12*
+25n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javal l( 
+n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javal l('
+%0java.util.List"Korg.codehawk.plugin.java.checks.ExtendClassTree#getMethod()Ljava/util/List;*;
+9
+classT/org.codehawk.plugin.java.checks.ExtendClassTree2getMethod()*
+20*•
+15n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javaz z(º·
+n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javaz z(#*
+%8$org.sonar.plugins.java.api.tree.Tree"Sorg.sonar.plugins.java.api.tree.Tree#parent()Lorg/sonar/plugins/java/api/tree/Tree;*:
+8
+target.org.sonar.plugins.java.api.tree.IdentifierTree2parent()Ø
+Õ
+n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javaz z($/
+target2$org.sonar.plugins.java.api.tree.Tree"__id*,
+*
+%8$org.sonar.plugins.java.api.tree.Tree*
+13
+8*þ
+17n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javax x(!ÈÅ
+n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javax x(*0
+%6*org.sonar.plugins.java.api.semantic.Symbol"aorg.sonar.plugins.java.api.tree.VariableTree#symbol()Lorg/sonar/plugins/java/api/semantic/Symbol;*4
+2
+vt,org.sonar.plugins.java.api.tree.VariableTree2symbol()Œ‰
+n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javax x(3
+%7java.util.List"Corg.sonar.plugins.java.api.semantic.Symbol#usages()Ljava/util/List;*2
+0
+%6*org.sonar.plugins.java.api.semantic.Symbol2usages()¨
+¥
+n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javax x(4
+litjava.util.List"__id*
 
-%5java.util.List*
-5*Ü
-9p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java§ §(´
-±
-p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java§ §(/
-%1)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
-""´
-±
-p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java§ §(/
-%2)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
-""îë
-p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java§ §(
-%3boolean"Vorg.sonar.plugins.java.api.tree.Tree#is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)Z*+
-)
-t$org.sonar.plugins.java.api.tree.Tree*1
-/
-%2)org.sonar.plugins.java.api.tree.Tree$Kind20is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)*
-4
-8*Œ
-10p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java¦ ¦(Ž‹
-p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java¦ ¦(
-%0java.util.List"Corg.sonar.plugins.java.api.tree.ClassTree#members()Ljava/util/List;*1
-/
-ct)org.sonar.plugins.java.api.tree.ClassTree2	members()*
-4*ñ
+%7java.util.List*
+8*×
+18n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javaw w(	ÈÅ
+n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javaw w(0
+%4*org.sonar.plugins.java.api.semantic.Symbol"aorg.sonar.plugins.java.api.tree.VariableTree#symbol()Lorg/sonar/plugins/java/api/semantic/Symbol;*4
+2
+vt,org.sonar.plugins.java.api.tree.VariableTree2symbol()Œ‰
+n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javaw w(
+%5java.util.List"Corg.sonar.plugins.java.api.semantic.Symbol#usages()Ljava/util/List;*2
+0
+%4*org.sonar.plugins.java.api.semantic.Symbol2usages()*
+17
+7*Ÿ
+19n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javav v( £ 
+n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javav v(-
+%3java.util.List"Lorg.codehawk.plugin.java.checks.ExtendClassTree#getMembers()Ljava/util/List;*<
+:
+extendT/org.codehawk.plugin.java.checks.ExtendClassTree2getMembers()*
+7*ñ
 1p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javaµ	 µ("z
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javaŽ	 Ž("z
 p
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javaµ µ(
-"":/
-ct)org.sonar.plugins.java.api.tree.ClassTreeB20
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javaŽ Ž(
+""*ñ
+2p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javaŠ Š("z
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javaŠ Š(
+""*ã
+3p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java‰9 ‰(E¦£
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java‰L ‰(`
+%23java.util.List"Lorg.codehawk.plugin.java.checks.ExtendClassTree#getMembers()Ljava/util/List;*<
+:
+extendT/org.codehawk.plugin.java.checks.ExtendClassTree2getMembers()º·
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java‰L ‰(g
+
+%24int"java.util.List#size()I*
+
+%23java.util.List2size()*
+2
+1*á
+4p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java‰ ‰(¤¡
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java‰ ‰(.
+%21java.util.List"Korg.codehawk.plugin.java.checks.ExtendClassTree#getMethod()Ljava/util/List;*<
+:
+extendT/org.codehawk.plugin.java.checks.ExtendClassTree2getMethod()º·
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java‰ ‰(5
+
+%22int"java.util.List#size()I*
+
+%21java.util.List2size()*
+3
+1*á
+5p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javaˆ' ˆ(.¤¡
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javaˆ' ˆ(:
+%19java.util.List"Korg.codehawk.plugin.java.checks.ExtendClassTree#getMethod()Ljava/util/List;*<
+:
+extendT/org.codehawk.plugin.java.checks.ExtendClassTree2getMethod()º·
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javaˆ' ˆ(A
+
+%20int"java.util.List#size()I*
+
+%19java.util.List2size()*
+4
+1*à
+6p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javaˆ ˆ(£ 
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javaˆ ˆ(
+%17java.util.List"Korg.codehawk.plugin.java.checks.ExtendClassTree#getMethod()Ljava/util/List;*;
+9
+classT/org.codehawk.plugin.java.checks.ExtendClassTree2getMethod()º·
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javaˆ ˆ(
+
+%18int"java.util.List#size()I*
+
+%17java.util.List2size()*
+5
+1*´
+7n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javav v(µ
+²
+n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javav v(2
+vt,org.sonar.plugins.java.api.tree.VariableTree"__id*
+""*
+6
+18*º
+8n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javay	 y(»
+¸
+n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javay	 y(8
+target.org.sonar.plugins.java.api.tree.IdentifierTree"__id*
+""*
+15
+7*“
+9p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java‚ ‚(´±
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java‚ ‚( +
+%16$org.sonar.plugins.java.api.tree.Tree"Sorg.sonar.plugins.java.api.tree.Tree#parent()Lorg/sonar/plugins/java/api/tree/Tree;*1
+/
+target2$org.sonar.plugins.java.api.tree.Tree2parent()Û
+Ø
+p
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java‚ ‚( /
+target2$org.sonar.plugins.java.api.tree.Tree"__id*-
++
+%16$org.sonar.plugins.java.api.tree.Tree*
+13
+8*œ
+20n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javal l(›
+˜
+n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javal l(
+str1java.lang.String"__id*
+""*
+24
+19*œ
+21n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javam m(›
+˜
+n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javam m(
+str2java.lang.String"__id*
+""*
+20
+23*…
+23n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javan n(„
+n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.javan n(
+%2boolean",java.lang.String#equals(Ljava/lang/Object;)Z*
+
+str1java.lang.String*
+
+str2java.lang.String2equals(Ljava/lang/Object;)*
+20
+21*’
+
+12n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java} }(ÓÐ
+n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java} }(-5
+%12.org.sonar.plugins.java.api.tree.IdentifierTree"forg.sonar.plugins.java.api.tree.ClassTree#simpleName()Lorg/sonar/plugins/java/api/tree/IdentifierTree;*1
+/
+target2$org.sonar.plugins.java.api.tree.Tree2simpleName()–“
+n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java} }(4
+%13java.lang.String"Gorg.sonar.plugins.java.api.tree.IdentifierTree#name()Ljava/lang/String;*7
+5
+%12.org.sonar.plugins.java.api.tree.IdentifierTree2name()¡ž
+n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java}< }(L
+%14java.lang.String"Korg.codehawk.plugin.java.checks.ExtendClassTree#getName()Ljava/lang/String;*;
+9
+classT/org.codehawk.plugin.java.checks.ExtendClassTree2	getName()ƒ€
+n
+dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/RefusedBequest.java} }(M
+%15boolean",java.lang.String#equals(Ljava/lang/Object;)Z*
+
+%13java.lang.String*
+
+%14java.lang.String2equals(Ljava/lang/Object;)*
+8:9
+classT/org.codehawk.plugin.java.checks.ExtendClassTree::
+extendT/org.codehawk.plugin.java.checks.ExtendClassTreeB20
 .org.codehawk.plugin.java.checks.RefusedBequest

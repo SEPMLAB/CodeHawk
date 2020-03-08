@@ -1,21 +1,45 @@
 
-Eorg.codehawk.smell.modler.DataMember#getNames()Ljava/util/Collection;d
-ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java" "(#"1*î
-1d
-ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java#	 #(º
+_org.codehawk.smell.modler.DataMember#addmember(Lorg/sonar/plugins/java/api/tree/VariableTree;)Zd
+ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java ("5*ÿ
+3d
+ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java& ((Ž
+‹
+d
+ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java ()2
+%3,org.sonar.plugins.java.api.tree.VariableTree"__mapSet*
+
+%0java.util.Map*
+
+%2java.lang.String*4
+2
+vt,org.sonar.plugins.java.api.tree.VariableTree*
+1*û
+4d
+ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java ($Š‡
+d
+ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java ($
+%2java.lang.String"Gorg.sonar.plugins.java.api.tree.IdentifierTree#name()Ljava/lang/String;*6
+4
+%1.org.sonar.plugins.java.api.tree.IdentifierTree2name()*
+3*ü
+5d
+ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java (	º
 ·
 d
-ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java#	 #(
+ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java (	
 %0java.util.Map"__id*4*2&
 $org.codehawk.smell.modler.DataMember"
-paramsÆÃ
+paramsÎË
 d
-ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java#	 #(
-%1java.util.Set"%java.util.Map#keySet()Ljava/util/Set;*
-
-%0java.util.Map2keySet()"}
+ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java (4
+%1.org.sonar.plugins.java.api.tree.IdentifierTree"iorg.sonar.plugins.java.api.tree.VariableTree#simpleName()Lorg/sonar/plugins/java/api/tree/IdentifierTree;*4
+2
+vt,org.sonar.plugins.java.api.tree.VariableTree2simpleName()*
+4*Ù
+1d
+ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java	 ("n
 d
-ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java# #(
-
-%1java.util.SetB(&
+ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java (
+"":2
+vt,org.sonar.plugins.java.api.tree.VariableTreeB(&
 $org.codehawk.smell.modler.DataMember

@@ -1,15 +1,28 @@
 
-Forg.codehawk.plugin.java.RulesList#getJavaTestChecks()Ljava/util/List;b
-XC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/RulesList.java71 7(B"1*≥
+Borg.codehawk.plugin.java.RulesList#getJavaChecks()Ljava/util/List;b
+XC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/RulesList.java/1 /(>"1*Ê
 1b
-XC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/RulesList.java8 8(À
-»
+XC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/RulesList.java0 0(Å
+˛
 b
-XC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/RulesList.java8 8("
-%0java.util.List"1java.util.Collections#emptyList()Ljava/util/List;*"
-java.util.Collections"|
+XC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/RulesList.java0( 1(d
+%0java.util.List"<java.util.Arrays#asList([Ljava/lang/Object;)Ljava/util/List;*"
+java.util.Arrays*
+""*
+""*
+""*
+""*
+""*
+""˙
+˜
 b
-XC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/RulesList.java8 8(#
+XC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/RulesList.java0 1(e
+%1java.util.List"Hjava.util.Collections#unmodifiableList(Ljava/util/List;)Ljava/util/List;*"
+java.util.Collections*
 
-%0java.util.ListB&"$
+%0java.util.List"|
+b
+XC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/RulesList.java0 1(f
+
+%1java.util.ListB&"$
 "org.codehawk.plugin.java.RulesList

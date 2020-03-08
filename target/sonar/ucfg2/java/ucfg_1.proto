@@ -1,33 +1,61 @@
 
-Xorg.codehawk.smell.smellruler.LargeClass#is(Lorg/codehawk/smell/smellruler/Smell$Type;)Zh
-^C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LargeClass.java ("paramAnnotations*á
-paramAnnotationsh
-^C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LargeClass.java (À
-»
-h
-^C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LargeClass.java (
-
-%1"
-__annotate*
-java.lang.Override*2
-0
-type(org.codehawk.smell.smellruler.Smell$Typeµ
-≤
-h
-^C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LargeClass.java (0
-type(org.codehawk.smell.smellruler.Smell$Type"__annotation*
-
-%1*
-1*è
-1h
-^C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LargeClass.java (´
-®
-h
-^C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LargeClass.java		 	(.
-%0(org.codehawk.smell.smellruler.Smell$Type"__id*
-"""r
-h
-^C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LargeClass.java	 	(
-"":0
-type(org.codehawk.smell.smellruler.Smell$TypeB,*
-(org.codehawk.smell.smellruler.LargeClass
+Sorg.codehawk.plugin.java.functioningClass.GetClass#setClassCount(Ljava/util/List;)Ir
+hC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/functioningClass/GetClass.java ( "2*µ
+2r
+hC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/functioningClass/GetClass.java (≥
+∞
+r
+hC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/functioningClass/GetClass.java (,
+tree$org.sonar.plugins.java.api.tree.Tree"__id*
+""*
+4
+1*ö
+3r
+hC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/functioningClass/GetClass.java (ﬁ
+€
+r
+hC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/functioningClass/GetClass.java ($/
+ct)org.sonar.plugins.java.api.tree.ClassTree"__id*.
+,
+tree$org.sonar.plugins.java.api.tree.Treeêç
+r
+hC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/functioningClass/GetClass.java (
+%3java.util.List"Corg.sonar.plugins.java.api.tree.ClassTree#members()Ljava/util/List;*1
+/
+ct)org.sonar.plugins.java.api.tree.ClassTree2	members()ß
+§
+r
+hC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/functioningClass/GetClass.java (	
+%4int"Sorg.codehawk.plugin.java.functioningClass.GetClass#setClassCount(Ljava/util/List;)I*6"4
+2org.codehawk.plugin.java.functioningClass.GetClass*
+
+%3java.util.List*
+2*Á
+4r
+hC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/functioningClass/GetClass.java (∂
+≥
+r
+hC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/functioningClass/GetClass.java (/
+%0)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""∂
+≥
+r
+hC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/functioningClass/GetClass.java (/
+%1)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
+""Û
+r
+hC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/functioningClass/GetClass.java (
+%2boolean"Vorg.sonar.plugins.java.api.tree.Tree#is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)Z*.
+,
+tree$org.sonar.plugins.java.api.tree.Tree*1
+/
+%1)org.sonar.plugins.java.api.tree.Tree$Kind20is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)*
+2
+3*ı
+1r
+hC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/functioningClass/GetClass.java	 ("|
+r
+hC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/functioningClass/GetClass.java (
+"":
+ltjava.util.ListB6"4
+2org.codehawk.plugin.java.functioningClass.GetClass

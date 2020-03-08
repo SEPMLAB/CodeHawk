@@ -1,9 +1,22 @@
 
-@org.codehawk.smell.modler.SwitchNode#getName()Ljava/lang/String;d
-ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchNode.java ("1*÷
+Porg.codehawk.smell.modler.SwitchNode#kind()Lorg/codehawk/smell/modler/Node$Kind;d
+ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchNode.java
+ 
+("1*É
 1d
-ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchNode.java	 (*"‹
+ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchNode.java	 (¢
+Ÿ
 d
-ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchNode.java (+#!
-smellable switch case statementB(&
+ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchNode.java	 ()
+%0#org.codehawk.smell.modler.Node$Kind"__id*
+""¢
+Ÿ
+d
+ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchNode.java	 ()
+%1#org.codehawk.smell.modler.Node$Kind"__id*
+"""“
+d
+ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchNode.java (+
+)
+%1#org.codehawk.smell.modler.Node$KindB(&
 $org.codehawk.smell.modler.SwitchNode

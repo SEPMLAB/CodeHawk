@@ -1,17 +1,26 @@
 
-Lorg.codehawk.smell.modler.SwitchCaseDetector#getSmellNodes()Ljava/util/List;l
-bC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchCaseDetector.java' '(&"1*Ì
+porg.codehawk.smell.modler.SwitchCaseDetector#countSwitch(Lorg/sonar/plugins/java/api/tree/SwitchStatementTree;)Il
+bC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchCaseDetector.java" "("1*”
 1l
-bC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchCaseDetector.java(	 ((Ï
-Ì
+bC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchCaseDetector.java#* #(=«¨
 l
-bC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchCaseDetector.java(	 ((
-%0java.util.List"__id*@*>.
-,org.codehawk.smell.modler.SwitchCaseDetector"
-
-smellNodes"†
+bC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchCaseDetector.java#* #(E
+%0java.util.List"Korg.sonar.plugins.java.api.tree.SwitchStatementTree#cases()Ljava/util/List;*L
+J
+switchStatementTree3org.sonar.plugins.java.api.tree.SwitchStatementTree2cases()´
+±
 l
-bC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchCaseDetector.java( ((
+bC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchCaseDetector.java# #(F#
+caseGroupTreeListjava.util.List"__id*
 
-%0java.util.ListB0.
+%0java.util.ListÃÀ
+l
+bC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchCaseDetector.java$	 $(!	
+%1int"java.util.List#size()I*%
+#
+caseGroupTreeListjava.util.List2size()"v
+l
+bC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchCaseDetector.java$ $("
+"":J
+switchStatementTree3org.sonar.plugins.java.api.tree.SwitchStatementTreeB0.
 ,org.codehawk.smell.modler.SwitchCaseDetector
