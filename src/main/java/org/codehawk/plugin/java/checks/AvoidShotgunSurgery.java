@@ -386,8 +386,8 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 						MethodTree methodtree = entry4.getKey();
 						String methodName2 = methodtree.simpleName().name();
 						Boolean b = isEqual(className, className2, methodName, methodName2);
-						if ((methodCount.get(className).get(methodName).size() > 0
-								|| classCount.get(className).get(methodName).size() > 0) && Boolean.TRUE.equals(b)) {
+						if (methodCount.get(className).get(methodName).size() > 7
+								&& classCount.get(className).get(methodName).size() > 10 && Boolean.TRUE.equals(b)) {
 							if (!hasShowed.containsKey(className)) {
 								entry4.getValue().addIssue(methodtree.openParenToken().line(), this,
 										"Code smell \"Shotgun Surgery\" occurred in method \"" + methodName + "\" !");
