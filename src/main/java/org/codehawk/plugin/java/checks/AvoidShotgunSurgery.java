@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.sonar.check.Rule;
 import org.sonar.plugins.java.api.IssuableSubscriptionVisitor;
@@ -36,15 +37,15 @@ import org.sonar.plugins.java.api.tree.WhileStatementTree;
 
 @Rule(key = "AvoidShotgunSurgery")
 public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
-	private Map<String, Map<String, List<String>>> usedInMethod = new HashMap<String, Map<String, List<String>>>();
-	private Map<String, Map<String, List<String>>> usedInVariable = new HashMap<String, Map<String, List<String>>>();
-	private Map<String, Map<String, List<String>>> classCount = new HashMap<String, Map<String, List<String>>>();
-	private Map<String, Map<String, List<String>>> methodCount = new HashMap<String, Map<String, List<String>>>();
-	private Map<String, Map<MethodTree, JavaFileScannerContext>> location = new HashMap<String, Map<MethodTree, JavaFileScannerContext>>();
-	private Map<String, List<String>> hasShowed = new HashMap<String, List<String>>();
-	private List<List<String>> Inheritance = new ArrayList<List<String>>();
-	private List<String> objectList = new ArrayList<String>();
-	private List<String> reusedList = new ArrayList<String>();
+	private Map<String, Map<String, List<String>>> usedInMethod = new HashMap<>();
+	private Map<String, Map<String, List<String>>> usedInVariable = new HashMap<>();
+	private Map<String, Map<String, List<String>>> classCount = new HashMap<>();
+	private Map<String, Map<String, List<String>>> methodCount = new HashMap<>();
+	private Map<String, Map<MethodTree, JavaFileScannerContext>> location = new HashMap<>();
+	private Map<String, List<String>> hasShowed = new HashMap<>();
+	private List<List<String>> inHeritance = new ArrayList<>();
+	private List<String> objectList = new ArrayList<>();
+	private List<String> reusedList = new ArrayList<>();
 
 	@Override
 	public List<Tree.Kind> nodesToVisit() {
@@ -62,35 +63,37 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 		comparedWithUsedInVariable();
 		showSmell();
 	}
-	
+
 	private void checkInheritance(ClassTree classTree) {
-		List<String> innerInherit = new ArrayList<String>();
-		if (!checkIsNewInheritance(classTree.simpleName().name(),classTree.superClass().symbolType().fullyQualifiedName())) {
+		List<String> innerInherit = new ArrayList<>();
+		Boolean b = checkIsNewInheritance(classTree.simpleName().name(),
+				classTree.superClass().symbolType().fullyQualifiedName());
+		if (Boolean.FALSE.equals(b)) {
 			innerInherit.add(classTree.superClass().symbolType().fullyQualifiedName());
 			innerInherit.add(classTree.simpleName().name());
 		}
-		Inheritance.add(innerInherit);
+		inHeritance.add(innerInherit);
 	}
-	
+
 	private Boolean checkIsNewInheritance(String thisClass, String superClass) {
-		for (int i = 0; i < Inheritance.size(); i++) {
-			if (Inheritance.get(i).indexOf(thisClass) != -1 && Inheritance.get(i).indexOf(superClass) == -1) {
-				Inheritance.get(i).add(superClass);
+		for (int i = 0; i < inHeritance.size(); i++) {
+			if (inHeritance.get(i).indexOf(thisClass) != -1 && inHeritance.get(i).indexOf(superClass) == -1) {
+				inHeritance.get(i).add(superClass);
 				return true;
-			} else if (Inheritance.get(i).indexOf(superClass) != -1 && Inheritance.get(i).indexOf(thisClass) == -1) {
-				Inheritance.get(i).add(thisClass);
+			} else if (inHeritance.get(i).indexOf(superClass) != -1 && inHeritance.get(i).indexOf(thisClass) == -1) {
+				inHeritance.get(i).add(thisClass);
 				return true;
 			}
 		}
 		return false;
 	}
-	
+
 	private void checkInnerClassTree(ClassTree classTree) {
-		Map<String, List<String>> innerUsedInMethod = new HashMap<String, List<String>>();
-		Map<String, List<String>> innerUsedInVariable = new HashMap<String, List<String>>();
-		Map<String, List<String>> innerClassCount = new HashMap<String, List<String>>();
-		Map<String, List<String>> innerMethodCount = new HashMap<String, List<String>>();
-		Map<MethodTree, JavaFileScannerContext> innerlocation = new HashMap<MethodTree, JavaFileScannerContext>();
+		Map<String, List<String>> innerUsedInMethod = new HashMap<>();
+		Map<String, List<String>> innerUsedInVariable = new HashMap<>();
+		Map<String, List<String>> innerClassCount = new HashMap<>();
+		Map<String, List<String>> innerMethodCount = new HashMap<>();
+		Map<MethodTree, JavaFileScannerContext> innerlocation = new HashMap<>();
 		List<Tree> treeList = classTree.members();
 		for (Tree tempTree : treeList) {// check every method (constructor) in each class
 			if (tempTree.is(Tree.Kind.METHOD) || tempTree.is(Tree.Kind.CONSTRUCTOR)) {
@@ -225,7 +228,7 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 					checkInnerBlockTree(tryStatementTree.finallyBlock());// check finally part in this try statement
 				}
 				break;
-				
+
 			default:
 				break;
 			}
@@ -275,7 +278,8 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 		}
 	}
 
-	private void checkElseIfStatementTree(IfStatementTree ifStatementTree) {// check elseif and else parts in if statement method
+	private void checkElseIfStatementTree(IfStatementTree ifStatementTree) {// check elseif and else parts in if
+																			// statement method
 		if (ifStatementTree.elseKeyword() != null) {
 			StatementTree elseStatementTree = ifStatementTree.elseStatement();
 			if (elseStatementTree.is(Tree.Kind.IF_STATEMENT)) {
@@ -312,45 +316,59 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 	}
 
 	private void comparedWithUsedInMethod() {
-		for (String className : usedInMethod.keySet()) {
-			for (String methodName : usedInMethod.get(className).keySet()) {
+		for (Entry<String, Map<String, List<String>>> entry1 : usedInMethod.entrySet()) {
+			String className = entry1.getKey();
+			for (Entry<String, List<String>> entry2 : entry1.getValue().entrySet()) {
+				String methodName = entry2.getKey();
 				for (int i = 0; i < usedInMethod.get(className).get(methodName).size(); i += 2) {
 					String tempClassName = usedInMethod.get(className).get(methodName).get(i);
 					String tempMethodName = usedInMethod.get(className).get(methodName).get(i + 1);
-					if(classCount.containsKey(tempClassName) && classCount.get(tempClassName).containsKey(tempMethodName)) {
-						if (classCount.get(tempClassName).get(tempMethodName).indexOf(className) == -1 && noInheritance(className, tempClassName)) {
-							classCount.get(tempClassName).get(tempMethodName).add(className);
-						}
+					if (classCount.containsKey(tempClassName)
+							&& classCount.get(tempClassName).containsKey(tempMethodName)
+							&& isNewClass(tempClassName, tempMethodName, className)) {
+						classCount.get(tempClassName).get(tempMethodName).add(className);
 					}
-					if(methodCount.containsKey(tempClassName) && methodCount.get(tempClassName).containsKey(tempMethodName)) {
-						if (methodCount.get(tempClassName).get(tempMethodName).indexOf(className + methodName) == -1 && noInheritance(className, tempClassName)) {
-							methodCount.get(tempClassName).get(tempMethodName).add(className + methodName);
-						}
-					}
-				}
-			}
-		}
-	}
-	
-	private void comparedWithUsedInVariable() {
-		for (String className : usedInVariable.keySet()) {
-			for (String variableName : usedInVariable.get(className).keySet()) {
-				for (int i = 0; i < usedInVariable.get(className).get(variableName).size(); i += 2) {
-					String tempClassName = usedInVariable.get(className).get(variableName).get(i);
-					String tempMethodName = usedInVariable.get(className).get(variableName).get(i + 1);
-					if(classCount.containsKey(tempClassName) && classCount.get(tempClassName).containsKey(tempMethodName)) {
-						if (classCount.get(tempClassName).get(tempMethodName).indexOf(className) == -1 && noInheritance(className, tempClassName)) {
-							classCount.get(tempClassName).get(tempMethodName).add(className);
-						}
+					if (methodCount.containsKey(tempClassName)
+							&& methodCount.get(tempClassName).containsKey(tempMethodName)
+							&& isNewMethod(tempClassName, tempMethodName, className, methodName)) {
+						methodCount.get(tempClassName).get(tempMethodName).add(className + methodName);
 					}
 				}
 			}
 		}
 	}
 
+	private void comparedWithUsedInVariable() {
+		for (Entry<String, Map<String, List<String>>> entry1 : usedInVariable.entrySet()) {
+			String className = entry1.getKey();
+			for (Entry<String, List<String>> entry2 : entry1.getValue().entrySet()) {
+				String variableName = entry2.getKey();
+				for (int i = 0; i < usedInVariable.get(className).get(variableName).size(); i += 2) {
+					String tempClassName = usedInVariable.get(className).get(variableName).get(i);
+					String tempMethodName = usedInVariable.get(className).get(variableName).get(i + 1);
+					if (classCount.containsKey(tempClassName)
+							&& classCount.get(tempClassName).containsKey(tempMethodName)
+							&& isNewClass(tempClassName, tempMethodName, className)) {
+						classCount.get(tempClassName).get(tempMethodName).add(className);
+					}
+				}
+			}
+		}
+	}
+
+	private Boolean isNewClass(String tempClassName, String tempMethodName, String className) {
+		return classCount.get(tempClassName).get(tempMethodName).indexOf(className) == -1
+				&& noInheritance(className, tempClassName);
+	}
+
+	private Boolean isNewMethod(String tempClassName, String tempMethodName, String className, String methodName) {
+		return methodCount.get(tempClassName).get(tempMethodName).indexOf(className + methodName) == -1
+				&& noInheritance(className, tempClassName);
+	}
+
 	private Boolean noInheritance(String thisClass, String superClass) {
-		for (int i = 0; i < Inheritance.size(); i++) {
-			if (Inheritance.get(i).indexOf(thisClass) != -1 && Inheritance.get(i).indexOf(superClass) != -1) {
+		for (int i = 0; i < inHeritance.size(); i++) {
+			if (inHeritance.get(i).indexOf(thisClass) != -1 && inHeritance.get(i).indexOf(superClass) != -1) {
 				return false;
 			}
 		}
@@ -358,26 +376,35 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 	}
 
 	private void showSmell() {
-		for (String className : methodCount.keySet()) {
-			for (String methodName : methodCount.get(className).keySet()) {
-				for (String className2 : location.keySet()) {
-					for (MethodTree methodtree : location.get(className2).keySet()) {
+		for (Entry<String, Map<String, List<String>>> entry1 : methodCount.entrySet()) {
+			String className = entry1.getKey();
+			for (Entry<String, List<String>> entry2 : entry1.getValue().entrySet()) {
+				String methodName = entry2.getKey();
+				for (Entry<String, Map<MethodTree, JavaFileScannerContext>> entry3 : location.entrySet()) {
+					String className2 = entry3.getKey();
+					for (Entry<MethodTree, JavaFileScannerContext> entry4 : entry3.getValue().entrySet()) {
+						MethodTree methodtree = entry4.getKey();
 						String methodName2 = methodtree.simpleName().name();
-						if (methodCount.get(className).get(methodName).size() > 7 && classCount.get(className).get(methodName).size() > 10) {
-							if (className.equals(className2) && methodName.equals(methodName2)) {
-								if (!hasShowed.containsKey(className)) {
-									location.get(className2).get(methodtree).addIssue(methodtree.openParenToken().line(),this, "Code smell \"Shotgun Surgery\" occurred in method \"" + methodName + "\" !");
-									hasShowed.put(className, new ArrayList<String>());
-									hasShowed.get(className).add(methodName);
-								} else if (hasShowed.get(className).indexOf(methodName) == -1) {
-									location.get(className2).get(methodtree).addIssue(methodtree.openParenToken().line(),this, "Code smell \"Shotgun Surgery\" occurred in method \"" + methodName + "\" !");
-									hasShowed.get(className).add(methodName);
-								}
+						if (methodCount.get(className).get(methodName).size() > 7
+								&& classCount.get(className).get(methodName).size() > 10
+								&& isEqual(className, className2, methodName, methodName2)) {
+							if (!hasShowed.containsKey(className)) {
+								entry4.getValue().addIssue(methodtree.openParenToken().line(), this,
+										"Code smell \"Shotgun Surgery\" occurred in method \"" + methodName + "\" !");
+								hasShowed.put(className, new ArrayList<String>());
+							} else if (hasShowed.get(className).indexOf(methodName) == -1) {
+								entry4.getValue().addIssue(methodtree.openParenToken().line(), this,
+										"Code smell \"Shotgun Surgery\" occurred in method \"" + methodName + "\" !");
 							}
+							hasShowed.get(className).add(methodName);
 						}
 					}
 				}
 			}
 		}
+	}
+
+	private Boolean isEqual(String className, String className2, String methodName, String methodName2) {
+		return className.equals(className2) && methodName.equals(methodName2);
 	}
 }
