@@ -323,14 +323,14 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 				for (int i = 0; i < usedInMethod.get(className).get(methodName).size(); i += 2) {
 					String tempClassName = usedInMethod.get(className).get(methodName).get(i);
 					String tempMethodName = usedInMethod.get(className).get(methodName).get(i + 1);
+					Boolean b1 = isNewClass(tempClassName, tempMethodName, className);
 					if (classCount.containsKey(tempClassName)
-							&& classCount.get(tempClassName).containsKey(tempMethodName)
-							&& isNewClass(tempClassName, tempMethodName, className)) {
+							&& classCount.get(tempClassName).containsKey(tempMethodName) && Boolean.TRUE.equals(b1)) {
 						classCount.get(tempClassName).get(tempMethodName).add(className);
 					}
+					Boolean b2 = isNewMethod(tempClassName, tempMethodName, className, methodName);
 					if (methodCount.containsKey(tempClassName)
-							&& methodCount.get(tempClassName).containsKey(tempMethodName)
-							&& isNewMethod(tempClassName, tempMethodName, className, methodName)) {
+							&& methodCount.get(tempClassName).containsKey(tempMethodName) && Boolean.TRUE.equals(b2)) {
 						methodCount.get(tempClassName).get(tempMethodName).add(className + methodName);
 					}
 				}
@@ -346,9 +346,9 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 				for (int i = 0; i < usedInVariable.get(className).get(variableName).size(); i += 2) {
 					String tempClassName = usedInVariable.get(className).get(variableName).get(i);
 					String tempMethodName = usedInVariable.get(className).get(variableName).get(i + 1);
+					Boolean b = isNewClass(tempClassName, tempMethodName, className);
 					if (classCount.containsKey(tempClassName)
-							&& classCount.get(tempClassName).containsKey(tempMethodName)
-							&& isNewClass(tempClassName, tempMethodName, className)) {
+							&& classCount.get(tempClassName).containsKey(tempMethodName) && Boolean.TRUE.equals(b)) {
 						classCount.get(tempClassName).get(tempMethodName).add(className);
 					}
 				}
@@ -385,9 +385,9 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 					for (Entry<MethodTree, JavaFileScannerContext> entry4 : entry3.getValue().entrySet()) {
 						MethodTree methodtree = entry4.getKey();
 						String methodName2 = methodtree.simpleName().name();
-						if (methodCount.get(className).get(methodName).size() > 7
-								&& classCount.get(className).get(methodName).size() > 10
-								&& isEqual(className, className2, methodName, methodName2)) {
+						Boolean b = isEqual(className, className2, methodName, methodName2);
+						if ((methodCount.get(className).get(methodName).size() > 0
+								|| classCount.get(className).get(methodName).size() > 0) && Boolean.TRUE.equals(b)) {
 							if (!hasShowed.containsKey(className)) {
 								entry4.getValue().addIssue(methodtree.openParenToken().line(), this,
 										"Code smell \"Shotgun Surgery\" occurred in method \"" + methodName + "\" !");
