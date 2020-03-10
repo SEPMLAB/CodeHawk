@@ -320,35 +320,31 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 			String className = entry1.getKey();
 			for (Entry<String, List<String>> entry2 : entry1.getValue().entrySet()) {
 				String methodName = entry2.getKey();
-				for (int i = 0; i < usedInMethod.get(className).get(methodName).size(); i += 2) {
-					String tempClassName = usedInMethod.get(className).get(methodName).get(i);
-					String tempMethodName = usedInMethod.get(className).get(methodName).get(i + 1);
-					Boolean b1 = isNewClass(tempClassName, tempMethodName, className);
-					if (classCount.containsKey(tempClassName)
-							&& classCount.get(tempClassName).containsKey(tempMethodName) && Boolean.TRUE.equals(b1)) {
+				for (int i = 0; i < entry2.getValue().size(); i += 2) {
+					String tempClassName = entry2.getValue().get(i);
+					String tempMethodName = entry2.getValue().get(i + 1);
+					Boolean b1 = containClass(tempClassName,tempMethodName);
+					if(Boolean.TRUE.equals(b1) && classCount.get(tempClassName).get(tempMethodName).indexOf(className) == -1 && noInheritance(className, tempClassName)) {
 						classCount.get(tempClassName).get(tempMethodName).add(className);
 					}
-					Boolean b2 = isNewMethod(tempClassName, tempMethodName, className, methodName);
-					if (methodCount.containsKey(tempClassName)
-							&& methodCount.get(tempClassName).containsKey(tempMethodName) && Boolean.TRUE.equals(b2)) {
-						methodCount.get(tempClassName).get(tempMethodName).add(className + methodName);
+					Boolean b2 = containMethod(tempClassName,tempMethodName);
+					if(Boolean.TRUE.equals(b2) && methodCount.get(tempClassName).get(tempMethodName).indexOf(className + methodName) == -1 && noInheritance(className, tempClassName)) {
+							methodCount.get(tempClassName).get(tempMethodName).add(className + methodName);
 					}
 				}
 			}
 		}
 	}
-
+	
 	private void comparedWithUsedInVariable() {
 		for (Entry<String, Map<String, List<String>>> entry1 : usedInVariable.entrySet()) {
 			String className = entry1.getKey();
 			for (Entry<String, List<String>> entry2 : entry1.getValue().entrySet()) {
-				String variableName = entry2.getKey();
-				for (int i = 0; i < usedInVariable.get(className).get(variableName).size(); i += 2) {
-					String tempClassName = usedInVariable.get(className).get(variableName).get(i);
-					String tempMethodName = usedInVariable.get(className).get(variableName).get(i + 1);
-					Boolean b = isNewClass(tempClassName, tempMethodName, className);
-					if (classCount.containsKey(tempClassName)
-							&& classCount.get(tempClassName).containsKey(tempMethodName) && Boolean.TRUE.equals(b)) {
+				for (int i = 0; i <  entry2.getValue().size(); i += 2) {
+					String tempClassName = entry2.getValue().get(i);
+					String tempMethodName = entry2.getValue().get(i + 1);
+					Boolean b = containClass(tempClassName, tempMethodName);
+					if (Boolean.TRUE.equals(b) && classCount.containsKey(tempClassName) && classCount.get(tempClassName).containsKey(tempMethodName)) {
 						classCount.get(tempClassName).get(tempMethodName).add(className);
 					}
 				}
@@ -356,14 +352,12 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 		}
 	}
 
-	private Boolean isNewClass(String tempClassName, String tempMethodName, String className) {
-		return classCount.get(tempClassName).get(tempMethodName).indexOf(className) == -1
-				&& noInheritance(className, tempClassName);
+	private Boolean containClass(String tempClassName, String tempMethodName) {
+		return classCount.containsKey(tempClassName) && classCount.get(tempClassName).containsKey(tempMethodName);
 	}
-
-	private Boolean isNewMethod(String tempClassName, String tempMethodName, String className, String methodName) {
-		return methodCount.get(tempClassName).get(tempMethodName).indexOf(className + methodName) == -1
-				&& noInheritance(className, tempClassName);
+	
+	private Boolean containMethod(String tempClassName, String tempMethodName) {
+		return methodCount.containsKey(tempClassName) && classCount.get(tempClassName).containsKey(tempMethodName);
 	}
 
 	private Boolean noInheritance(String thisClass, String superClass) {
@@ -386,8 +380,8 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 						MethodTree methodtree = entry4.getKey();
 						String methodName2 = methodtree.simpleName().name();
 						Boolean b = isEqual(className, className2, methodName, methodName2);
-						if (methodCount.get(className).get(methodName).size() > 7
-								&& classCount.get(className).get(methodName).size() > 10 && Boolean.TRUE.equals(b)) {
+						if ((methodCount.get(className).get(methodName).size() > 0
+								|| classCount.get(className).get(methodName).size() > 0) && Boolean.TRUE.equals(b)) {
 							if (!hasShowed.containsKey(className)) {
 								entry4.getValue().addIssue(methodtree.openParenToken().line(), this,
 										"Code smell \"Shotgun Surgery\" occurred in method \"" + methodName + "\" !");
