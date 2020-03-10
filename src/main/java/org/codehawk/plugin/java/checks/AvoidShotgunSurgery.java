@@ -323,12 +323,12 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 				for (int i = 0; i < entry2.getValue().size(); i += 2) {
 					String tempClassName = entry2.getValue().get(i);
 					String tempMethodName = entry2.getValue().get(i + 1);
-					Boolean b1 = containClass(tempClassName,tempMethodName);
-					if(Boolean.TRUE.equals(b1) && classCount.get(tempClassName).get(tempMethodName).indexOf(className) == -1 && noInheritance(className, tempClassName)) {
+					Boolean b1 = containClass(tempClassName,tempMethodName) && classCount.get(tempClassName).get(tempMethodName).indexOf(className) == -1 && noInheritance(className, tempClassName);
+					if(Boolean.TRUE.equals(b1)) {
 						classCount.get(tempClassName).get(tempMethodName).add(className);
 					}
-					Boolean b2 = containMethod(tempClassName,tempMethodName);
-					if(Boolean.TRUE.equals(b2) && methodCount.get(tempClassName).get(tempMethodName).indexOf(className + methodName) == -1 && noInheritance(className, tempClassName)) {
+					Boolean b2 = containMethod(tempClassName,tempMethodName) && methodCount.get(tempClassName).get(tempMethodName).indexOf(className + methodName) == -1 && noInheritance(className, tempClassName);
+					if(Boolean.TRUE.equals(b2)) {
 							methodCount.get(tempClassName).get(tempMethodName).add(className + methodName);
 					}
 				}
@@ -379,16 +379,13 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 					for (Entry<MethodTree, JavaFileScannerContext> entry4 : entry3.getValue().entrySet()) {
 						MethodTree methodtree = entry4.getKey();
 						String methodName2 = methodtree.simpleName().name();
-						Boolean b = isEqual(className, className2, methodName, methodName2);
-						if ((methodCount.get(className).get(methodName).size() > 0
-								|| classCount.get(className).get(methodName).size() > 0) && Boolean.TRUE.equals(b)) {
+						Boolean b = isEqual(className, className2, methodName, methodName2) && methodCount.get(className).get(methodName).size() > 7 && classCount.get(className).get(methodName).size() > 10;
+						if (Boolean.TRUE.equals(b)) {
 							if (!hasShowed.containsKey(className)) {
-								entry4.getValue().addIssue(methodtree.openParenToken().line(), this,
-										"Code smell \"Shotgun Surgery\" occurred in method \"" + methodName + "\" !");
+								entry4.getValue().addIssue(methodtree.openParenToken().line(), this,"Code smell \"Shotgun Surgery\" occurred in method \"" + methodName + "\" !");
 								hasShowed.put(className, new ArrayList<String>());
 							} else if (hasShowed.get(className).indexOf(methodName) == -1) {
-								entry4.getValue().addIssue(methodtree.openParenToken().line(), this,
-										"Code smell \"Shotgun Surgery\" occurred in method \"" + methodName + "\" !");
+								entry4.getValue().addIssue(methodtree.openParenToken().line(), this,"Code smell \"Shotgun Surgery\" occurred in method \"" + methodName + "\" !");
 							}
 							hasShowed.get(className).add(methodName);
 						}
