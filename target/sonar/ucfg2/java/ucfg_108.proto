@@ -1,220 +1,0 @@
-
-dorg.codehawk.plugin.java.checks.AvoidMemberClumps#visitNode(Lorg/sonar/plugins/java/api/tree/Tree;)Vq
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java ("paramAnnotations*Ç
-2q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java1 1(ı
-Ú
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java1 1(2
-%17+org.codehawk.smell.modler.DataClumpDetector"__id*C*A3
-1org.codehawk.plugin.java.checks.AvoidMemberClumps"
-
-detectoråâ
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java1 1(+
-%18void"Üorg.codehawk.smell.modler.DataClumpDetector#reportSmell(Lorg/codehawk/smell/modler/DataMember;Lorg/sonar/plugins/java/api/JavaCheck;)V*4
-2
-%17+org.codehawk.smell.modler.DataClumpDetector*6
-4
-classMembers$org.codehawk.smell.modler.DataMember*53
-1org.codehawk.plugin.java.checks.AvoidMemberClumps2YreportSmell(Lorg/codehawk/smell/modler/DataMember;Lorg/sonar/plugins/java/api/JavaCheck;)*
-1*Ó
-3q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java0 0(ı
-Ú
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java0 0(2
-%15+org.codehawk.smell.modler.DataClumpDetector"__id*C*A3
-1org.codehawk.plugin.java.checks.AvoidMemberClumps"
-
-detectorıÚ
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java0 0("
-%16boolean"Uorg.codehawk.smell.modler.DataClumpDetector#detect(Lorg/codehawk/smell/modler/Node;)Z*4
-2
-%15+org.codehawk.smell.modler.DataClumpDetector*6
-4
-classMembers$org.codehawk.smell.modler.DataMember2(detect(Lorg/codehawk/smell/modler/Node;)*
-2
-1*∞
-4q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java& &(Ø
-¨
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java& &()
-t$org.sonar.plugins.java.api.tree.Tree"__id*
-""*
-3
-6*®
-5q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java(% ((&›
-⁄
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java( (('2
-vt,org.sonar.plugins.java.api.tree.VariableTree"__id*+
-)
-t$org.sonar.plugins.java.api.tree.Tree‹Ÿ
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java) )(!5
-%11.org.sonar.plugins.java.api.tree.IdentifierTree"iorg.sonar.plugins.java.api.tree.VariableTree#simpleName()Lorg/sonar/plugins/java/api/tree/IdentifierTree;*4
-2
-vt,org.sonar.plugins.java.api.tree.VariableTree2simpleName()ôñ
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java) )((
-%12java.lang.String"Gorg.sonar.plugins.java.api.tree.IdentifierTree#name()Ljava/lang/String;*7
-5
-%11.org.sonar.plugins.java.api.tree.IdentifierTree2name()±
-Æ
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java) )()
-namejava.lang.String"__id*
-
-%12java.lang.StringàÖ
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java* *(&
-%13boolean"Mcom.google.common.collect.Multimap#put(Ljava/lang/Object;Ljava/lang/Object;)Z*2
-0
-
-nameToNode"com.google.common.collect.Multimap*
-
-namejava.lang.String*6
-4
-classMembers$org.codehawk.smell.modler.DataMember2)put(Ljava/lang/Object;Ljava/lang/Object;)êç
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java, ,(
-%14boolean"_org.codehawk.smell.modler.DataMember#addmember(Lorg/sonar/plugins/java/api/tree/VariableTree;)Z*6
-4
-classMembers$org.codehawk.smell.modler.DataMember*4
-2
-vt,org.sonar.plugins.java.api.tree.VariableTree29addmember(Lorg/sonar/plugins/java/api/tree/VariableTree;)*
-4*·
-6q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java' '(µ
-≤
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java' '(/
-%8)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
-""µ
-≤
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java' '(/
-%9)org.sonar.plugins.java.api.tree.Tree$Kind"__id*
-""Ì
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java' '(
-%10boolean"Vorg.sonar.plugins.java.api.tree.Tree#is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)Z*+
-)
-t$org.sonar.plugins.java.api.tree.Tree*1
-/
-%9)org.sonar.plugins.java.api.tree.Tree$Kind20is([Lorg/sonar/plugins/java/api/tree/Tree$Kind;)*
-4
-5*ç
-7q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java& &(èå
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java& &(
-%7java.util.List"Corg.sonar.plugins.java.api.tree.ClassTree#members()Ljava/util/List;*1
-/
-ct)org.sonar.plugins.java.api.tree.ClassTree2	members()*
-4*Ò
-8q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java   (!›
-⁄
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java   ("/
-ct)org.sonar.plugins.java.api.tree.ClassTree"__id*.
-,
-tree$org.sonar.plugins.java.api.tree.Tree˘
-ˆ
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java!+ !(27
-%01org.sonar.plugins.java.api.JavaFileScannerContext"__id*B*@3
-1org.codehawk.plugin.java.checks.AvoidMemberClumps"	
-context◊‘
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java!4 !(G1
-%1+org.sonar.plugins.java.api.tree.SyntaxToken"gorg.sonar.plugins.java.api.tree.ClassTree#openBraceToken()Lorg/sonar/plugins/java/api/tree/SyntaxToken;*1
-/
-ct)org.sonar.plugins.java.api.tree.ClassTree2openBraceToken()Û
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java!4 !(N	
-%2int"3org.sonar.plugins.java.api.tree.SyntaxToken#line()I*3
-1
-%1+org.sonar.plugins.java.api.tree.SyntaxToken2line()»≈
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java!  !(**
-%3$org.codehawk.smell.modler.DataMember"$org.codehawk.smell.modler.DataMemberÛ
-
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java! !(X
-%4"torg.codehawk.smell.modler.DataMember#<init>(Lorg/sonar/plugins/java/api/JavaFileScannerContext;ILjava/lang/String;)V*,
-*
-%3$org.codehawk.smell.modler.DataMember*9
-7
-%01org.sonar.plugins.java.api.JavaFileScannerContext*
-	
-%2int*	
-class‡
-›
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java! !(Y4
-classMembers$org.codehawk.smell.modler.DataMember"__id*,
-*
-%3$org.codehawk.smell.modler.DataMemberΩ
-∫
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java#, #(F1
-%5+com.google.common.collect.ArrayListMultimap"acom.google.common.collect.ArrayListMultimap#create()Lcom/google/common/collect/ArrayListMultimap;*/"-
-+com.google.common.collect.ArrayListMultimap„
-‡
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java# #(G0
-
-nameToNode"com.google.common.collect.Multimap"__id*3
-1
-%5+com.google.common.collect.ArrayListMultimap*
-7*ö
-paramAnnotationsq
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java (!–
-Õ
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java (
-
-%6"
-__annotate*
-java.lang.Override*.
-,
-tree$org.sonar.plugins.java.api.tree.Tree∫
-∑
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java ( ,
-tree$org.sonar.plugins.java.api.tree.Tree"__annotation*
-
-%6*
-8*ê
-0 "à
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java4 4(
-implicit return*Ï
-1q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java3 3(
-ı
-Ú
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java3 3(
-2
-%19+org.codehawk.smell.modler.DataClumpDetector"__id*C*A3
-1org.codehawk.plugin.java.checks.AvoidMemberClumps"
-
-detectorˆÛ
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidMemberClumps.java3 3(
-%20void"Yorg.codehawk.smell.modler.DataClumpDetector#putAll(Lcom/google/common/collect/Multimap;)V*4
-2
-%19+org.codehawk.smell.modler.DataClumpDetector*2
-0
-
-nameToNode"com.google.common.collect.Multimap2,putAll(Lcom/google/common/collect/Multimap;)*
-0:,
-tree$org.sonar.plugins.java.api.tree.TreeB53
-1org.codehawk.plugin.java.checks.AvoidMemberClumps

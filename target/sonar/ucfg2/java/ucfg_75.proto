@@ -1,22 +1,0 @@
-
-1org.codehawk.smell.modler.StringGroup#hashCode()Ie
-[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java% %("1*ï
-1e
-[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java&	 &(¼
-¹
-e
-[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java& &(
-%0java.util.List"__id*4*2'
-%org.codehawk.smell.modler.StringGroup"
-namesÒ
-Ï
-e
-[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java&	 &(	
-%1int",java.util.Objects#hash([Ljava/lang/Object;)I*"
-java.util.Objects*
-
-%0java.util.List"o
-e
-[C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/StringGroup.java& &(
-""B)'
-%org.codehawk.smell.modler.StringGroup

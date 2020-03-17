@@ -1,29 +1,0 @@
-
-Dorg.codehawk.smell.metricruler.GetLines#treeLines(Ljava/util/List;)Ig
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javao o( "2*ú
-2g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaq q(ƒ
-€
-g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javaq q(
-stE"__id*
-""*
-3
-1*ð
-3g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javar r(ü
-ù
-g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javar r(	
-%0int"Korg.codehawk.smell.metricruler.GetLines#recursiveLines(Ljava/lang/Object;)I*+")
-'org.codehawk.smell.metricruler.GetLines*	
-
-stE*
-2*ß
-1g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javat	 t("q
-g
-]C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/metricruler/GetLines.javat t(
-"":
-lstjava.util.ListB+")
-'org.codehawk.smell.metricruler.GetLines

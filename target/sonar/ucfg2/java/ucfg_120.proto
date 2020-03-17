@@ -1,17 +1,0 @@
-
-Lorg.codehawk.smell.modler.SwitchCaseDetector#getSmellNodes()Ljava/util/List;l
-bC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchCaseDetector.java' '(&"1*Ì
-1l
-bC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchCaseDetector.java(	 ((Ï
-Ì
-l
-bC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchCaseDetector.java(	 ((
-%0java.util.List"__id*@*>.
-,org.codehawk.smell.modler.SwitchCaseDetector"
-
-smellNodes"†
-l
-bC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchCaseDetector.java( ((
-
-%0java.util.ListB0.
-,org.codehawk.smell.modler.SwitchCaseDetector

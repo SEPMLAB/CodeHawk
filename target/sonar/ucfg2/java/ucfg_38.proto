@@ -1,21 +1,0 @@
-
-Eorg.codehawk.smell.modler.DataMember#getNames()Ljava/util/Collection;d
-ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java" "(#"1*î
-1d
-ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java#	 #(º
-·
-d
-ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java#	 #(
-%0java.util.Map"__id*4*2&
-$org.codehawk.smell.modler.DataMember"
-paramsÆÃ
-d
-ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java#	 #(
-%1java.util.Set"%java.util.Map#keySet()Ljava/util/Set;*
-
-%0java.util.Map2keySet()"}
-d
-ZC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataMember.java# #(
-
-%1java.util.SetB(&
-$org.codehawk.smell.modler.DataMember

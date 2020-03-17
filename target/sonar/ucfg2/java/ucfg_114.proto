@@ -1,15 +1,0 @@
-
-Porg.codehawk.plugin.java.MyJavaFileCheckRegistrar#checkClasses()Ljava/util/List;q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaFileCheckRegistrar.java01 0(="1*ÿ
-1q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaFileCheckRegistrar.java1 1(ø
-õ
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaFileCheckRegistrar.java1 1($
-%0java.util.List"Borg.codehawk.plugin.java.RulesList#getJavaChecks()Ljava/util/List;*&"$
-"org.codehawk.plugin.java.RulesList"‹
-q
-gC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaFileCheckRegistrar.java1 1(%
-
-%0java.util.ListB5"3
-1org.codehawk.plugin.java.MyJavaFileCheckRegistrar

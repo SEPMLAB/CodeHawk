@@ -1,15 +1,0 @@
-
-Forg.codehawk.plugin.java.RulesList#getJavaTestChecks()Ljava/util/List;b
-XC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/RulesList.java41 4(B"1*³
-1b
-XC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/RulesList.java5 5(Ë
-È
-b
-XC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/RulesList.java5 5("
-%0java.util.List"1java.util.Collections#emptyList()Ljava/util/List;*"
-java.util.Collections"|
-b
-XC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/RulesList.java5 5(#
-
-%0java.util.ListB&"$
-"org.codehawk.plugin.java.RulesList

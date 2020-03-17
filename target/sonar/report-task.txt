@@ -1,7 +1,0 @@
-organization=codehawkv1
-projectKey=SDPMLab_CodeHawk
-serverUrl=https://sonarcloud.io
-serverVersion=8.0.0.5447
-dashboardUrl=https://sonarcloud.io/dashboard?id=SDPMLab_CodeHawk
-ceTaskId=AXC7wwdG2sxIEnSfOVvP
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AXC7wwdG2sxIEnSfOVvP

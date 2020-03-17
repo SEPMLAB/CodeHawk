@@ -1,52 +1,0 @@
-
-Vorg.codehawk.smell.modler.SwitchCaseDetector#detect(Lorg/codehawk/smell/modler/Node;)Zl
-bC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchCaseDetector.java ("paramAnnotations*é
-2l
-bC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchCaseDetector.java
- ("v
-l
-bC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchCaseDetector.java (
-""*Ü
-3l
-bC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchCaseDetector.java (Ï
-Ì
-l
-bC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchCaseDetector.java (
-%0java.util.List"__id*@*>.
-,org.codehawk.smell.modler.SwitchCaseDetector"
-
-smellNodesŽ‹
-l
-bC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchCaseDetector.java (
-%1boolean",java.util.List#contains(Ljava/lang/Object;)Z*
-
-%0java.util.List*(
-&
-nodeorg.codehawk.smell.modler.Node2contains(Ljava/lang/Object;)*
-2
-1*ÿ
-paramAnnotationsl
-bC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchCaseDetector.java (!Å
-Â
-l
-bC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchCaseDetector.java (
-
-%2"
-__annotate*
-java.lang.Override*(
-&
-nodeorg.codehawk.smell.modler.Node¯
-¬
-l
-bC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchCaseDetector.java ( &
-nodeorg.codehawk.smell.modler.Node"__annotation*
-
-%2*
-3*é
-1l
-bC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchCaseDetector.java	 ("v
-l
-bC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/SwitchCaseDetector.java (
-"":&
-nodeorg.codehawk.smell.modler.NodeB0.
-,org.codehawk.smell.modler.SwitchCaseDetector

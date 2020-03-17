@@ -1,33 +1,0 @@
-
-Yorg.codehawk.smell.smellruler.LargeMethod#is(Lorg/codehawk/smell/smellruler/Smell$Type;)Zi
-_C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LargeMethod.java ("paramAnnotations*Š
-paramAnnotationsi
-_C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LargeMethod.java (Ì
-É
-i
-_C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LargeMethod.java (
-
-%1"
-__annotate*
-java.lang.Override*2
-0
-type(org.codehawk.smell.smellruler.Smell$Type¶
-³
-i
-_C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LargeMethod.java (0
-type(org.codehawk.smell.smellruler.Smell$Type"__annotation*
-
-%1*
-1*’
-1i
-_C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LargeMethod.java	 (¬
-©
-i
-_C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LargeMethod.java	 (.
-%0(org.codehawk.smell.smellruler.Smell$Type"__id*
-"""s
-i
-_C:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/smellruler/LargeMethod.java (
-"":0
-type(org.codehawk.smell.smellruler.Smell$TypeB-+
-)org.codehawk.smell.smellruler.LargeMethod

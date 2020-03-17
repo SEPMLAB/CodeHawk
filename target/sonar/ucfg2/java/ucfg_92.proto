@@ -1,83 +1,0 @@
-
-zorg.codehawk.plugin.java.checks.AvoidShotgunSurgery#noInheritance(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Boolean;u
-iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.javaß ß("6*û
-3u
-iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.javaâ â("
-u
-iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.javaâ â(
-""*°
-4u
-iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.javaá6 á(Aà
-Ý
-u
-iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.javaá6 á(A
-%5java.util.List"__id*H*F5
-3org.codehawk.plugin.java.checks.AvoidShotgunSurgery"
-Inheritance¼
-¹
-u
-iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.javaá6 á(H
-%6java.util.List"
-__arrayGet*
-
-%5java.util.List*
-""‰†
-u
-iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.javaá6 á(\	
-%7int"+java.util.List#indexOf(Ljava/lang/Object;)I*
-
-%6java.util.List* 
-
-
-superClassjava.lang.String2indexOf(Ljava/lang/Object;)*
-3
-6*¯
-5u
-iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.javaá á(à
-Ý
-u
-iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.javaá á(
-%2java.util.List"__id*H*F5
-3org.codehawk.plugin.java.checks.AvoidShotgunSurgery"
-Inheritance¼
-¹
-u
-iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.javaá á(
-%3java.util.List"
-__arrayGet*
-
-%2java.util.List*
-""ˆ…
-u
-iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.javaá á(,	
-%4int"+java.util.List#indexOf(Ljava/lang/Object;)I*
-
-%3java.util.List*
-
-	thisClassjava.lang.String2indexOf(Ljava/lang/Object;)*
-4
-6*¥
-6u
-iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.javaà à(à
-Ý
-u
-iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.javaà à(!
-%0java.util.List"__id*H*F5
-3org.codehawk.plugin.java.checks.AvoidShotgunSurgery"
-Inheritance½º
-u
-iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.javaà à((	
-%1int"java.util.List#size()I*
-
-%0java.util.List2size()*
-5
-1*û
-1u
-iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.javaå	 å("
-u
-iC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/checks/AvoidShotgunSurgery.javaå å(
-"":
-	thisClassjava.lang.String:
-
-superClassjava.lang.StringB75
-3org.codehawk.plugin.java.checks.AvoidShotgunSurgery

@@ -1,80 +1,0 @@
-
-]org.codehawk.plugin.java.MyJavaRulesDefinition#readResource(Ljava/net/URL;)Ljava/lang/String;n
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.javar r($"9*€
-3n
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.javat t(>"Š
-n
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.javat t(>
-
-%7java.lang.String*Ã
-4n
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.javat t(=ÈÅ
-n
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.javat t(=
-%7java.lang.String"Ojava.util.stream.Stream#collect(Ljava/util/stream/Collector;)Ljava/lang/Object;*
-
-%5java.util.stream.Stream*"
- 
-%6java.util.stream.Collector2%collect(Ljava/util/stream/Collector;)*
-3*”
-5n
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.javat$ t(.™
-–
-n
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.javat$ t(< 
-%6java.util.stream.Collector"Yjava.util.stream.Collectors#joining(Ljava/lang/CharSequence;)Ljava/util/stream/Collector;*"
-java.util.stream.Collectors*
-\n*
-4*±
-6n
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.javas	 s(a»
-¸
-n
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.javas	 s(a 
-readerjava.io.BufferedReader"__id*
-
-%3java.io.BufferedReaderøõ
-n
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.javat t(
-%5java.util.stream.Stream"7java.io.BufferedReader#lines()Ljava/util/stream/Stream;*"
- 
-readerjava.io.BufferedReader2lines()*
-5*•
-7n
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.javas! s(a©¦
-n
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.javas% s(3
-%3java.io.BufferedReader"java.io.BufferedReaderî
-ë
-n
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.javas! s(a
-%4"0java.io.BufferedReader#<init>(Ljava/io/Reader;)V*
-
-%3java.io.BufferedReader*!
-
-%1java.io.InputStreamReader*
-6* 
-8n
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.javas4 s(`¯¬
-n
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.javas8 s(I
-%1java.io.InputStreamReader"java.io.InputStreamReaderó
-ð
-n
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.javas4 s(`
-%2"8java.io.InputStreamReader#<init>(Ljava/io/InputStream;)V*!
-
-%1java.io.InputStreamReader*
-
-%0java.io.InputStream*
-7*ã
-9n
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.javasJ s(Rèå
-n
-dC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/plugin/java/MyJavaRulesDefinition.javasJ s(_
-%0java.io.InputStream".java.net.URL#openStream()Ljava/io/InputStream;*
-
-resourcejava.net.URL2openStream()*
-8:
-resourcejava.net.URLB2"0
-.org.codehawk.plugin.java.MyJavaRulesDefinition

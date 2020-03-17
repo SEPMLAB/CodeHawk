@@ -14,7 +14,6 @@ org\codehawk\smell\modler\DataClumpDetector.class
 org\codehawk\plugin\java\MyJavaFileCheckRegistrar.class
 org\codehawk\smell\metricruler\GetLines.class
 org\codehawk\smell\smellruler\LargeMethod.class
-org\codehawk\plugin\java\functioningClass\GetClass.class
 org\codehawk\smell\modler\SwitchCaseDetector.class
 org\codehawk\plugin\java\checks\RefusedBequest.class
 org\codehawk\smell\modler\DataMember.class
@@ -31,6 +30,7 @@ org\codehawk\plugin\java\checks\ExtendClassTree.class
 org\codehawk\plugin\java\MyJavaRulesDefinition.class
 org\codehawk\plugin\java\MyJavaRulesDefinition$RuleMetatada.class
 org\codehawk\smell\smellruler\TooManyCasesInOneSwitch.class
+org\codehawk\plugin\java\functioningclass\GetClass.class
 org\codehawk\plugin\java\MyJavaRulesDefinition$Remediation.class
 org\codehawk\smell\modler\StringGroup.class
 org\codehawk\plugin\java\checks\AvoidTooManyCasesInOneSwitch.class

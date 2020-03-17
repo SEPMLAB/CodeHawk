@@ -1,128 +1,0 @@
-
-Uorg.codehawk.smell.modler.DataClumpDetector#detect(Lorg/codehawk/smell/modler/Node;)Zk
-aC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataClumpDetector.java ("paramAnnotations*ì
-2k
-aC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataClumpDetector.java (ò
-ï
-k
-aC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataClumpDetector.java (
-namejava.lang.String"__id*
-""*
-5
-1*§
-3k
-aC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataClumpDetector.java (©
-¶
-k
-aC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataClumpDetector.java ()
-m$org.codehawk.smell.modler.DataMember"__id*
-""*
-2
-4*
-4k
-aC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataClumpDetector.java (¯ı
-k
-aC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataClumpDetector.java (
-%5boolean"Mcom.google.common.collect.Multimap#put(Ljava/lang/Object;Ljava/lang/Object;)Z*4
-2
-memberToName"com.google.common.collect.Multimap*+
-)
-m$org.codehawk.smell.modler.DataMember*
-
-namejava.lang.String2)put(Ljava/lang/Object;Ljava/lang/Object;)*
-3*õ
-5k
-aC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataClumpDetector.java (·
-ﬁ
-k
-aC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataClumpDetector.java ((
-%3"com.google.common.collect.Multimap"__id*?*=-
-+org.codehawk.smell.modler.DataClumpDetector"
-
-nameToNodeøº
-k
-aC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataClumpDetector.java ()
-%4java.util.Collection"Pcom.google.common.collect.Multimap#get(Ljava/lang/Object;)Ljava/util/Collection;**
-(
-%3"com.google.common.collect.Multimap*
-
-namejava.lang.String2get(Ljava/lang/Object;)*
-3*Ö
-6k
-aC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataClumpDetector.java (çä
-k
-aC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataClumpDetector.java ( 
-%2java.util.Collection"Eorg.codehawk.smell.modler.DataMember#getNames()Ljava/util/Collection;*,
-*
-dm$org.codehawk.smell.modler.DataMember2
-getNames()*
-2*¿
-7k
-aC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataClumpDetector.java (#Ã
-…
-k
-aC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataClumpDetector.java ($*
-dm$org.codehawk.smell.modler.DataMember"__id*(
-&
-nodeorg.codehawk.smell.modler.Node›
-⁄
-k
-aC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataClumpDetector.java (7-
-+org.codehawk.smell.modler.DataClumpDetector"
-node"__id*,
-*
-dm$org.codehawk.smell.modler.DataMember∑
-¥
-k
-aC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataClumpDetector.java. (H1
-%0+com.google.common.collect.ArrayListMultimap"acom.google.common.collect.ArrayListMultimap#create()Lcom/google/common/collect/ArrayListMultimap;*/"-
-+com.google.common.collect.ArrayListMultimapﬂ
-‹
-k
-aC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataClumpDetector.java (I2
-memberToName"com.google.common.collect.Multimap"__id*3
-1
-%0+com.google.common.collect.ArrayListMultimap*
-6*¸
-paramAnnotationsk
-aC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataClumpDetector.java (!ƒ
-¡
-k
-aC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataClumpDetector.java (
-
-%1"
-__annotate*
-java.lang.Override*(
-&
-nodeorg.codehawk.smell.modler.NodeÆ
-´
-k
-aC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataClumpDetector.java ( &
-nodeorg.codehawk.smell.modler.Node"__annotation*
-
-%1*
-7*Î
-1k
-aC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataClumpDetector.java 	  (∆
-√
-k
-aC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataClumpDetector.java *  (1
-%6java.lang.String"__id*6*4
-*
-dm$org.codehawk.smell.modler.DataMember"
-type∏µ
-k
-aC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataClumpDetector.java 	  (2
-%7boolean"ôorg.codehawk.smell.modler.DataClumpDetector#registerClumps(Lorg/codehawk/smell/modler/DataMember;Lcom/google/common/collect/Multimap;Ljava/lang/String;)Z*/-
-+org.codehawk.smell.modler.DataClumpDetector*,
-*
-dm$org.codehawk.smell.modler.DataMember*4
-2
-memberToName"com.google.common.collect.Multimap*
-
-%6java.lang.String2lregisterClumps(Lorg/codehawk/smell/modler/DataMember;Lcom/google/common/collect/Multimap;Ljava/lang/String;)"u
-k
-aC:/Users/jason/Desktop/up/CodeHawk/src/main/java/org/codehawk/smell/modler/DataClumpDetector.java   (3
-"":&
-nodeorg.codehawk.smell.modler.NodeB/-
-+org.codehawk.smell.modler.DataClumpDetector
