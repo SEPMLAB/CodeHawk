@@ -134,25 +134,12 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 			case METHOD_INVOCATION:
 				MethodInvocationTree methodInvocationTree = (MethodInvocationTree) statementTree;
 				ExpressionTree innerExpressionTree = methodInvocationTree.methodSelect();
-				if (innerExpressionTree.is(Tree.Kind.MEMBER_SELECT)) {
-					MemberSelectExpressionTree memberSelectExpressionTree = (MemberSelectExpressionTree) innerExpressionTree;
-					if (memberSelectExpressionTree.expression().is(Tree.Kind.IDENTIFIER)) {
-						IdentifierTree frontIdentifierTree = (IdentifierTree) memberSelectExpressionTree.expression();
-						reusedList.add(checkIsObject(frontIdentifierTree.name()));
-						reusedList.add(memberSelectExpressionTree.identifier().name());
-					}
-					checkExpressionTree(memberSelectExpressionTree.expression());
-				}
+				checkMethodInvocationTree(innerExpressionTree);
 				break;
 
 			case VARIABLE:
 				VariableTree variableTree = (VariableTree) statementTree;
-				if (variableTree.initializer().is(Tree.Kind.NEW_CLASS)) {
-					objectList.add(variableTree.simpleName().name());
-					objectList.add(((IdentifierTree) variableTree.type()).name());
-				} else {
-					checkExpressionTree(variableTree.initializer());
-				}
+				checkVariableTree(variableTree);
 				break;
 
 			case EXPRESSION_STATEMENT:
@@ -217,21 +204,46 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 			case TRY_STATEMENT:// get try_catch statement in this method
 				TryStatementTree tryStatementTree = (TryStatementTree) statementTree;// check try part in this try
 																						// statement
-				if (tryStatementTree.tryKeyword() != null) {
-					checkInnerBlockTree(tryStatementTree.block());
-				}
-				List<CatchTree> catchTreeList = tryStatementTree.catches();// check catch part in this try statement
-				for (CatchTree catchtree : catchTreeList) {
-					checkInnerBlockTree(catchtree.block());
-				}
-				if (tryStatementTree.finallyKeyword() != null) {
-					checkInnerBlockTree(tryStatementTree.finallyBlock());// check finally part in this try statement
-				}
+				checkTryStatementTree(tryStatementTree);
 				break;
 
 			default:
 				break;
 			}
+		}
+	}
+	
+	private void checkMethodInvocationTree(ExpressionTree innerExpressionTree) {
+		if (innerExpressionTree.is(Tree.Kind.MEMBER_SELECT)) {
+			MemberSelectExpressionTree memberSelectExpressionTree = (MemberSelectExpressionTree) innerExpressionTree;
+			if (memberSelectExpressionTree.expression().is(Tree.Kind.IDENTIFIER)) {
+				IdentifierTree frontIdentifierTree = (IdentifierTree) memberSelectExpressionTree.expression();
+				reusedList.add(checkIsObject(frontIdentifierTree.name()));
+				reusedList.add(memberSelectExpressionTree.identifier().name());
+			}
+			checkExpressionTree(memberSelectExpressionTree.expression());
+		}
+	}
+	
+	private void checkVariableTree(VariableTree variableTree) {
+		if (variableTree.initializer().is(Tree.Kind.NEW_CLASS)) {
+			objectList.add(variableTree.simpleName().name());
+			objectList.add(((IdentifierTree) variableTree.type()).name());
+		} else {
+			checkExpressionTree(variableTree.initializer());
+		}
+	}
+	
+	private void checkTryStatementTree(TryStatementTree tryStatementTree) {
+		if (tryStatementTree.tryKeyword() != null) {
+			checkInnerBlockTree(tryStatementTree.block());
+		}
+		List<CatchTree> catchTreeList = tryStatementTree.catches();// check catch part in this try statement
+		for (CatchTree catchtree : catchTreeList) {
+			checkInnerBlockTree(catchtree.block());
+		}
+		if (tryStatementTree.finallyKeyword() != null) {
+			checkInnerBlockTree(tryStatementTree.finallyBlock());// check finally part in this try statement
 		}
 	}
 
@@ -320,35 +332,35 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 			String className = entry1.getKey();
 			for (Entry<String, List<String>> entry2 : entry1.getValue().entrySet()) {
 				String methodName = entry2.getKey();
-				for (int i = 0; i < usedInMethod.get(className).get(methodName).size(); i += 2) {
-					String tempClassName = usedInMethod.get(className).get(methodName).get(i);
-					String tempMethodName = usedInMethod.get(className).get(methodName).get(i + 1);
-					Boolean b1 = isNewClass(tempClassName, tempMethodName, className);
-					if (classCount.containsKey(tempClassName)
-							&& classCount.get(tempClassName).containsKey(tempMethodName) && Boolean.TRUE.equals(b1)) {
-						classCount.get(tempClassName).get(tempMethodName).add(className);
-					}
-					Boolean b2 = isNewMethod(tempClassName, tempMethodName, className, methodName);
-					if (methodCount.containsKey(tempClassName)
-							&& methodCount.get(tempClassName).containsKey(tempMethodName) && Boolean.TRUE.equals(b2)) {
-						methodCount.get(tempClassName).get(tempMethodName).add(className + methodName);
-					}
+				for (int i = 0; i < entry2.getValue().size(); i += 2) {
+					String tempClassName = entry2.getValue().get(i);
+					String tempMethodName = entry2.getValue().get(i + 1);
+					checkContained(tempClassName, tempMethodName, className, methodName);
 				}
 			}
 		}
 	}
-
+	
+	private void checkContained(String tempClassName, String tempMethodName,String className, String methodName) {
+		Boolean b1 = containClass(tempClassName,tempMethodName) && classCount.get(tempClassName).get(tempMethodName).indexOf(className) == -1 && noInheritance(className, tempClassName);
+		if(Boolean.TRUE.equals(b1)) {
+			classCount.get(tempClassName).get(tempMethodName).add(className);
+		}
+		Boolean b2 = containMethod(tempClassName,tempMethodName) && methodCount.get(tempClassName).get(tempMethodName).indexOf(className + methodName) == -1 && noInheritance(className, tempClassName);
+		if(Boolean.TRUE.equals(b2)) {
+				methodCount.get(tempClassName).get(tempMethodName).add(className + methodName);
+		}
+	}
+	
 	private void comparedWithUsedInVariable() {
 		for (Entry<String, Map<String, List<String>>> entry1 : usedInVariable.entrySet()) {
 			String className = entry1.getKey();
 			for (Entry<String, List<String>> entry2 : entry1.getValue().entrySet()) {
-				String variableName = entry2.getKey();
-				for (int i = 0; i < usedInVariable.get(className).get(variableName).size(); i += 2) {
-					String tempClassName = usedInVariable.get(className).get(variableName).get(i);
-					String tempMethodName = usedInVariable.get(className).get(variableName).get(i + 1);
-					Boolean b = isNewClass(tempClassName, tempMethodName, className);
-					if (classCount.containsKey(tempClassName)
-							&& classCount.get(tempClassName).containsKey(tempMethodName) && Boolean.TRUE.equals(b)) {
+				for (int i = 0; i <  entry2.getValue().size(); i += 2) {
+					String tempClassName = entry2.getValue().get(i);
+					String tempMethodName = entry2.getValue().get(i + 1);
+					Boolean b = containClass(tempClassName, tempMethodName);
+					if (Boolean.TRUE.equals(b) && classCount.containsKey(tempClassName) && classCount.get(tempClassName).containsKey(tempMethodName)) {
 						classCount.get(tempClassName).get(tempMethodName).add(className);
 					}
 				}
@@ -356,14 +368,13 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 		}
 	}
 
-	private Boolean isNewClass(String tempClassName, String tempMethodName, String className) {
-		return classCount.get(tempClassName).get(tempMethodName).indexOf(className) == -1
-				&& noInheritance(className, tempClassName);
-	}
 
-	private Boolean isNewMethod(String tempClassName, String tempMethodName, String className, String methodName) {
-		return methodCount.get(tempClassName).get(tempMethodName).indexOf(className + methodName) == -1
-				&& noInheritance(className, tempClassName);
+	private Boolean containClass(String tempClassName, String tempMethodName) {
+		return classCount.containsKey(tempClassName) && classCount.get(tempClassName).containsKey(tempMethodName);
+	}
+	
+	private Boolean containMethod(String tempClassName, String tempMethodName) {
+		return methodCount.containsKey(tempClassName) && classCount.get(tempClassName).containsKey(tempMethodName);
 	}
 
 	private Boolean noInheritance(String thisClass, String superClass) {
@@ -385,22 +396,23 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 					for (Entry<MethodTree, JavaFileScannerContext> entry4 : entry3.getValue().entrySet()) {
 						MethodTree methodtree = entry4.getKey();
 						String methodName2 = methodtree.simpleName().name();
-						Boolean b = isEqual(className, className2, methodName, methodName2);
-						if (methodCount.get(className).get(methodName).size() > 7
-								&& classCount.get(className).get(methodName).size() > 10 && Boolean.TRUE.equals(b)) {
-							if (!hasShowed.containsKey(className)) {
-								entry4.getValue().addIssue(methodtree.openParenToken().line(), this,
-										"Code smell \"Shotgun Surgery\" occurred in method \"" + methodName + "\" !");
-								hasShowed.put(className, new ArrayList<String>());
-							} else if (hasShowed.get(className).indexOf(methodName) == -1) {
-								entry4.getValue().addIssue(methodtree.openParenToken().line(), this,
-										"Code smell \"Shotgun Surgery\" occurred in method \"" + methodName + "\" !");
-							}
-							hasShowed.get(className).add(methodName);
-						}
+						count(methodtree, className, className2, methodName, methodName2 ,entry4.getValue());
 					}
 				}
 			}
+		}
+	}
+	
+	private void count(MethodTree methodtree, String className, String className2, String methodName, String  methodName2,JavaFileScannerContext context) {
+		Boolean b = isEqual(className, className2, methodName, methodName2) && methodCount.get(className).get(methodName).size() > 7 && classCount.get(className).get(methodName).size() > 10;
+		if (Boolean.TRUE.equals(b)) {
+			if (!hasShowed.containsKey(className)) {
+				context.addIssue(methodtree.openParenToken().line(), this,"Code smell \"Shotgun Surgery\" occurred in method \"" + methodName + "\" !");
+				hasShowed.put(className, new ArrayList<String>());
+			} else if (hasShowed.get(className).indexOf(methodName) == -1) {
+				context.addIssue(methodtree.openParenToken().line(), this,"Code smell \"Shotgun Surgery\" occurred in method \"" + methodName + "\" !");
+			}
+			hasShowed.get(className).add(methodName);
 		}
 	}
 
