@@ -247,6 +247,34 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 		}
 	}
 
+	private void checkElseIfStatementTree(IfStatementTree ifStatementTree) {// check elseif and else parts in if
+																			// statement method
+		if (ifStatementTree.elseKeyword() != null) {
+			StatementTree elseStatementTree = ifStatementTree.elseStatement();
+			if (elseStatementTree.is(Tree.Kind.IF_STATEMENT)) {
+				IfStatementTree elseifStatementTree = (IfStatementTree) elseStatementTree;
+				checkElseIfStatementTree(elseifStatementTree);// check next part is elseif or else statement
+				checkExpressionTree(elseifStatementTree.condition());
+				checkInnerStatementTree(elseifStatementTree.thenStatement());// check elseif part in if statement
+			} else {
+				checkInnerStatementTree(elseStatementTree);// check else part in if statement
+			}
+		}
+	}
+
+	private void checkInnerStatementTree(StatementTree statementTree) {// check inner statement method
+		if (statementTree.is(Tree.Kind.BLOCK)) {
+			BlockTree blockTree = (BlockTree) statementTree;
+			List<StatementTree> statementTreeList = blockTree.body();
+			checkStatementTree(statementTreeList);
+		}
+	}
+
+	private void checkInnerBlockTree(BlockTree blockTree) {// check inner block method
+		List<StatementTree> statementTreeList = blockTree.body();
+		checkStatementTree(statementTreeList);
+	}
+	
 	private void checkExpressionTree(ExpressionTree expressionTree) {
 		if (expressionTree.is(Tree.Kind.METHOD_INVOCATION)) {
 			MethodInvocationTree methodInvocationTree = (MethodInvocationTree) expressionTree;
@@ -290,34 +318,6 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 		}
 	}
 
-	private void checkElseIfStatementTree(IfStatementTree ifStatementTree) {// check elseif and else parts in if
-																			// statement method
-		if (ifStatementTree.elseKeyword() != null) {
-			StatementTree elseStatementTree = ifStatementTree.elseStatement();
-			if (elseStatementTree.is(Tree.Kind.IF_STATEMENT)) {
-				IfStatementTree elseifStatementTree = (IfStatementTree) elseStatementTree;
-				checkElseIfStatementTree(elseifStatementTree);// check next part is elseif or else statement
-				checkExpressionTree(elseifStatementTree.condition());
-				checkInnerStatementTree(elseifStatementTree.thenStatement());// check elseif part in if statement
-			} else {
-				checkInnerStatementTree(elseStatementTree);// check else part in if statement
-			}
-		}
-	}
-
-	private void checkInnerStatementTree(StatementTree statementTree) {// check inner statement method
-		if (statementTree.is(Tree.Kind.BLOCK)) {
-			BlockTree blockTree = (BlockTree) statementTree;
-			List<StatementTree> statementTreeList = blockTree.body();
-			checkStatementTree(statementTreeList);
-		}
-	}
-
-	private void checkInnerBlockTree(BlockTree blockTree) {// check inner block method
-		List<StatementTree> statementTreeList = blockTree.body();
-		checkStatementTree(statementTreeList);
-	}
-
 	private String checkIsObject(String name) {
 		for (int i = 0; i + 1 < objectList.size(); i += 2) {
 			if (name.equals(objectList.get(i))) {
@@ -342,14 +342,23 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 	}
 	
 	private void checkContained(String tempClassName, String tempMethodName,String className, String methodName) {
-		Boolean b1 = containClass(tempClassName,tempMethodName) && classCount.get(tempClassName).get(tempMethodName).indexOf(className) == -1 && noInheritance(className, tempClassName);
+		Boolean b1 = checkClassCount(tempClassName,tempMethodName) && classCount.get(tempClassName).get(tempMethodName).indexOf(className) == -1 && noInheritance(className, tempClassName);
 		if(Boolean.TRUE.equals(b1)) {
 			classCount.get(tempClassName).get(tempMethodName).add(className);
 		}
-		Boolean b2 = containMethod(tempClassName,tempMethodName) && methodCount.get(tempClassName).get(tempMethodName).indexOf(className + methodName) == -1 && noInheritance(className, tempClassName);
+		Boolean b2 = checkMethodCount(tempClassName,tempMethodName) && methodCount.get(tempClassName).get(tempMethodName).indexOf(className + methodName) == -1 && noInheritance(className, tempClassName);
 		if(Boolean.TRUE.equals(b2)) {
 				methodCount.get(tempClassName).get(tempMethodName).add(className + methodName);
 		}
+	}
+	
+	private Boolean noInheritance(String thisClass, String superClass) {
+		for (int i = 0; i < inHeritance.size(); i++) {
+			if (inHeritance.get(i).indexOf(thisClass) != -1 && inHeritance.get(i).indexOf(superClass) != -1) {
+				return false;
+			}
+		}
+		return true;
 	}
 	
 	private void comparedWithUsedInVariable() {
@@ -359,7 +368,7 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 				for (int i = 0; i <  entry2.getValue().size(); i += 2) {
 					String tempClassName = entry2.getValue().get(i);
 					String tempMethodName = entry2.getValue().get(i + 1);
-					Boolean b = containClass(tempClassName, tempMethodName);
+					Boolean b = checkClassCount(tempClassName, tempMethodName);
 					if (Boolean.TRUE.equals(b) && classCount.containsKey(tempClassName) && classCount.get(tempClassName).containsKey(tempMethodName)) {
 						classCount.get(tempClassName).get(tempMethodName).add(className);
 					}
@@ -368,22 +377,12 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 		}
 	}
 
-
-	private Boolean containClass(String tempClassName, String tempMethodName) {
+	private Boolean checkClassCount(String tempClassName, String tempMethodName) {
 		return classCount.containsKey(tempClassName) && classCount.get(tempClassName).containsKey(tempMethodName);
 	}
 	
-	private Boolean containMethod(String tempClassName, String tempMethodName) {
+	private Boolean checkMethodCount(String tempClassName, String tempMethodName) {
 		return methodCount.containsKey(tempClassName) && classCount.get(tempClassName).containsKey(tempMethodName);
-	}
-
-	private Boolean noInheritance(String thisClass, String superClass) {
-		for (int i = 0; i < inHeritance.size(); i++) {
-			if (inHeritance.get(i).indexOf(thisClass) != -1 && inHeritance.get(i).indexOf(superClass) != -1) {
-				return false;
-			}
-		}
-		return true;
 	}
 
 	private void showSmell() {
@@ -396,15 +395,15 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 					for (Entry<MethodTree, JavaFileScannerContext> entry4 : entry3.getValue().entrySet()) {
 						MethodTree methodtree = entry4.getKey();
 						String methodName2 = methodtree.simpleName().name();
-						count(methodtree, className, className2, methodName, methodName2 ,entry4.getValue());
+						innerShowSmell(methodtree, className, className2, methodName, methodName2 ,entry4.getValue());
 					}
 				}
 			}
 		}
 	}
 	
-	private void count(MethodTree methodtree, String className, String className2, String methodName, String  methodName2,JavaFileScannerContext context) {
-		Boolean b = isEqual(className, className2, methodName, methodName2) && methodCount.get(className).get(methodName).size() > 7 && classCount.get(className).get(methodName).size() > 10;
+	private void innerShowSmell(MethodTree methodtree, String className, String className2, String methodName, String  methodName2,JavaFileScannerContext context) {
+		Boolean b = chcekConsistent(className, className2, methodName, methodName2) && methodCount.get(className).get(methodName).size() > 7 && classCount.get(className).get(methodName).size() > 10;
 		if (Boolean.TRUE.equals(b)) {
 			if (!hasShowed.containsKey(className)) {
 				context.addIssue(methodtree.openParenToken().line(), this,"Code smell \"Shotgun Surgery\" occurred in method \"" + methodName + "\" !");
@@ -416,7 +415,7 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 		}
 	}
 
-	private Boolean isEqual(String className, String className2, String methodName, String methodName2) {
+	private Boolean chcekConsistent(String className, String className2, String methodName, String methodName2) {
 		return className.equals(className2) && methodName.equals(methodName2);
 	}
 }
