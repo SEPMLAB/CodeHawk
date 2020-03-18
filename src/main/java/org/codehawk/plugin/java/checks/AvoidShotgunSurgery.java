@@ -27,6 +27,7 @@ import org.sonar.plugins.java.api.tree.LabeledStatementTree;
 import org.sonar.plugins.java.api.tree.MemberSelectExpressionTree;
 import org.sonar.plugins.java.api.tree.MethodInvocationTree;
 import org.sonar.plugins.java.api.tree.MethodTree;
+import org.sonar.plugins.java.api.tree.NewClassTree;
 import org.sonar.plugins.java.api.tree.StatementTree;
 import org.sonar.plugins.java.api.tree.SwitchStatementTree;
 import org.sonar.plugins.java.api.tree.SynchronizedStatementTree;
@@ -110,8 +111,12 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 				VariableTree variableTree = (VariableTree) tempTree;
 				innerUsedInVariable.put(variableTree.simpleName().name(), new ArrayList<String>());
 				if (variableTree.initializer().is(Tree.Kind.NEW_CLASS)) {
-					objectList.add(variableTree.simpleName().name());
-					objectList.add(((IdentifierTree) variableTree.type()).name());
+					NewClassTree newClassTree = (NewClassTree) variableTree.initializer();
+					if (newClassTree.identifier().is(Tree.Kind. IDENTIFIER)) {
+						IdentifierTree identifierTree = (IdentifierTree) newClassTree. identifier();
+						objectList.add(variableTree.simpleName().name());
+						objectList.add(identifierTree.name());
+					}
 				} else {
 					checkExpressionTree(variableTree.initializer());
 				}
@@ -227,8 +232,12 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 	
 	private void checkVariableTree(VariableTree variableTree) {
 		if (variableTree.initializer().is(Tree.Kind.NEW_CLASS)) {
-			objectList.add(variableTree.simpleName().name());
-			objectList.add(((IdentifierTree) variableTree.type()).name());
+			NewClassTree newClassTree = (NewClassTree) variableTree.initializer();
+			if (newClassTree.identifier().is(Tree.Kind. IDENTIFIER)) {
+				IdentifierTree identifierTree = (IdentifierTree) newClassTree. identifier();
+				objectList.add(variableTree.simpleName().name());
+				objectList.add(identifierTree.name());
+			}
 		} else {
 			checkExpressionTree(variableTree.initializer());
 		}
@@ -247,15 +256,14 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 		}
 	}
 
-	private void checkElseIfStatementTree(IfStatementTree ifStatementTree) {// check elseif and else parts in if
-																			// statement method
+	private void checkElseIfStatementTree(IfStatementTree ifStatementTree) {// check else if and else parts in if statement method
 		if (ifStatementTree.elseKeyword() != null) {
 			StatementTree elseStatementTree = ifStatementTree.elseStatement();
 			if (elseStatementTree.is(Tree.Kind.IF_STATEMENT)) {
 				IfStatementTree elseifStatementTree = (IfStatementTree) elseStatementTree;
-				checkElseIfStatementTree(elseifStatementTree);// check next part is elseif or else statement
+				checkElseIfStatementTree(elseifStatementTree);// check next part is else if or else statement
 				checkExpressionTree(elseifStatementTree.condition());
-				checkInnerStatementTree(elseifStatementTree.thenStatement());// check elseif part in if statement
+				checkInnerStatementTree(elseifStatementTree.thenStatement());// check else if part in if statement
 			} else {
 				checkInnerStatementTree(elseStatementTree);// check else part in if statement
 			}
