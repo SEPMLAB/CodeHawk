@@ -113,7 +113,7 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 				if (variableTree.initializer().is(Tree.Kind.NEW_CLASS)) {
 					NewClassTree newClassTree = (NewClassTree) variableTree.initializer();
 					if (newClassTree.identifier().is(Tree.Kind. IDENTIFIER)) {
-						IdentifierTree identifierTree = (IdentifierTree) newClassTree. identifier();
+						IdentifierTree identifierTree = (IdentifierTree) newClassTree.identifier();
 						objectList.add(variableTree.simpleName().name());
 						objectList.add(identifierTree.name());
 					}
@@ -234,7 +234,7 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 		if (variableTree.initializer().is(Tree.Kind.NEW_CLASS)) {
 			NewClassTree newClassTree = (NewClassTree) variableTree.initializer();
 			if (newClassTree.identifier().is(Tree.Kind. IDENTIFIER)) {
-				IdentifierTree identifierTree = (IdentifierTree) newClassTree. identifier();
+				IdentifierTree identifierTree = (IdentifierTree) newClassTree.identifier();
 				objectList.add(variableTree.simpleName().name());
 				objectList.add(identifierTree.name());
 			}
