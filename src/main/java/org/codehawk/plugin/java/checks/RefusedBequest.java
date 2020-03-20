@@ -66,11 +66,11 @@ public class RefusedBequest extends IssuableSubscriptionVisitor {
 			extendList.add(extendTree.getName());
 			extendList.add(extendTree.getExtendClassName());
 		} else {
-			if (ct.simpleName().name() != null) {
+			if (ct.simpleName() != null) {
 				extendTree = new ExtendClassTree(ct, checkAMW(ct));
 			}
 		}
-		if (ct.simpleName().name() != null) {
+		if (ct.simpleName() != null) {
 			classList.put(ct.simpleName().name(), extendTree);
 		}
 
