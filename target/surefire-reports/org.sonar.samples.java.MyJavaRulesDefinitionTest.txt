@@ -1,11 +1,4 @@
-<<<<<<< HEAD
 -------------------------------------------------------------------------------
 Test set: org.sonar.samples.java.MyJavaRulesDefinitionTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in org.sonar.samples.java.MyJavaRulesDefinitionTest
-=======
--------------------------------------------------------------------------------
-Test set: org.sonar.samples.java.MyJavaRulesDefinitionTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.sonar.samples.java.MyJavaRulesDefinitionTest
->>>>>>> a390b6c99b3b1a4cf34bbcc68e3ec05ab28641e4
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in org.sonar.samples.java.MyJavaRulesDefinitionTest
