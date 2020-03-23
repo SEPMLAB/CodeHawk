@@ -156,7 +156,11 @@ public class RefusedBequest extends IssuableSubscriptionVisitor {
 				if (mt.block() != null ) {
 					BlockTree bt = mt.block();
 					if (bt.body() != null ) {
+<<<<<<< HEAD
 						List<StatementTree> lst = bt.body();
+=======
+						List<StatementTree> lst = bt.body();	
+>>>>>>> a390b6c99b3b1a4cf34bbcc68e3ec05ab28641e4
 						for (StatementTree st : lst) {
 							sum = cycleCheck(sum, st);
 						}
