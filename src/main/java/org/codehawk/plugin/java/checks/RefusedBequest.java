@@ -66,9 +66,13 @@ public class RefusedBequest extends IssuableSubscriptionVisitor {
 			extendList.add(extendTree.getName());
 			extendList.add(extendTree.getExtendClassName());
 		} else {
-			extendTree = new ExtendClassTree(ct, checkAMW(ct));
+			if (ct.simpleName() != null) {
+				extendTree = new ExtendClassTree(ct, checkAMW(ct));
+			}
 		}
-		classList.put(ct.simpleName().name(), extendTree);
+		if (ct.simpleName() != null) {
+			classList.put(ct.simpleName().name(), extendTree);
+		}
 
 		// save the method & members of classtree into extendTree
 		for (Tree t : ct.members()) {
@@ -149,14 +153,18 @@ public class RefusedBequest extends IssuableSubscriptionVisitor {
 			if (t.is(Tree.Kind.METHOD)) {
 				methodNum++;
 				MethodTree mt = (MethodTree) t;
-				BlockTree bt = mt.block();
-				List<StatementTree> lst = bt.body();
-				for (StatementTree st : lst) {
-					sum = cycleCheck(sum, st);
+				if (mt.block() != null ) {
+					BlockTree bt = mt.block();
+					if (bt.body() != null ) {
+						List<StatementTree> lst = bt.body();
+						for (StatementTree st : lst) {
+							sum = cycleCheck(sum, st);
+						}
+					}
 				}
 			}
 		}
-		
+
 		if (2 * methodNum <= sum) {
 			return true;
 		}

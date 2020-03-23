@@ -1,4 +1,0 @@
-# Created at 2020-03-17T22:41:31.211
-Boot Manifest-JAR contains absolute paths in classpath 'D:\專題\sonarqube\codehawkgit\CodeHawk\target\test-classes'
-Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
-

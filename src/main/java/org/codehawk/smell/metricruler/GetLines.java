@@ -24,31 +24,31 @@ import org.sonar.plugins.java.api.tree.WhileStatementTree;
 public class GetLines {
 	private static int maxMethodLines = 50;
 	private static int maxClassLines = 150;
-	
+
 	//use private constructor to avoid the class to be new
 	private GetLines() {
-		
+
 	}
-	
+
 	public static int getMaxMethodLines() {
 		return maxMethodLines;
 	}
-	
+
 	public static int getMaxClassLines() {
 		return maxClassLines;
 	}
-	
+
 	//get the trees from MethodTree
 	public static int getMethodTreeLines(MethodTree tree){
 		BlockTree bt = tree.block();
 		return treeLines(bt.body());
 	}
-	
+
 	//get the trees from ClassTree
 	public static int getClassTreeLines(ClassTree tree){
 		return treeLines(tree.members());
 	}
-	
+
 	//recursive the trees to find the number of line
 	public static <E> int recursiveLines(E st) {
 		int lines = 1;
@@ -102,7 +102,9 @@ public class GetLines {
 		} else if (((Tree) st).is(Tree.Kind.CONSTRUCTOR)) {
 			lines += recursiveLines(((MethodTree) st).block());
 		} else if (((Tree) st).is(Tree.Kind.METHOD)) {
-			lines += recursiveLines(((MethodTree) st).block());
+			if(((MethodTree) st).block() != null){
+				lines += recursiveLines(((MethodTree) st).block());
+			}
 		}
 		return lines;
 	}

@@ -27,6 +27,7 @@ import org.sonar.plugins.java.api.tree.LabeledStatementTree;
 import org.sonar.plugins.java.api.tree.MemberSelectExpressionTree;
 import org.sonar.plugins.java.api.tree.MethodInvocationTree;
 import org.sonar.plugins.java.api.tree.MethodTree;
+import org.sonar.plugins.java.api.tree.NewClassTree;
 import org.sonar.plugins.java.api.tree.StatementTree;
 import org.sonar.plugins.java.api.tree.SwitchStatementTree;
 import org.sonar.plugins.java.api.tree.SynchronizedStatementTree;
@@ -110,8 +111,12 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 				VariableTree variableTree = (VariableTree) tempTree;
 				innerUsedInVariable.put(variableTree.simpleName().name(), new ArrayList<String>());
 				if (variableTree.initializer().is(Tree.Kind.NEW_CLASS)) {
-					objectList.add(variableTree.simpleName().name());
-					objectList.add(((IdentifierTree) variableTree.type()).name());
+					NewClassTree newClassTree = (NewClassTree) variableTree.initializer();
+					if (newClassTree.identifier().is(Tree.Kind. IDENTIFIER)) {
+						IdentifierTree identifierTree = (IdentifierTree) newClassTree.identifier();
+						objectList.add(variableTree.simpleName().name());
+						objectList.add(identifierTree.name());
+					}
 				} else {
 					checkExpressionTree(variableTree.initializer());
 				}
@@ -212,7 +217,7 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 			}
 		}
 	}
-	
+
 	private void checkMethodInvocationTree(ExpressionTree innerExpressionTree) {
 		if (innerExpressionTree.is(Tree.Kind.MEMBER_SELECT)) {
 			MemberSelectExpressionTree memberSelectExpressionTree = (MemberSelectExpressionTree) innerExpressionTree;
@@ -224,16 +229,20 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 			checkExpressionTree(memberSelectExpressionTree.expression());
 		}
 	}
-	
+
 	private void checkVariableTree(VariableTree variableTree) {
 		if (variableTree.initializer().is(Tree.Kind.NEW_CLASS)) {
-			objectList.add(variableTree.simpleName().name());
-			objectList.add(((IdentifierTree) variableTree.type()).name());
+			NewClassTree newClassTree = (NewClassTree) variableTree.initializer();
+			if (newClassTree.identifier().is(Tree.Kind. IDENTIFIER)) {
+				IdentifierTree identifierTree = (IdentifierTree) newClassTree.identifier();
+				objectList.add(variableTree.simpleName().name());
+				objectList.add(identifierTree.name());
+			}
 		} else {
 			checkExpressionTree(variableTree.initializer());
 		}
 	}
-	
+
 	private void checkTryStatementTree(TryStatementTree tryStatementTree) {
 		if (tryStatementTree.tryKeyword() != null) {
 			checkInnerBlockTree(tryStatementTree.block());
@@ -247,15 +256,14 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 		}
 	}
 
-	private void checkElseIfStatementTree(IfStatementTree ifStatementTree) {// check elseif and else parts in if
-																			// statement method
+	private void checkElseIfStatementTree(IfStatementTree ifStatementTree) {// check else if and else parts in if statement method
 		if (ifStatementTree.elseKeyword() != null) {
 			StatementTree elseStatementTree = ifStatementTree.elseStatement();
 			if (elseStatementTree.is(Tree.Kind.IF_STATEMENT)) {
 				IfStatementTree elseifStatementTree = (IfStatementTree) elseStatementTree;
-				checkElseIfStatementTree(elseifStatementTree);// check next part is elseif or else statement
+				checkElseIfStatementTree(elseifStatementTree);// check next part is else if or else statement
 				checkExpressionTree(elseifStatementTree.condition());
-				checkInnerStatementTree(elseifStatementTree.thenStatement());// check elseif part in if statement
+				checkInnerStatementTree(elseifStatementTree.thenStatement());// check else if part in if statement
 			} else {
 				checkInnerStatementTree(elseStatementTree);// check else part in if statement
 			}
@@ -274,7 +282,7 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 		List<StatementTree> statementTreeList = blockTree.body();
 		checkStatementTree(statementTreeList);
 	}
-	
+
 	private void checkExpressionTree(ExpressionTree expressionTree) {
 		if (expressionTree.is(Tree.Kind.METHOD_INVOCATION)) {
 			MethodInvocationTree methodInvocationTree = (MethodInvocationTree) expressionTree;
@@ -340,7 +348,7 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 			}
 		}
 	}
-	
+
 	private void checkContained(String tempClassName, String tempMethodName,String className, String methodName) {
 		Boolean b1 = checkClassCount(tempClassName,tempMethodName) && classCount.get(tempClassName).get(tempMethodName).indexOf(className) == -1 && noInheritance(className, tempClassName);
 		if(Boolean.TRUE.equals(b1)) {
@@ -351,7 +359,7 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 				methodCount.get(tempClassName).get(tempMethodName).add(className + methodName);
 		}
 	}
-	
+
 	private Boolean noInheritance(String thisClass, String superClass) {
 		for (int i = 0; i < inHeritance.size(); i++) {
 			if (inHeritance.get(i).indexOf(thisClass) != -1 && inHeritance.get(i).indexOf(superClass) != -1) {
@@ -360,7 +368,7 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 		}
 		return true;
 	}
-	
+
 	private void comparedWithUsedInVariable() {
 		for (Entry<String, Map<String, List<String>>> entry1 : usedInVariable.entrySet()) {
 			String className = entry1.getKey();
@@ -380,7 +388,7 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 	private Boolean checkClassCount(String tempClassName, String tempMethodName) {
 		return classCount.containsKey(tempClassName) && classCount.get(tempClassName).containsKey(tempMethodName);
 	}
-	
+
 	private Boolean checkMethodCount(String tempClassName, String tempMethodName) {
 		return methodCount.containsKey(tempClassName) && classCount.get(tempClassName).containsKey(tempMethodName);
 	}
@@ -401,7 +409,7 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 			}
 		}
 	}
-	
+
 	private void innerShowSmell(MethodTree methodtree, String className, String className2, String methodName, String  methodName2,JavaFileScannerContext context) {
 		Boolean b = chcekConsistent(className, className2, methodName, methodName2) && methodCount.get(className).get(methodName).size() > 7 && classCount.get(className).get(methodName).size() > 10;
 		if (Boolean.TRUE.equals(b)) {
