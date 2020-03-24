@@ -89,7 +89,7 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 	}
 
 	private void checkInnerClassTree(ClassTree classTree) {
-		String className = "";
+		String className = null;
 		if(classTree.simpleName() != null) {
 			className = classTree.simpleName().name();
 		}
@@ -319,13 +319,13 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 	}
 	
 	private void putInHashMap(String className ,Map<String, List<String>> innerUsedInMethod ,Map<String, List<String>> innerUsedInVariable,Map<MethodTree , JavaFileScannerContext> innerlocation) {
-		if(!className.equals("") && !innerUsedInMethod.isEmpty()) {
+		if(!className.equals(null) && !innerUsedInMethod.isEmpty()) {
 			usedInMethod.put(className, innerUsedInMethod);
 		}
-		if(!className.equals("") && !innerUsedInVariable.isEmpty()) {
+		if(!className.equals(null) && !innerUsedInVariable.isEmpty()) {
 			usedInVariable.put(className, innerUsedInVariable);
 		}
-		if(!className.equals("") && !innerlocation.isEmpty()) {
+		if(!className.equals(null) && !innerlocation.isEmpty()) {
 			location.put(className, innerlocation);
 		}
 	}
