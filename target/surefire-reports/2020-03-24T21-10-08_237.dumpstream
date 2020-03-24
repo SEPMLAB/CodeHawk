@@ -1,4 +1,0 @@
-# Created at 2020-03-24T21:10:08.406
-Boot Manifest-JAR contains absolute paths in classpath 'D:\程式\workspace\CodeHawk\target\test-classes'
-Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
-
