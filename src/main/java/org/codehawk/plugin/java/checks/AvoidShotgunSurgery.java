@@ -318,14 +318,14 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 		return name;
 	}
 	
-	private void putInHashMap(String className ,Map<String, List<String>> innerUsedInMethod ,Map<String, List<String>> innerUsedInVariable,Map<MethodTree , JavaFileScannerContext> innerlocation) {
-		if(!className.equals(null) && !innerUsedInMethod.isEmpty()) {
+	private void putInHashMap(String className,Map<String, List<String>> innerUsedInMethod ,Map<String, List<String>> innerUsedInVariable,Map<MethodTree , JavaFileScannerContext> innerlocation) {
+		if(className != null && !innerUsedInMethod.isEmpty()) {
 			usedInMethod.put(className, innerUsedInMethod);
 		}
-		if(!className.equals(null) && !innerUsedInVariable.isEmpty()) {
+		if(className != null && !innerUsedInVariable.isEmpty()) {
 			usedInVariable.put(className, innerUsedInVariable);
 		}
-		if(!className.equals(null) && !innerlocation.isEmpty()) {
+		if(className != null && !innerlocation.isEmpty()) {
 			location.put(className, innerlocation);
 		}
 	}
