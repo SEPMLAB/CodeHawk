@@ -105,29 +105,21 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 					List<StatementTree> statementTreeList = methodTree.block().body();
 					checkStatementTree(statementTreeList);
 				}
-				if(reusedList.size() > 0) {
+				if(!reusedList.isEmpty()) {
 					innerUsedInMethod.put(methodTree.simpleName().name(),new ArrayList<>());
 					innerUsedInMethod.get(methodTree.simpleName().name()).addAll(reusedList);
 				}
 			} else if (tempTree.is(Tree.Kind.VARIABLE)) {// check every variable in each class
 				VariableTree variableTree = (VariableTree) tempTree;
 				checkVariableTree(variableTree);
-				if(reusedList.size() > 0) {
+				if(!reusedList.isEmpty()) {
 					innerUsedInVariable.put(variableTree.simpleName().name(), new ArrayList<>());
 					innerUsedInVariable.get(variableTree.simpleName().name()).addAll(reusedList);
 				}
 			}
 			reusedList.clear();
 		}
-		if(!className.equals("") && !innerUsedInMethod.isEmpty()) {
-			usedInMethod.put(className, innerUsedInMethod);
-		}
-		if(!className.equals("") && !innerUsedInVariable.isEmpty()) {
-			usedInVariable.put(className, innerUsedInVariable);
-		}
-		if(!className.equals("") && !innerlocation.isEmpty()) {
-			location.put(className, innerlocation);
-		}
+		putInHashMap(className ,innerUsedInMethod, innerUsedInVariable, innerlocation);
 		objectList.clear();
 	}
 
@@ -324,6 +316,18 @@ public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
 			}
 		}
 		return name;
+	}
+	
+	private void putInHashMap(String className ,Map<String, List<String>> innerUsedInMethod ,Map<String, List<String>> innerUsedInVariable,Map<MethodTree , JavaFileScannerContext> innerlocation) {
+		if(!className.equals("") && !innerUsedInMethod.isEmpty()) {
+			usedInMethod.put(className, innerUsedInMethod);
+		}
+		if(!className.equals("") && !innerUsedInVariable.isEmpty()) {
+			usedInVariable.put(className, innerUsedInVariable);
+		}
+		if(!className.equals("") && !innerlocation.isEmpty()) {
+			location.put(className, innerlocation);
+		}
 	}
 
 	private void comparedWithUsedInMethod() {
