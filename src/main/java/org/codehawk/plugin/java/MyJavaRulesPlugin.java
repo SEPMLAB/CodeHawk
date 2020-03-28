@@ -1,5 +1,5 @@
 /*
- * SonarQube Java Custom Rules Example
+ * CodeHawk plugin
  * Copyright (C) 2016-2016 SonarSource SA
  * mailto:contact AT sonarsource DOT com
  *
@@ -22,7 +22,7 @@ package org.codehawk.plugin.java;
 import org.sonar.api.Plugin;
 
 /**
- * Entry point of your plugin containing your custom rules
+ * Entry point of rules
  */
 public class MyJavaRulesPlugin implements Plugin {
 

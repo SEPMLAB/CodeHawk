@@ -1,5 +1,5 @@
 /*
- * SonarQube Java Custom Rules Example
+ * CodeHawk plugin
  * Copyright (C) 2016-2016 SonarSource SA
  * mailto:contact AT sonarsource DOT com
  *
@@ -38,7 +38,7 @@ import org.sonar.plugins.java.api.JavaCheck;
 import org.sonar.squidbridge.annotations.RuleTemplate;
 
 /**
- * Declare rule metadata in server repository of rules. 
+ * Declare rule metadata in server repository of rules.
  * That allows to list the rules in the page "Rules".
  */
 public class MyJavaRulesDefinition implements RulesDefinition {

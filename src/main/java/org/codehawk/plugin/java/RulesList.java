@@ -1,5 +1,5 @@
 /*
- * SonarQube Java Custom Rules Example
+ * CodeHawk plugin
  * Copyright (C) 2016-2016 SonarSource SA
  * mailto:contact AT sonarsource DOT com
  *
