@@ -30,6 +30,7 @@ import org.codehawk.plugin.java.checks.InappropriateIntimacy;
 import org.codehawk.plugin.java.checks.AvoidLargeClass;
 import org.codehawk.plugin.java.checks.AvoidLazyClass;
 import org.codehawk.plugin.java.checks.AvoidMemberClumps;
+import org.codehawk.plugin.java.checks.AvoidPrimitiveObsession;
 import org.sonar.plugins.java.api.JavaCheck;
 import org.codehawk.plugin.java.checks.RefusedBequest;
 
@@ -47,7 +48,7 @@ public final class RulesList {
 
   public static List<Class<? extends JavaCheck>> getJavaChecks() {
     return Collections.unmodifiableList(Arrays.asList(AvoidLargeClass.class, RefusedBequest.class,
-			AvoidLazyClass.class, AvoidParamClumps.class, AvoidMemberClumps.class, AvoidShotgunSurgery.class, InappropriateIntimacy.class));
+			AvoidLazyClass.class, AvoidParamClumps.class, AvoidMemberClumps.class, AvoidShotgunSurgery.class, InappropriateIntimacy.class, AvoidPrimitiveObsession.class));
   }
 
   public static List<Class<? extends JavaCheck>> getJavaTestChecks() {

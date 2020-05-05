@@ -1,4 +1,5 @@
 org\codehawk\plugin\java\checks\AvoidLargeMethod.class
+org\codehawk\smell\smellruler\PrimitiveObsession.class
 org\codehawk\smell\smellruler\Smell.class
 org\codehawk\smell\smellruler\Smell$Type.class
 org\codehawk\plugin\java\checks\AvoidTooManyParametersInOneMethod.class
@@ -11,6 +12,7 @@ org\codehawk\plugin\java\checks\AvoidLargeClass.class
 org\codehawk\smell\modler\Smellable.class
 org\codehawk\smell\metricruler\ClumpMetrics.class
 org\codehawk\smell\modler\DataClumpDetector.class
+org\codehawk\plugin\java\checks\InappropriateIntimacy.class
 org\codehawk\plugin\java\MyJavaFileCheckRegistrar.class
 org\codehawk\smell\metricruler\GetLines.class
 org\codehawk\smell\smellruler\LargeMethod.class
@@ -26,7 +28,9 @@ org\codehawk\smell\smellruler\TooManyParameters.class
 org\codehawk\plugin\java\checks\RefusedBequest$1.class
 org\codehawk\plugin\java\checks\AvoidShotgunSurgery$1.class
 org\codehawk\plugin\java\checks\AvoidShotgunSurgery.class
+org\codehawk\smell\modler\POMethodNode.class
 org\codehawk\plugin\java\checks\ExtendClassTree.class
+org\codehawk\plugin\java\checks\AvoidPrimitiveObsession.class
 org\codehawk\plugin\java\MyJavaRulesDefinition.class
 org\codehawk\plugin\java\MyJavaRulesDefinition$RuleMetatada.class
 org\codehawk\smell\smellruler\TooManyCasesInOneSwitch.class
@@ -36,4 +40,5 @@ org\codehawk\smell\modler\StringGroup.class
 org\codehawk\plugin\java\checks\AvoidTooManyCasesInOneSwitch.class
 org\codehawk\smell\modler\Detector.class
 org\codehawk\smell\modler\Node.class
+org\codehawk\smell\modler\PODetector.class
 org\codehawk\plugin\java\checks\AvoidLazyClass.class

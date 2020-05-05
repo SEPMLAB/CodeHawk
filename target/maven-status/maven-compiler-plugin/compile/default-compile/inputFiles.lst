@@ -6,12 +6,15 @@ D:\專題\sonarqube\codehawkgit\CodeHawk\src\main\java\org\codehawk\smell\modler\D
 D:\專題\sonarqube\codehawkgit\CodeHawk\src\main\java\org\codehawk\smell\modler\Smellable.java
 D:\專題\sonarqube\codehawkgit\CodeHawk\src\main\java\org\codehawk\smell\smellruler\LargeClass.java
 D:\專題\sonarqube\codehawkgit\CodeHawk\src\main\java\org\codehawk\smell\modler\SwitchNode.java
+D:\專題\sonarqube\codehawkgit\CodeHawk\src\main\java\org\codehawk\plugin\java\checks\InappropriateIntimacy.java
 D:\專題\sonarqube\codehawkgit\CodeHawk\src\main\java\org\codehawk\smell\modler\DataClumpDetector.java
+D:\專題\sonarqube\codehawkgit\CodeHawk\src\main\java\org\codehawk\smell\smellruler\PrimitiveObsession.java
 D:\專題\sonarqube\codehawkgit\CodeHawk\src\main\java\org\codehawk\smell\metricruler\GetLines.java
 D:\專題\sonarqube\codehawkgit\CodeHawk\src\main\java\org\codehawk\smell\modler\SwitchCaseDetector.java
 D:\專題\sonarqube\codehawkgit\CodeHawk\src\main\java\org\codehawk\plugin\java\checks\AvoidLargeMethod.java
 D:\專題\sonarqube\codehawkgit\CodeHawk\src\main\java\org\codehawk\plugin\java\checks\AvoidLazyClass.java
 D:\專題\sonarqube\codehawkgit\CodeHawk\src\main\java\org\codehawk\plugin\java\functioningclass\GetClass.java
+D:\專題\sonarqube\codehawkgit\CodeHawk\src\main\java\org\codehawk\smell\modler\POMethodNode.java
 D:\專題\sonarqube\codehawkgit\CodeHawk\src\main\java\org\codehawk\plugin\java\MyJavaRulesDefinition.java
 D:\專題\sonarqube\codehawkgit\CodeHawk\src\main\java\org\codehawk\plugin\java\checks\AvoidMemberClumps.java
 D:\專題\sonarqube\codehawkgit\CodeHawk\src\main\java\org\codehawk\smell\metricruler\ClumpMetrics.java
@@ -28,5 +31,7 @@ D:\專題\sonarqube\codehawkgit\CodeHawk\src\main\java\org\codehawk\plugin\java\My
 D:\專題\sonarqube\codehawkgit\CodeHawk\src\main\java\org\codehawk\plugin\java\checks\AvoidShotgunSurgery.java
 D:\專題\sonarqube\codehawkgit\CodeHawk\src\main\java\org\codehawk\plugin\java\RulesList.java
 D:\專題\sonarqube\codehawkgit\CodeHawk\src\main\java\org\codehawk\plugin\java\checks\AvoidTooManyParametersInOneMethod.java
+D:\專題\sonarqube\codehawkgit\CodeHawk\src\main\java\org\codehawk\smell\modler\PODetector.java
 D:\專題\sonarqube\codehawkgit\CodeHawk\src\main\java\org\codehawk\smell\smellruler\TooManyCasesInOneSwitch.java
 D:\專題\sonarqube\codehawkgit\CodeHawk\src\main\java\org\codehawk\plugin\java\checks\AvoidLargeClass.java
+D:\專題\sonarqube\codehawkgit\CodeHawk\src\main\java\org\codehawk\plugin\java\checks\AvoidPrimitiveObsession.java

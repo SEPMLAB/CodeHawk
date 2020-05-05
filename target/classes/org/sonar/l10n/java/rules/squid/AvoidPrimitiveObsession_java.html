@@ -1,0 +1,28 @@
+<p style="font-size: 1.1em">This rule detects Primitive Obsession code smell in Java.</br>
+  When too many primitive type (including wrapper classes) parameters were passed, the method will be marked as primitive obsession.</br>
+  Details of Primitve Obsession can be found <a href="https://refactoring.guru/smells/primitive-obsession">here</a>.</br>
+  The detection strategy was set according to article
+  <a href="https://www.researchgate.net/publication/326874600_Grasping_Primitive_Enthusiasm_-_Approaching_Primitive_Obsession_in_Steps">
+    Grasping Primitive Enthusiasm - Approaching Primitive Obsession in Steps</a>.</br>
+  Here is a brief explaination:</br>
+  Let's say the ratio of primitve type paramters to all parameters in a method is represented as Rm.</br>
+  The ratio of all primitve parameters to all parameters in one class is RM.</br>
+  We iterate through all methods in a class and mark thos whose Rm > RM.</p>
+<h2>Compliant Code Example</h2>
+<pre>
+  class C1{
+	  void m1(A a, B b, int c){}
+
+	  void m2(D d, int e){}
+  }
+</pre>
+<h2>Noncompliant Code Example</h2>
+<pre>
+  class C1{
+	  <span style="color: red">void m1(double a, Integer b, int c){}</span>
+
+	  void m2(D d, int e){}
+  }
+</pre>
+<h2>Recommended Solution</h2>
+<p>Declare a new class to handle primitve data that might have further use.</br></p>

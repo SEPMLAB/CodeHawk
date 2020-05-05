@@ -3,7 +3,7 @@ package org.codehawk.smell.smellruler;
 public interface Smell {
 	public boolean is(Smell.Type type);
 	public Smell.Type type();
-	
+
 	public String smellDetail();
 	enum Type{
 		DATACLUMP,
@@ -11,6 +11,7 @@ public interface Smell {
 		LARGEMETHOD,
 		LAZYCLASS,
 		TOOMANYCASESINONESWITCH,
-		TOOMANYPARAMETERS;
+		TOOMANYPARAMETERS,
+		PRIMITIVE_OBSESSION;
 	}
 }
