@@ -36,8 +36,8 @@ import org.sonar.plugins.java.api.tree.TryStatementTree;
 import org.sonar.plugins.java.api.tree.VariableTree;
 import org.sonar.plugins.java.api.tree.WhileStatementTree;
 
-@Rule(key = "AvoidShotgunSurgery")
-public class AvoidShotgunSurgery extends IssuableSubscriptionVisitor {
+@Rule(key = "ShotgunSurgery")
+public class ShotgunSurgery extends IssuableSubscriptionVisitor {
 	private Map<String, Map<String, List<String>>> usedInMethod = new HashMap<>();
 	private Map<String, Map<String, List<String>>> usedInVariable = new HashMap<>();
 	private Map<String, Map<String, List<String>>> classCount = new HashMap<>();
