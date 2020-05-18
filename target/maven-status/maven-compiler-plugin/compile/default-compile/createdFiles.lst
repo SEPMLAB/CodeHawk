@@ -12,6 +12,7 @@ org\codehawk\plugin\java\checks\AvoidLargeClass.class
 org\codehawk\smell\modler\Smellable.class
 org\codehawk\smell\metricruler\ClumpMetrics.class
 org\codehawk\smell\modler\DataClumpDetector.class
+org\codehawk\plugin\java\checks\ShotgunSurgery$1.class
 org\codehawk\plugin\java\checks\InappropriateIntimacy.class
 org\codehawk\plugin\java\MyJavaFileCheckRegistrar.class
 org\codehawk\smell\metricruler\GetLines.class
@@ -26,8 +27,6 @@ org\codehawk\smell\smellruler\LargeClass.class
 org\codehawk\smell\modler\SmellableNode.class
 org\codehawk\smell\smellruler\TooManyParameters.class
 org\codehawk\plugin\java\checks\RefusedBequest$1.class
-org\codehawk\plugin\java\checks\AvoidShotgunSurgery$1.class
-org\codehawk\plugin\java\checks\AvoidShotgunSurgery.class
 org\codehawk\smell\modler\POMethodNode.class
 org\codehawk\plugin\java\checks\ExtendClassTree.class
 org\codehawk\plugin\java\checks\AvoidPrimitiveObsession.class
@@ -42,3 +41,4 @@ org\codehawk\smell\modler\Detector.class
 org\codehawk\smell\modler\Node.class
 org\codehawk\smell\modler\PODetector.class
 org\codehawk\plugin\java\checks\AvoidLazyClass.class
+org\codehawk\plugin\java\checks\ShotgunSurgery.class
