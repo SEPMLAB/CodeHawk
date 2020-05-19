@@ -1,5 +1,5 @@
 {
-  "title": "Avoid Shotgun Surgery",
+  "title": "Shotgun Surgery",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {
