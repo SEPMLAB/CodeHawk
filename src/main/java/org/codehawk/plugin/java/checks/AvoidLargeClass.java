@@ -29,7 +29,7 @@ public class AvoidLargeClass extends IssuableSubscriptionVisitor {
 		int line = GetLines.getClassTreeLines(ct);
 		int maxLine = GetLines.getMaxClassLines();
 		if (line > maxLine) {
-			reportIssue(ct, "Your class is too big with " + line + " lines");
+			addIssue(ct.openBraceToken().line(), "Your class is too big with " + line + " lines");
 		}
 
 	}
