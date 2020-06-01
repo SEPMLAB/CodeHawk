@@ -1,8 +1,0 @@
-<p>This rule detects refused bequest between classes. If child class inherits parent class child class doesn't use most methods and variables in parent class. You will get the issue. It means you should make sure that is it really have to use Inheritance relationship. </p>
-<h2>Recommended Solution</h2>
-<p>You have three ways to deal with the smell.</p>
-<pre>
-1.Change the inheritance from 'Parent class - child class' to 'child class - child class'. Let them have common Parent class to deal with the smell.
-2.Refactor the code,let class has a clearer division of labor. After that,you can get clearer inheritance relationship.
-3.Make two class have no inheritance.
-</pre>

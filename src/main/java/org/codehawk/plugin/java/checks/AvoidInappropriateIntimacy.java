@@ -20,11 +20,11 @@ import org.sonar.plugins.java.api.tree.ModifiersTree;
 import org.sonar.plugins.java.api.tree.Tree;
 import org.sonar.plugins.java.api.tree.VariableTree;
 
-@Rule(key = "InappropriateIntimacy")
+@Rule(key = "AvoidInappropriateIntimacy")
 /**
  * To use subsctiption visitor, just extend the IssuableSubscriptionVisitor.
  */
-public class InappropriateIntimacy extends IssuableSubscriptionVisitor {
+public class AvoidInappropriateIntimacy extends IssuableSubscriptionVisitor {
 
 	private Map<String, ArrayList<String>> relationList = new HashMap<>();
 	private ArrayList<String> classList = new ArrayList<>();
