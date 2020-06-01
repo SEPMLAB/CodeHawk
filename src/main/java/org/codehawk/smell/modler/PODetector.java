@@ -19,7 +19,7 @@ public class PODetector implements Detector {
 			"Double", "Boolean" };
 	public static final Set<String> wrapperTypes = new HashSet<>(Arrays.asList(primitveWrappers));
 
-	// �p������
+
 	public static int[] getRatio(MethodTree mt) {
 		int primitives = 0;
 		int size = 0;
