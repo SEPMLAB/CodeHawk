@@ -3,7 +3,7 @@ package org.codehawk.smell.metricruler;
 import org.sonar.plugins.java.api.tree.ClassTree;
 import org.sonar.plugins.java.api.tree.Tree;
 
-public class classMetrics {
+public class ClassMetrics {
 
     // returns number of fields
     public static int extractNumOfFieldsMetrics(ClassTree tree) {

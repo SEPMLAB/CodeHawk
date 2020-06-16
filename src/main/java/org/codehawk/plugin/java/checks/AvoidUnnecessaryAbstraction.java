@@ -11,7 +11,7 @@ import org.sonar.plugins.java.api.tree.ClassTree;
 import org.sonar.plugins.java.api.tree.ModifierKeywordTree;
 import org.sonar.plugins.java.api.tree.Tree;
 import org.codehawk.smell.ThresholdDTO;
-import org.codehawk.smell.metricruler.classMetrics;
+import org.codehawk.smell.metricruler.ClassMetrics;
 
 @Rule(key = "AvoidUnnecessaryAbstraction")
 public class AvoidUnnecessaryAbstraction extends IssuableSubscriptionVisitor {
@@ -28,7 +28,7 @@ public class AvoidUnnecessaryAbstraction extends IssuableSubscriptionVisitor {
 
         if (isAbstract(ct)) {
             if (isUnnecessary(ct)) {
-                addIssue(classMetrics.extractStartingLine(ct),
+                addIssue(ClassMetrics.extractStartingLine(ct),
                         "abstract classes should at least one method and 6 fields.");
             }
         }
@@ -50,9 +50,9 @@ public class AvoidUnnecessaryAbstraction extends IssuableSubscriptionVisitor {
         ThresholdDTO thresholdDTO = new ThresholdDTO();
 
         // get number of fields
-        int numOfFields = classMetrics.extractNumOfFieldsMetrics(ct);
+        int numOfFields = ClassMetrics.extractNumOfFieldsMetrics(ct);
         // get number of methods
-        int numOfMethods = classMetrics.extractNumOfMethodsMetrics(ct);
+        int numOfMethods = ClassMetrics.extractNumOfMethodsMetrics(ct);
 
         return numOfMethods == thresholdDTO.getUnnecessaryAbstractionFewMethods()
                 && numOfFields <= thresholdDTO.getUnnecessaryAbstractionFewFields();
