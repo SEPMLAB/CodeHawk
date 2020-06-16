@@ -7,8 +7,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.codehawk.plugin.java.functioningclass.GetClass;
-import org.codehawk.smell.modler.PODetector;
-import org.codehawk.smell.modler.POMethodNode;
 import org.sonar.check.Rule;
 import org.sonar.plugins.java.api.IssuableSubscriptionVisitor;
 import org.sonar.plugins.java.api.tree.ClassTree;
@@ -41,8 +39,8 @@ public class InappropriateIntimacy extends IssuableSubscriptionVisitor {
 	@Override
 	public void visitNode(Tree tree) {
 
-		ArrayList<MethodTree> vtUseList = new ArrayList<>();// ¬ö¿ýClass¤¤ªºPrivateÅÜ¼Æ³Q­þ¨ÇMETHOD¨Ï¥Î
-		ArrayList<String> mtUseList = new ArrayList<>(); // ¬ö¿ývtUseList¤¤ªº¤èªk³Q­þ¨ÇClass¨Ï¥Î
+		ArrayList<MethodTree> vtUseList = new ArrayList<>();// ï¿½ï¿½ï¿½ï¿½Classï¿½ï¿½ï¿½ï¿½Privateï¿½Ü¼Æ³Qï¿½ï¿½ï¿½ï¿½METHODï¿½Ï¥ï¿½
+		ArrayList<String> mtUseList = new ArrayList<>(); // ï¿½ï¿½ï¿½ï¿½vtUseListï¿½ï¿½ï¿½ï¿½ï¿½ï¿½kï¿½Qï¿½ï¿½ï¿½ï¿½Classï¿½Ï¥ï¿½
 
 		// to count the number of classTrees
 		if (classCount == 0) {
@@ -53,7 +51,7 @@ public class InappropriateIntimacy extends IssuableSubscriptionVisitor {
 		String className = ct.simpleName().name();
 		int classLine = ct.openBraceToken().line();
 
-		//¨ú±oPrivateÅÜ¼Æ¡A¨Ã°õ¦ævtuseCheck()
+		//ï¿½ï¿½ï¿½oPrivateï¿½Ü¼Æ¡Aï¿½Ã°ï¿½ï¿½ï¿½vtuseCheck()
 		for (Tree t : ct.members()) {
 			if (t.is(Tree.Kind.VARIABLE)) {
 				VariableTree vt = (VariableTree) t;
@@ -88,7 +86,7 @@ public class InappropriateIntimacy extends IssuableSubscriptionVisitor {
 		}
 	}
 
-	// ¬ö¿ýClass¤¤ªºPrivateÅÜ¼Æ³Q­þ¨ÇMETHOD¨Ï¥Î
+	// ï¿½ï¿½ï¿½ï¿½Classï¿½ï¿½ï¿½ï¿½Privateï¿½Ü¼Æ³Qï¿½ï¿½ï¿½ï¿½METHODï¿½Ï¥ï¿½
 	public void vtuseCheck(List<IdentifierTree> trees, ArrayList<MethodTree> vtuseList) {
 		for (Tree target : trees) {
 			while (target.parent() != null) {
@@ -107,7 +105,7 @@ public class InappropriateIntimacy extends IssuableSubscriptionVisitor {
 		}
 	}
 
-	// ¬ö¿ývtUseList¤¤ªº¤èªk³Q¨º¨ÇClass¨Ï¥Î¨ì
+	// ï¿½ï¿½ï¿½ï¿½vtUseListï¿½ï¿½ï¿½ï¿½ï¿½ï¿½kï¿½Qï¿½ï¿½ï¿½ï¿½Classï¿½Ï¥Î¨ï¿½
 	public void rlListUpdate(ArrayList<MethodTree> vtuseList, String className, ArrayList<String> mtUseList) {
 
 		for (MethodTree mt : vtuseList) {
@@ -121,7 +119,7 @@ public class InappropriateIntimacy extends IssuableSubscriptionVisitor {
 						System.out.println("use in:" + ct.simpleName().name());
 						if (!(ct.simpleName().name()).equals(className)) {
 							mtUseList.add(ct.simpleName().name());
-							System.out.println("¦¨¥\¦s¤JClass");
+							System.out.println("ï¿½ï¿½ï¿½\nsï¿½JClass");
 						}
 						break;
 					} else {
@@ -132,10 +130,10 @@ public class InappropriateIntimacy extends IssuableSubscriptionVisitor {
 		}
 	}
 
-	// µ²ºâPrivateÅÜ¼Æ³Q¨Ï¥Îªº¦¸¼Æ
+	// ï¿½ï¿½ï¿½ï¿½Privateï¿½Ü¼Æ³Qï¿½Ï¥Îªï¿½ï¿½ï¿½ï¿½ï¿½
 	public void finalCheck(String className, int classLine, ArrayList<String> mtUseList) {
 
-		ArrayList<String> temp = new ArrayList<>(); //¬ö¿ý¨Ï¥Î3¦¸¥H¤WªºCLASS
+		ArrayList<String> temp = new ArrayList<>(); //ï¿½ï¿½ï¿½ï¿½ï¿½Ï¥ï¿½3ï¿½ï¿½ï¿½Hï¿½Wï¿½ï¿½CLASS
 
 		while (mtUseList.size() > 2) {
 			System.out.println("list size: " + mtUseList.size());
@@ -156,7 +154,7 @@ public class InappropriateIntimacy extends IssuableSubscriptionVisitor {
 					classList.add(className);
 					classLineList.add(classLine);
 				}
-				System.out.println("¶W¹L3­Ó");
+				System.out.println("ï¿½Wï¿½L3ï¿½ï¿½");
 			}
 			if (num > 1) {
 				for (int i = position.size() - 1; i >= 0; i--) {
