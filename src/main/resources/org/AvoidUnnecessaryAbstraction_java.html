@@ -1,0 +1,26 @@
+<p>This rule detects unnecessary abstraction. An abstract class will be marked as unnecessary when no methods and
+    less than 5 fields were defined.</p>
+<h2>Compliant Code Example</h2>
+<pre style="background-color: #868686;">
+    abstract class A {
+        int v1 = 1;
+        int v2 = 2;
+        boolean v3 = true;
+        boolean v4 = false;
+        String v5 = "foo";
+        String v6 = "bar";
+
+        public abstarct void m1(int p1){};
+    }
+   </pre>
+<h2>Noncompliant Code Example</h2>
+<pre style="background-color: #868686;">
+    abstract class B {
+        int v1 = 1;
+        int v2 = 2;
+        boolean v3 = true;
+        boolean v4 = false;
+        String v5 = "foo";
+    }
+   </pre>
+<p>class B has under 6 fields and has no methods, therefor will be marked as unnecessary.</p>
