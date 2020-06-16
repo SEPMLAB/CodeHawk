@@ -26,7 +26,7 @@ import java.util.List;
 
 import org.codehawk.plugin.java.checks.AvoidParamClumps;
 import org.codehawk.plugin.java.checks.ShotgunSurgery;
-import org.codehawk.plugin.java.checks.InappropriateIntimacy;
+import org.codehawk.plugin.java.checks.AvoidInappropriateIntimacy;
 import org.codehawk.plugin.java.checks.AvoidLargeClass;
 import org.codehawk.plugin.java.checks.AvoidLazyClass;
 import org.codehawk.plugin.java.checks.AvoidMemberClumps;
@@ -48,7 +48,7 @@ public final class RulesList {
 
   public static List<Class<? extends JavaCheck>> getJavaChecks() {
     return Collections.unmodifiableList(Arrays.asList(AvoidLargeClass.class, RefusedBequest.class,
-			AvoidLazyClass.class, AvoidParamClumps.class, AvoidMemberClumps.class, ShotgunSurgery.class, InappropriateIntimacy.class, AvoidPrimitiveObsession.class));
+			AvoidLazyClass.class, AvoidParamClumps.class, AvoidMemberClumps.class, ShotgunSurgery.class, AvoidInappropriateIntimacy.class, AvoidPrimitiveObsession.class));
   }
 
   public static List<Class<? extends JavaCheck>> getJavaTestChecks() {

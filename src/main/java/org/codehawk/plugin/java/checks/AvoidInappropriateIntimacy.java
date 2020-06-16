@@ -18,11 +18,11 @@ import org.sonar.plugins.java.api.tree.ModifiersTree;
 import org.sonar.plugins.java.api.tree.Tree;
 import org.sonar.plugins.java.api.tree.VariableTree;
 
-@Rule(key = "InappropriateIntimacy")
+@Rule(key = "AvoidInappropriateIntimacy")
 /**
  * To use subsctiption visitor, just extend the IssuableSubscriptionVisitor.
  */
-public class InappropriateIntimacy extends IssuableSubscriptionVisitor {
+public class AvoidInappropriateIntimacy extends IssuableSubscriptionVisitor {
 
 	private Map<String, ArrayList<String>> relationList = new HashMap<>();
 	private ArrayList<String> classList = new ArrayList<>();
@@ -39,8 +39,8 @@ public class InappropriateIntimacy extends IssuableSubscriptionVisitor {
 	@Override
 	public void visitNode(Tree tree) {
 
-		ArrayList<MethodTree> vtUseList = new ArrayList<>();// ����Class����Private�ܼƳQ����METHOD�ϥ�
-		ArrayList<String> mtUseList = new ArrayList<>(); // ����vtUseList������k�Q����Class�ϥ�
+		ArrayList<MethodTree> vtUseList = new ArrayList<>();// 紀錄Class中的Private變數被哪些METHOD使用
+		ArrayList<String> mtUseList = new ArrayList<>(); // 紀錄vtUseList中的方法被哪些Class使用
 
 		// to count the number of classTrees
 		if (classCount == 0) {
@@ -51,7 +51,7 @@ public class InappropriateIntimacy extends IssuableSubscriptionVisitor {
 		String className = ct.simpleName().name();
 		int classLine = ct.openBraceToken().line();
 
-		//���oPrivate�ܼơA�ð���vtuseCheck()
+		// 取得Private變數，並執行vtuseCheck()
 		for (Tree t : ct.members()) {
 			if (t.is(Tree.Kind.VARIABLE)) {
 				VariableTree vt = (VariableTree) t;
@@ -70,13 +70,14 @@ public class InappropriateIntimacy extends IssuableSubscriptionVisitor {
 
 		rlListUpdate(vtUseList, className, mtUseList);
 		finalCheck(className, classLine, mtUseList);
-		
+
 		if (--classCount == 0 && !classList.isEmpty()) {
 			for (String cName : classList) {
 				for (String target : relationList.get(cName)) {
-					if(relationList.get(target) != null) {
-						if(relationList.get(target).contains(cName)) {
-							addIssue(classLineList.get(issueNum), "this class has Inappropriate Intimacy with class " + target);
+					if (relationList.get(target) != null) {
+						if (relationList.get(target).contains(cName)) {
+							addIssue(classLineList.get(issueNum),
+									"this class has Inappropriate Intimacy with class " + target);
 						}
 					}
 				}
@@ -86,7 +87,7 @@ public class InappropriateIntimacy extends IssuableSubscriptionVisitor {
 		}
 	}
 
-	// ����Class����Private�ܼƳQ����METHOD�ϥ�
+	// 紀錄Class中的Private變數被哪些METHOD使用
 	public void vtuseCheck(List<IdentifierTree> trees, ArrayList<MethodTree> vtuseList) {
 		for (Tree target : trees) {
 			while (target.parent() != null) {
@@ -105,7 +106,7 @@ public class InappropriateIntimacy extends IssuableSubscriptionVisitor {
 		}
 	}
 
-	// ����vtUseList������k�Q����Class�ϥΨ�
+	// 紀錄vtUseList中的方法被那些Class使用到
 	public void rlListUpdate(ArrayList<MethodTree> vtuseList, String className, ArrayList<String> mtUseList) {
 
 		for (MethodTree mt : vtuseList) {
@@ -119,7 +120,7 @@ public class InappropriateIntimacy extends IssuableSubscriptionVisitor {
 						System.out.println("use in:" + ct.simpleName().name());
 						if (!(ct.simpleName().name()).equals(className)) {
 							mtUseList.add(ct.simpleName().name());
-							System.out.println("���\ns�JClass");
+							System.out.println("成功存入Class");
 						}
 						break;
 					} else {
@@ -130,10 +131,10 @@ public class InappropriateIntimacy extends IssuableSubscriptionVisitor {
 		}
 	}
 
-	// ����Private�ܼƳQ�ϥΪ�����
+	// 結算Private變數被使用的次數
 	public void finalCheck(String className, int classLine, ArrayList<String> mtUseList) {
 
-		ArrayList<String> temp = new ArrayList<>(); //�����ϥ�3���H�W��CLASS
+		ArrayList<String> temp = new ArrayList<>(); // 紀錄使用3次以上的CLASS
 
 		while (mtUseList.size() > 2) {
 			System.out.println("list size: " + mtUseList.size());
@@ -150,11 +151,11 @@ public class InappropriateIntimacy extends IssuableSubscriptionVisitor {
 
 			if (num >= 3) {
 				temp.add(tempclass);
-				if(!classList.contains(className)) {
+				if (!classList.contains(className)) {
 					classList.add(className);
 					classLineList.add(classLine);
 				}
-				System.out.println("�W�L3��");
+				System.out.println("超過3個");
 			}
 			if (num > 1) {
 				for (int i = position.size() - 1; i >= 0; i--) {
@@ -162,7 +163,7 @@ public class InappropriateIntimacy extends IssuableSubscriptionVisitor {
 					mtUseList.remove(tempP);
 				}
 			}
-			
+
 			mtUseList.remove(0);
 
 		}

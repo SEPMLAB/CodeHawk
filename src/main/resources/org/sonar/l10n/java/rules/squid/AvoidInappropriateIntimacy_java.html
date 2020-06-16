@@ -1,0 +1,44 @@
+<p>This rule detects Inappropriate Intimacy between classes. If One class uses the internal fields and methods of another class. You will get the issue. </p>
+<h2>Noncompliant Example</h2>
+<pre>
+	class A {
+		private int a = 1;
+		
+		public int m1(){
+			return a;
+		}
+		
+		void m2(){
+			B.m5();
+		}
+		void m3(){
+			B.m5();
+		}
+		void m4(){
+			B.m5();
+		}
+	}
+	
+	class B {
+		private int b = 1;
+		
+		public int m5(){
+			return b;
+		}
+		void m6(){
+			A.m2();
+		}
+		void m7(){
+			A.m2();
+		}
+		void m8(){
+			A.m2();
+		}
+	}
+</pre>
+<h2>Recommended Solution</h2>
+<p>You have 2 ways to deal with the smell.</p>
+<pre>
+1.Replace Delegation with Inheritance.
+2.Use Extract Class and Hide Delegate on the class to make the code relations official.
+</pre>
