@@ -59,15 +59,16 @@ public class ShotgunSurgery extends IssuableSubscriptionVisitor {
 		if (classTree.superClass() != null) {
 			putInheritance(classTree);
 		}
-		checkInnerClassTree(classTree);
+		checkClassTree(classTree);
 		comparedWithUsedInMethod();
 		comparedWithUsedInVariable();
 		showSmell();
 	}
 
-	private void putInheritance(ClassTree classTree) {
+	private void putInheritance(ClassTree classTree) {// Establish an inheritance relationship
 		List<String> innerInherit = new ArrayList<>();
-		Boolean b = checkIsNewInheritance(classTree.simpleName().name(),classTree.superClass().symbolType().fullyQualifiedName());
+		Boolean b = checkIsNewInheritance(classTree.simpleName().name(),
+				classTree.superClass().symbolType().fullyQualifiedName());
 		if (Boolean.FALSE.equals(b)) {
 			innerInherit.add(classTree.superClass().symbolType().fullyQualifiedName());
 			innerInherit.add(classTree.simpleName().name());
@@ -75,7 +76,7 @@ public class ShotgunSurgery extends IssuableSubscriptionVisitor {
 		}
 	}
 
-	private Boolean checkIsNewInheritance(String thisClass, String superClass) {
+	private Boolean checkIsNewInheritance(String thisClass, String superClass) {// Check if it is a new inheritance
 		for (int i = 0; i < inHeritance.size(); i++) {
 			if (inHeritance.get(i).indexOf(thisClass) != -1 && inHeritance.get(i).indexOf(superClass) == -1) {
 				inHeritance.get(i).add(superClass);
@@ -88,126 +89,126 @@ public class ShotgunSurgery extends IssuableSubscriptionVisitor {
 		return false;
 	}
 
-	private void checkInnerClassTree(ClassTree classTree) {
+	private void checkClassTree(ClassTree classTree) {// Check each of class
 		String className = null;
-		if(classTree.simpleName() != null) {
+		if (classTree.simpleName() != null) {
 			className = classTree.simpleName().name();
 		}
 		Map<String, List<String>> innerUsedInMethod = new HashMap<>();
 		Map<String, List<String>> innerUsedInVariable = new HashMap<>();
 		Map<MethodTree, JavaFileScannerContext> innerlocation = new HashMap<>();
 		List<Tree> treeList = classTree.members();
-		for (Tree tempTree : treeList) {// check every method (constructor) in each class
+		for (Tree tempTree : treeList) {// check every method (constructor) of each class
 			if (tempTree.is(Tree.Kind.METHOD) || tempTree.is(Tree.Kind.CONSTRUCTOR)) {
 				MethodTree methodTree = (MethodTree) tempTree;
 				innerlocation.put(methodTree, context);
-				if(methodTree.block() != null) {
+				if (methodTree.block() != null) {
 					List<StatementTree> statementTreeList = methodTree.block().body();
 					checkStatementTree(statementTreeList);
 				}
-				if(!reusedList.isEmpty()) {
-					innerUsedInMethod.put(methodTree.simpleName().name(),new ArrayList<>());
+				if (!reusedList.isEmpty()) {
+					innerUsedInMethod.put(methodTree.simpleName().name(), new ArrayList<>());
 					innerUsedInMethod.get(methodTree.simpleName().name()).addAll(reusedList);
 				}
-			} else if (tempTree.is(Tree.Kind.VARIABLE)) {// check every variable in each class
+			} else if (tempTree.is(Tree.Kind.VARIABLE)) {// check every variable of each class
 				VariableTree variableTree = (VariableTree) tempTree;
 				checkVariableTree(variableTree);
-				if(!reusedList.isEmpty()) {
+				if (!reusedList.isEmpty()) {
 					innerUsedInVariable.put(variableTree.simpleName().name(), new ArrayList<>());
 					innerUsedInVariable.get(variableTree.simpleName().name()).addAll(reusedList);
 				}
 			}
 			reusedList.clear();
 		}
-		putInHashMap(className ,innerUsedInMethod, innerUsedInVariable, innerlocation);
+		putInHashMap(className, innerUsedInMethod, innerUsedInVariable, innerlocation);
 		objectList.clear();
 	}
 
-	private void checkStatementTree(List<StatementTree> list) {
+	private void checkStatementTree(List<StatementTree> list) {// check each of statement
 		for (StatementTree statementTree : list) {
 			switch (statementTree.kind()) {
-			
-			case METHOD_INVOCATION:
-				MethodInvocationTree methodInvocationTree = (MethodInvocationTree) statementTree;
-				checkMethodInvocationTree(methodInvocationTree);
-				break;
 
-			case VARIABLE:
-				VariableTree variableTree = (VariableTree) statementTree;
-				checkVariableTree(variableTree);
-				break;
+				case METHOD_INVOCATION:// get method invocation in each method
+					MethodInvocationTree methodInvocationTree = (MethodInvocationTree) statementTree;
+					checkMethodInvocationTree(methodInvocationTree);
+					break;
 
-			case EXPRESSION_STATEMENT:
-				ExpressionStatementTree expressionStatementTree = (ExpressionStatementTree) statementTree;
-				checkExpressionTree(expressionStatementTree.expression());
-				break;
+				case VARIABLE:// get variable in each method
+					VariableTree variableTree = (VariableTree) statementTree;
+					checkVariableTree(variableTree);
+					break;
 
-			case SWITCH_STATEMENT:// get switch statement in this method
-				SwitchStatementTree switchStatementTree = (SwitchStatementTree) statementTree;
-				checkExpressionTree(switchStatementTree.expression());
-				List<CaseGroupTree> caseGroupTreeList = switchStatementTree.cases();
-				for (CaseGroupTree caseGroupTree : caseGroupTreeList) {
-					List<StatementTree> statementTreeList = caseGroupTree.body();
-					checkStatementTree(statementTreeList);
-				}
-				break;
+				case EXPRESSION_STATEMENT:// get expression statement in each method
+					ExpressionStatementTree expressionStatementTree = (ExpressionStatementTree) statementTree;
+					checkExpressionTree(expressionStatementTree.expression());
+					break;
 
-			case IF_STATEMENT:// get if statement in this method
-				IfStatementTree ifStatementTree = (IfStatementTree) statementTree;
-				checkExpressionTree(ifStatementTree.condition());
-				checkInnerStatementTree(ifStatementTree.thenStatement());// check if part in this if statement
-				checkElseIfStatementTree(ifStatementTree);// check elseif and else parts in this if statement
-				break;
+				case SWITCH_STATEMENT:// get switch statement in each method
+					SwitchStatementTree switchStatementTree = (SwitchStatementTree) statementTree;
+					checkExpressionTree(switchStatementTree.expression());
+					List<CaseGroupTree> caseGroupTreeList = switchStatementTree.cases();
+					for (CaseGroupTree caseGroupTree : caseGroupTreeList) {
+						List<StatementTree> statementTreeList = caseGroupTree.body();
+						checkStatementTree(statementTreeList);
+					}
+					break;
 
-			case WHILE_STATEMENT:// get while statement in this method
-				WhileStatementTree whileStatementTree = (WhileStatementTree) statementTree;
-				checkExpressionTree(whileStatementTree.condition());
-				checkInnerStatementTree(whileStatementTree.statement());
-				break;
+				case IF_STATEMENT:// get if statement in each method
+					IfStatementTree ifStatementTree = (IfStatementTree) statementTree;
+					checkExpressionTree(ifStatementTree.condition());
+					checkInnerStatementTree(ifStatementTree.thenStatement());
+					checkElseIfStatementTree(ifStatementTree);
+					break;
 
-			case FOR_STATEMENT:// get for statement in this method
-				ForStatementTree forStatementTree = (ForStatementTree) statementTree;
-				checkExpressionTree(forStatementTree.condition());
-				checkInnerStatementTree(forStatementTree.statement());
-				break;
+				case WHILE_STATEMENT:// get while statement in each method
+					WhileStatementTree whileStatementTree = (WhileStatementTree) statementTree;
+					checkExpressionTree(whileStatementTree.condition());
+					checkInnerStatementTree(whileStatementTree.statement());
+					break;
 
-			case DO_STATEMENT:// get do_while statement in this method
-				DoWhileStatementTree doWhileStatementTree = (DoWhileStatementTree) statementTree;
-				checkExpressionTree(doWhileStatementTree.condition());
-				checkInnerStatementTree(doWhileStatementTree.statement());
-				break;
+				case FOR_STATEMENT:// get for statement in each method
+					ForStatementTree forStatementTree = (ForStatementTree) statementTree;
+					checkExpressionTree(forStatementTree.condition());
+					checkInnerStatementTree(forStatementTree.statement());
+					break;
 
-			case FOR_EACH_STATEMENT:// get for_each statement in this method
-				ForEachStatement forEachStatement = (ForEachStatement) statementTree;
-				checkExpressionTree(forEachStatement.expression());
-				checkInnerStatementTree(forEachStatement.statement());
-				break;
+				case DO_STATEMENT:// get do_while statement in each method
+					DoWhileStatementTree doWhileStatementTree = (DoWhileStatementTree) statementTree;
+					checkExpressionTree(doWhileStatementTree.condition());
+					checkInnerStatementTree(doWhileStatementTree.statement());
+					break;
 
-			case LABELED_STATEMENT:// get labeled statement in this method
-				LabeledStatementTree labeledStatementTree = (LabeledStatementTree) statementTree;
-				List<StatementTree> labeledStatementTreeList = new ArrayList<>();
-				labeledStatementTreeList.add(labeledStatementTree.statement());
-				checkStatementTree(labeledStatementTreeList);
-				break;
+				case FOR_EACH_STATEMENT:// get for_each statement in each method
+					ForEachStatement forEachStatement = (ForEachStatement) statementTree;
+					checkExpressionTree(forEachStatement.expression());
+					checkInnerStatementTree(forEachStatement.statement());
+					break;
 
-			case SYNCHRONIZED_STATEMENT:// get synchronized statement in this method
-				SynchronizedStatementTree synchronizedStatementTree = (SynchronizedStatementTree) statementTree;
-				checkExpressionTree(synchronizedStatementTree.expression());
-				checkInnerBlockTree(synchronizedStatementTree.block());
-				break;
+				case LABELED_STATEMENT:// get labeled statement in each method
+					LabeledStatementTree labeledStatementTree = (LabeledStatementTree) statementTree;
+					List<StatementTree> labeledStatementTreeList = new ArrayList<>();
+					labeledStatementTreeList.add(labeledStatementTree.statement());
+					checkStatementTree(labeledStatementTreeList);
+					break;
 
-			case TRY_STATEMENT:// get try_catch statement in this method
-				TryStatementTree tryStatementTree = (TryStatementTree) statementTree;// check try part in this try
-																						// statement
-				checkTryStatementTree(tryStatementTree);
-				break;
+				case SYNCHRONIZED_STATEMENT:// get synchronized statement in each method
+					SynchronizedStatementTree synchronizedStatementTree = (SynchronizedStatementTree) statementTree;
+					checkExpressionTree(synchronizedStatementTree.expression());
+					checkInnerBlockTree(synchronizedStatementTree.block());
+					break;
 
-			default:
-				break;
+				case TRY_STATEMENT:// get try_catch statement in each method
+					TryStatementTree tryStatementTree = (TryStatementTree) statementTree;
+					checkTryStatementTree(tryStatementTree);
+					break;
+
+				default:
+					break;
 			}
 		}
 	}
 
+	// check each of method invocation
 	private void checkMethodInvocationTree(MethodInvocationTree methodInvocationTree) {
 		ExpressionTree expressionTree = methodInvocationTree.methodSelect();
 		if (expressionTree.is(Tree.Kind.MEMBER_SELECT)) {
@@ -221,56 +222,55 @@ public class ShotgunSurgery extends IssuableSubscriptionVisitor {
 		}
 	}
 
-	private void checkVariableTree(VariableTree variableTree) {
+	private void checkVariableTree(VariableTree variableTree) {// check each of variable
 		if (variableTree.initializer() != null && variableTree.initializer().is(Tree.Kind.NEW_CLASS)) {
 			NewClassTree newClassTree = (NewClassTree) variableTree.initializer();
-			if (newClassTree.identifier().is(Tree.Kind. IDENTIFIER)) {
+			if (newClassTree.identifier().is(Tree.Kind.IDENTIFIER)) {
 				IdentifierTree identifierTree = (IdentifierTree) newClassTree.identifier();
 				objectList.add(variableTree.simpleName().name());
 				objectList.add(identifierTree.name());
 			}
-		} else if(variableTree.initializer() != null){
+		} else if (variableTree.initializer() != null) {
 			checkExpressionTree(variableTree.initializer());
 		}
 	}
 
-	private void checkTryStatementTree(TryStatementTree tryStatementTree) {
-		if (tryStatementTree.tryKeyword() != null) {
+	private void checkTryStatementTree(TryStatementTree tryStatementTree) {// check each of try_catah statement
+		if (tryStatementTree.tryKeyword() != null) {// check try part of each try statement
 			checkInnerBlockTree(tryStatementTree.block());
 		}
-		List<CatchTree> catchTreeList = tryStatementTree.catches();// check catch part in this try statement
+		List<CatchTree> catchTreeList = tryStatementTree.catches();// check catch part of each try statement
 		for (CatchTree catchtree : catchTreeList) {
 			checkInnerBlockTree(catchtree.block());
 		}
 		if (tryStatementTree.finallyKeyword() != null) {
-			checkInnerBlockTree(tryStatementTree.finallyBlock());// check finally part in this try statement
+			checkInnerBlockTree(tryStatementTree.finallyBlock());// check finally part of each try statement
 		}
 	}
 
-	private void checkElseIfStatementTree(IfStatementTree ifStatementTree) {// check else if and else parts in if
-																			// statement method
+	// check else if and else parts of each if statement
+	private void checkElseIfStatementTree(IfStatementTree ifStatementTree) {
 		if (ifStatementTree.elseKeyword() != null) {
 			StatementTree elseStatementTree = ifStatementTree.elseStatement();
 			if (elseStatementTree.is(Tree.Kind.IF_STATEMENT)) {
 				IfStatementTree elseifStatementTree = (IfStatementTree) elseStatementTree;
-				checkElseIfStatementTree(elseifStatementTree);// check next part is else if or else statement
+				checkElseIfStatementTree(elseifStatementTree);// check next part is else if statement or else statement
 				checkExpressionTree(elseifStatementTree.condition());
-				checkInnerStatementTree(elseifStatementTree.thenStatement());// check else if part in if statement
+				checkInnerStatementTree(elseifStatementTree.thenStatement());// check else if part of each if statement
 			} else {
-				checkInnerStatementTree(elseStatementTree);// check else part in if statement
+				checkInnerStatementTree(elseStatementTree);// check else part of each if statement
 			}
 		}
 	}
 
-	private void checkInnerStatementTree(StatementTree statementTree) {// check inner statement method
+	private void checkInnerStatementTree(StatementTree statementTree) {// check inner statement of each statement
 		if (statementTree.is(Tree.Kind.BLOCK)) {
 			BlockTree blockTree = (BlockTree) statementTree;
-			List<StatementTree> statementTreeList = blockTree.body();
-			checkStatementTree(statementTreeList);
+			checkInnerBlockTree(blockTree);
 		}
 	}
 
-	private void checkInnerBlockTree(BlockTree blockTree) {// check inner block method
+	private void checkInnerBlockTree(BlockTree blockTree) {// check inner block of each block
 		List<StatementTree> statementTreeList = blockTree.body();
 		checkStatementTree(statementTreeList);
 	}
@@ -309,6 +309,7 @@ public class ShotgunSurgery extends IssuableSubscriptionVisitor {
 		}
 	}
 
+	// Check if it is an object
 	private String checkIsObject(String name) {
 		for (int i = 0; i + 1 < objectList.size(); i += 2) {
 			if (name.equals(objectList.get(i))) {
@@ -317,19 +318,21 @@ public class ShotgunSurgery extends IssuableSubscriptionVisitor {
 		}
 		return name;
 	}
-	
-	private void putInHashMap(String className,Map<String, List<String>> innerUsedInMethod ,Map<String, List<String>> innerUsedInVariable,Map<MethodTree , JavaFileScannerContext> innerlocation) {
-		if(className != null && !innerUsedInMethod.isEmpty()) {
+
+	private void putInHashMap(String className, Map<String, List<String>> innerUsedInMethod,
+			Map<String, List<String>> innerUsedInVariable, Map<MethodTree, JavaFileScannerContext> innerlocation) {
+		if (className != null && !innerUsedInMethod.isEmpty()) {
 			usedInMethod.put(className, innerUsedInMethod);
 		}
-		if(className != null && !innerUsedInVariable.isEmpty()) {
+		if (className != null && !innerUsedInVariable.isEmpty()) {
 			usedInVariable.put(className, innerUsedInVariable);
 		}
-		if(className != null && !innerlocation.isEmpty()) {
+		if (className != null && !innerlocation.isEmpty()) {
 			location.put(className, innerlocation);
 		}
 	}
 
+	// Calculate changing method & changing class
 	private void comparedWithUsedInMethod() {
 		for (Entry<String, Map<String, List<String>>> entry1 : usedInMethod.entrySet()) {
 			String className = entry1.getKey();
@@ -344,7 +347,8 @@ public class ShotgunSurgery extends IssuableSubscriptionVisitor {
 			}
 		}
 	}
-	
+
+	// Calculate changing class
 	private void comparedWithUsedInVariable() {
 		for (Entry<String, Map<String, List<String>>> entry1 : usedInVariable.entrySet()) {
 			String className = entry1.getKey();
@@ -358,38 +362,41 @@ public class ShotgunSurgery extends IssuableSubscriptionVisitor {
 		}
 	}
 
+	// Store map of changing class quantity
 	private void moveToClassCount(String tempClassName, String tempMethodName, String className) {
-		Boolean b= checkInheritance(className, tempClassName);
-		if(Boolean.TRUE.equals(b)) {
-			if(!classCount.containsKey(tempClassName)) {
+		Boolean b = checkInheritance(className, tempClassName);
+		if (Boolean.TRUE.equals(b)) {
+			if (!classCount.containsKey(tempClassName)) {
 				Map<String, List<String>> innerClassCount = new HashMap<>();
-				innerClassCount.put(tempMethodName,new ArrayList<String>());
-				classCount.put(tempClassName,innerClassCount);
-			}else if(!classCount.get(tempClassName).containsKey(tempMethodName)) {
-				classCount.get(tempClassName).put(tempMethodName,new ArrayList<String>());
+				innerClassCount.put(tempMethodName, new ArrayList<>());
+				classCount.put(tempClassName, innerClassCount);
+			} else if (!classCount.get(tempClassName).containsKey(tempMethodName)) {
+				classCount.get(tempClassName).put(tempMethodName, new ArrayList<>());
 			}
-			if(classCount.get(tempClassName).get(tempMethodName).indexOf(className) == -1) {
+			if (classCount.get(tempClassName).get(tempMethodName).indexOf(className) == -1) {
 				classCount.get(tempClassName).get(tempMethodName).add(className);
 			}
 		}
 	}
-	
+
+	// Store map of changing method quantity
 	private void moveToMethodCount(String tempClassName, String tempMethodName, String className, String methodName) {
-		Boolean b= checkInheritance(className, tempClassName);
-		if(Boolean.TRUE.equals(b)) {
-			if(!methodCount.containsKey(tempClassName)) {
+		Boolean b = checkInheritance(className, tempClassName);
+		if (Boolean.TRUE.equals(b)) {
+			if (!methodCount.containsKey(tempClassName)) {
 				Map<String, List<String>> innerMethodCount = new HashMap<>();
-				innerMethodCount.put(tempMethodName,new ArrayList<String>());
-				methodCount.put(tempClassName,innerMethodCount);
-			}else if(!methodCount.get(tempClassName).containsKey(tempMethodName)) {
-				methodCount.get(tempClassName).put(tempMethodName,new ArrayList<String>());
+				innerMethodCount.put(tempMethodName, new ArrayList<>());
+				methodCount.put(tempClassName, innerMethodCount);
+			} else if (!methodCount.get(tempClassName).containsKey(tempMethodName)) {
+				methodCount.get(tempClassName).put(tempMethodName, new ArrayList<>());
 			}
-			if(methodCount.get(tempClassName).get(tempMethodName).indexOf(className + methodName) == -1) {
+			if (methodCount.get(tempClassName).get(tempMethodName).indexOf(className + methodName) == -1) {
 				methodCount.get(tempClassName).get(tempMethodName).add(className + methodName);
 			}
 		}
 	}
-	
+
+	// Check for inheritance
 	private Boolean checkInheritance(String thisClass, String superClass) {
 		for (int i = 0; i < inHeritance.size(); i++) {
 			if (inHeritance.get(i).indexOf(thisClass) != -1 && inHeritance.get(i).indexOf(superClass) != -1) {
@@ -399,7 +406,7 @@ public class ShotgunSurgery extends IssuableSubscriptionVisitor {
 		return true;
 	}
 
-	private void showSmell() {
+	private void showSmell() {// show bad smell
 		for (Entry<String, Map<String, List<String>>> entry1 : methodCount.entrySet()) {
 			String className = entry1.getKey();
 			for (Entry<String, List<String>> entry2 : entry1.getValue().entrySet()) {
@@ -415,21 +422,27 @@ public class ShotgunSurgery extends IssuableSubscriptionVisitor {
 		}
 	}
 
-	private void innerShowSmell(String className, String methodName, String className2 ,MethodTree methodtree, JavaFileScannerContext context) {
+	// show bad smell inner part
+	private void innerShowSmell(String className, String methodName, String className2, MethodTree methodtree,
+			JavaFileScannerContext context) {
 		String methodName2 = methodtree.simpleName().name();
 		Boolean b = chcekConsistent(className, className2, methodName, methodName2)
-				&& methodCount.get(className).get(methodName).size() > 7 && classCount.get(className).get(methodName).size() > 10;
-		if (Boolean.TRUE.equals(b)) {
+				&& methodCount.get(className).get(methodName).size() > 7
+				&& classCount.get(className).get(methodName).size() > 10;
+		if (Boolean.TRUE.equals(b)) {// avoid repeating bad smell
 			if (!hasShowed.containsKey(className)) {
-				context.addIssue(methodtree.openParenToken().line(), this,"Code smell \"Shotgun Surgery\" occurred in method \"" + methodName + "\" !");
-				hasShowed.put(className, new ArrayList<String>());
+				context.addIssue(methodtree.openParenToken().line(), this,
+						"Code smell \"Shotgun Surgery\" occurred in method \"" + methodName + "\" !");
+				hasShowed.put(className, new ArrayList<>());
 			} else if (hasShowed.get(className).indexOf(methodName) == -1) {
-				context.addIssue(methodtree.openParenToken().line(), this,"Code smell \"Shotgun Surgery\" occurred in method \"" + methodName + "\" !");
+				context.addIssue(methodtree.openParenToken().line(), this,
+						"Code smell \"Shotgun Surgery\" occurred in method \"" + methodName + "\" !");
 			}
 			hasShowed.get(className).add(methodName);
 		}
 	}
 
+	// avoid repeating bad smell
 	private Boolean chcekConsistent(String className, String className2, String methodName, String methodName2) {
 		return className.equals(className2) && methodName.equals(methodName2);
 	}
