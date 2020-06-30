@@ -16,45 +16,42 @@ import org.codehawk.smell.metricruler.ClassMetrics;
 @Rule(key = "AvoidUnnecessaryAbstraction")
 public class AvoidUnnecessaryAbstraction extends IssuableSubscriptionVisitor {
 
-    @Override
-    public List<Tree.Kind> nodesToVisit() {
-        // Register to the kind of nodes you want to be called upon visit.
-        return Collections.singletonList(Tree.Kind.CLASS);
+  @Override
+  public List<Tree.Kind> nodesToVisit() {
+    // Register to the kind of nodes you want to be called upon visit.
+    return Collections.singletonList(Tree.Kind.CLASS);
+  }
+
+  @Override
+  public void visitNode(Tree tree) {
+    ClassTree ct = (ClassTree) tree;
+
+    if (isUnnecessary(ct)) {
+      addIssue(ClassMetrics.extractStartingLine(ct), "abstract classes should at least one method and 6 fields.");
     }
+  }
 
-    @Override
-    public void visitNode(Tree tree) {
-        ClassTree ct = (ClassTree) tree;
+  // private boolean isAbstract(ClassTree ct) {
+  // List<ModifierKeywordTree> modifierList = ct.modifiers().modifiers();
 
-        if (isAbstract(ct)) {
-            if (isUnnecessary(ct)) {
-                addIssue(ClassMetrics.extractStartingLine(ct),
-                        "abstract classes should at least one method and 6 fields.");
-            }
-        }
-    }
+  // for (ModifierKeywordTree modifier : modifierList) {
+  // if (modifier.modifier().equals(Modifier.ABSTRACT)) {
+  // return true;
+  // }
+  // }
 
-    private boolean isAbstract(ClassTree ct) {
-        List<ModifierKeywordTree> modifierList = ct.modifiers().modifiers();
+  // return false;
+  // }
 
-        for (ModifierKeywordTree modifier : modifierList) {
-            if (modifier.modifier().equals(Modifier.ABSTRACT)) {
-                return true;
-            }
-        }
+  private boolean isUnnecessary(ClassTree ct) {
+    ThresholdDTO thresholdDTO = new ThresholdDTO();
 
-        return false;
-    }
+    // get number of fields
+    int numOfFields = ClassMetrics.extractNumOfFieldsMetrics(ct);
+    // get number of methods
+    int numOfMethods = ClassMetrics.extractNumOfMethodsMetrics(ct);
 
-    private boolean isUnnecessary(ClassTree ct) {
-        ThresholdDTO thresholdDTO = new ThresholdDTO();
-
-        // get number of fields
-        int numOfFields = ClassMetrics.extractNumOfFieldsMetrics(ct);
-        // get number of methods
-        int numOfMethods = ClassMetrics.extractNumOfMethodsMetrics(ct);
-
-        return numOfMethods == thresholdDTO.getUnnecessaryAbstractionFewMethods()
-                && numOfFields <= thresholdDTO.getUnnecessaryAbstractionFewFields();
-    }
+    return numOfMethods == thresholdDTO.getUnnecessaryAbstractionFewMethods()
+        && numOfFields <= thresholdDTO.getUnnecessaryAbstractionFewFields();
+  }
 }
