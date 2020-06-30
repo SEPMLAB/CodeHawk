@@ -39,8 +39,8 @@ public class AvoidInappropriateIntimacy extends IssuableSubscriptionVisitor {
 	@Override
 	public void visitNode(Tree tree) {
 
-		ArrayList<MethodTree> vtUseList = new ArrayList<>();// ç´€éŒ„Classä¸­çš„Privateè®Šæ•¸è¢«å“ªäº›METHODä½¿ç”¨
-		ArrayList<String> mtUseList = new ArrayList<>(); // ç´€éŒ„vtUseListä¸­çš„æ–¹æ³•è¢«å“ªäº›Classä½¿ç”¨
+		ArrayList<MethodTree> vtUseList = new ArrayList<>();// ¬ö¿ıClass¤¤ªºPrivateÅÜ¼Æ³Q­ş¨ÇMETHOD¨Ï¥Î
+		ArrayList<String> mtUseList = new ArrayList<>(); // ¬ö¿ıvtUseList¤¤ªº¤èªk³Q­ş¨ÇClass¨Ï¥Î
 
 		// to count the number of classTrees
 		if (classCount == 0) {
@@ -51,7 +51,7 @@ public class AvoidInappropriateIntimacy extends IssuableSubscriptionVisitor {
 		String className = ct.simpleName().name();
 		int classLine = ct.openBraceToken().line();
 
-		// å–å¾—Privateè®Šæ•¸ï¼Œä¸¦åŸ·è¡ŒvtuseCheck()
+		// ¨ú±oPrivateÅÜ¼Æ¡A¨Ã°õ¦ævtuseCheck()
 		for (Tree t : ct.members()) {
 			if (t.is(Tree.Kind.VARIABLE)) {
 				VariableTree vt = (VariableTree) t;
@@ -87,7 +87,7 @@ public class AvoidInappropriateIntimacy extends IssuableSubscriptionVisitor {
 		}
 	}
 
-	// ç´€éŒ„Classä¸­çš„Privateè®Šæ•¸è¢«å“ªäº›METHODä½¿ç”¨
+	// ¬ö¿ıClass¤¤ªºPrivateÅÜ¼Æ³Q­ş¨ÇMETHOD¨Ï¥Î
 	public void vtuseCheck(List<IdentifierTree> trees, ArrayList<MethodTree> vtuseList) {
 		for (Tree target : trees) {
 			while (target.parent() != null) {
@@ -106,7 +106,7 @@ public class AvoidInappropriateIntimacy extends IssuableSubscriptionVisitor {
 		}
 	}
 
-	// ç´€éŒ„vtUseListä¸­çš„æ–¹æ³•è¢«é‚£äº›Classä½¿ç”¨åˆ°
+	// ¬ö¿ıvtUseList¤¤ªº¤èªk³Q¨º¨ÇClass¨Ï¥Î¨ì
 	public void rlListUpdate(ArrayList<MethodTree> vtuseList, String className, ArrayList<String> mtUseList) {
 
 		for (MethodTree mt : vtuseList) {
@@ -120,7 +120,7 @@ public class AvoidInappropriateIntimacy extends IssuableSubscriptionVisitor {
 						System.out.println("use in:" + ct.simpleName().name());
 						if (!(ct.simpleName().name()).equals(className)) {
 							mtUseList.add(ct.simpleName().name());
-							System.out.println("æˆåŠŸå­˜å…¥Class");
+							System.out.println("¦¨¥\¦s¤JClass");
 						}
 						break;
 					} else {
@@ -131,10 +131,10 @@ public class AvoidInappropriateIntimacy extends IssuableSubscriptionVisitor {
 		}
 	}
 
-	// çµç®—Privateè®Šæ•¸è¢«ä½¿ç”¨çš„æ¬¡æ•¸
+	// µ²ºâPrivateÅÜ¼Æ³Q¨Ï¥Îªº¦¸¼Æ
 	public void finalCheck(String className, int classLine, ArrayList<String> mtUseList) {
 
-		ArrayList<String> temp = new ArrayList<>(); // ç´€éŒ„ä½¿ç”¨3æ¬¡ä»¥ä¸Šçš„CLASS
+		ArrayList<String> temp = new ArrayList<>(); // ¬ö¿ı¨Ï¥Î3¦¸¥H¤WªºCLASS
 
 		while (mtUseList.size() > 2) {
 			System.out.println("list size: " + mtUseList.size());
@@ -155,7 +155,7 @@ public class AvoidInappropriateIntimacy extends IssuableSubscriptionVisitor {
 					classList.add(className);
 					classLineList.add(classLine);
 				}
-				System.out.println("è¶…é3å€‹");
+				System.out.println("¶W¹L3­Ó");
 			}
 			if (num > 1) {
 				for (int i = position.size() - 1; i >= 0; i--) {

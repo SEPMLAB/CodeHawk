@@ -1,0 +1,13 @@
+<p>This rule detects UnutilizedAbstraction between classes. If classes don't use or be used. You will get the issue. It means you should make sure that is it really need to exist. </p>
+<h2>Noncompliant Example</h2>
+<pre>
+	class A {
+		
+	}
+</pre>
+<h2>Recommended Solution</h2>
+<p>You have two ways to deal with the smell.</p>
+<pre>
+1.Remove the class.
+2.Refactor the code,let class has a clearer division of labor. After that,you can get clearer architecture.
+</pre>
