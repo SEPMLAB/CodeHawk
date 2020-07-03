@@ -1,3 +1,4 @@
+org\codehawk\plugin\java\checks\ImperativeAbstraction.class
 org\codehawk\plugin\java\checks\AvoidLargeMethod.class
 org\codehawk\smell\metricruler\ClassMetrics.class
 org\codehawk\smell\smellruler\PrimitiveObsession.class
@@ -7,6 +8,8 @@ org\codehawk\plugin\java\checks\AvoidTooManyParametersInOneMethod.class
 org\codehawk\smell\smellruler\InappropriateIntimacy.class
 org\codehawk\smell\smellruler\LazyClass.class
 org\codehawk\smell\modler\Node$Kind.class
+org\codehawk\smell\modler\ShotgunSurgeryNode.class
+org\codehawk\smell\modler\ShotgunSurgeryDetector$1.class
 org\codehawk\plugin\java\checks\AvoidUnnecessaryAbstraction.class
 org\codehawk\plugin\java\checks\AvoidInappropriateIntimacy.class
 org\codehawk\smell\modler\SwitchNode.class
@@ -15,9 +18,12 @@ org\codehawk\smell\smellruler\DataClump.class
 org\codehawk\plugin\java\checks\AvoidLargeClass.class
 org\codehawk\smell\modler\Smellable.class
 org\codehawk\smell\metricruler\ClumpMetrics.class
+org\codehawk\smell\modler\DeficientEncapsulationNode.class
 org\codehawk\smell\modler\DataClumpDetector.class
 org\codehawk\plugin\java\checks\AvoidUnutilizedAbstraction.class
-org\codehawk\plugin\java\checks\ShotgunSurgery$1.class
+org\codehawk\smell\modler\DeficientEncapsulationDetector.class
+org\codehawk\smell\modler\ImperativeAbstractionNode.class
+org\codehawk\plugin\java\checks\InappropriateIntimacy.class
 org\codehawk\plugin\java\MyJavaFileCheckRegistrar.class
 org\codehawk\smell\metricruler\GetLines.class
 org\codehawk\smell\smellruler\LargeMethod.class
@@ -28,10 +34,13 @@ org\codehawk\plugin\java\checks\AvoidMemberClumps.class
 org\codehawk\plugin\java\checks\AvoidParamClumps.class
 org\codehawk\plugin\java\MyJavaRulesPlugin.class
 org\codehawk\smell\smellruler\LargeClass.class
+org\codehawk\smell\modler\ImperativeAbstractionDetector.class
 org\codehawk\smell\modler\SmellableNode.class
 org\codehawk\smell\smellruler\TooManyParameters.class
+org\codehawk\plugin\java\checks\DeficientEncapsulation.class
 org\codehawk\plugin\java\checks\RefusedBequest$1.class
 org\codehawk\smell\modler\POMethodNode.class
+org\codehawk\smell\modler\ShotgunSurgeryDetector.class
 org\codehawk\plugin\java\checks\ExtendClassTree.class
 org\codehawk\plugin\java\checks\AvoidPrimitiveObsession.class
 org\codehawk\plugin\java\MyJavaRulesDefinition.class

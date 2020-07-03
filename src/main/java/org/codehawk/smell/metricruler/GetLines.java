@@ -39,9 +39,13 @@ public class GetLines {
 	}
 
 	//get the trees from MethodTree
-	public static int getMethodTreeLines(MethodTree tree){
-		BlockTree bt = tree.block();
-		return treeLines(bt.body());
+	public static int getMethodTreeLines(MethodTree tree) {
+		try {
+			BlockTree bt = tree.block();
+			return treeLines(bt.body());
+		} catch (java.lang.NullPointerException exception) {
+			return 0;
+		}
 	}
 
 	//get the trees from ClassTree

@@ -5,6 +5,10 @@ import org.sonar.plugins.java.api.tree.Tree;
 
 public class ClassMetrics {
 
+    ClassMetrics(){
+
+    }
+    
     // returns number of fields
     public static int extractNumOfFieldsMetrics(ClassTree tree) {
         int numOfFields = 0;

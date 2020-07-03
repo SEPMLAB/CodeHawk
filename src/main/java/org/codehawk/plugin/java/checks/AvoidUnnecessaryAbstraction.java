@@ -27,7 +27,7 @@ public class AvoidUnnecessaryAbstraction extends IssuableSubscriptionVisitor {
     ClassTree ct = (ClassTree) tree;
 
     if (isUnnecessary(ct)) {
-      addIssue(ClassMetrics.extractStartingLine(ct), "Abstraction should have at least one method or 6 fields.");
+      addIssue(ClassMetrics.extractStartingLine(ct), "abstract classes should at least one method and 6 fields.");
     }
   }
 

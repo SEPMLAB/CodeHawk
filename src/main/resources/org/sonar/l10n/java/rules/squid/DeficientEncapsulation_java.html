@@ -1,0 +1,11 @@
+<p>This rule avoids Deficient Encapsulation</p>
+<h2>Noncompliant Example</h2>
+<p>
+    When the declared accessibility of one or more members of an abstraction is more permissive than actually required.
+</p>
+<h2>Compliant Solution</h2>
+<p>
+    1.If this parameter is to be used by other classes, change its modifier to "not public" and generate "a public
+    method" for other classes to obtain the parameter.<br>
+    2.If this parameter is not to be used by other classes, then change its modifier "not public".
+</p>
