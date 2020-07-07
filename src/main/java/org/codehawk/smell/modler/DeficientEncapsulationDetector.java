@@ -22,12 +22,10 @@ public class DeficientEncapsulationDetector implements Detector {
 		return false;
 	}
 
-	public void detect(ClassTree ct, DeficientEncapsulationNode node) {
+	public void detect(ClassTree ct) {
 		if (getModifier(ct) == Modifier.PUBLIC) {
 			putInGetter(ct);
 			checkClass(ct);
-			if (numOfPublicFields > 0)
-				showSmell(node);
 		}
 	}
 
@@ -42,7 +40,7 @@ public class DeficientEncapsulationDetector implements Detector {
 		}
 	}
 
-	private void innerPutInGetter(MethodTree methodTree) {//inner part of putInGetter method
+	private void innerPutInGetter(MethodTree methodTree) {// inner part of putInGetter
 		for (StatementTree statementTree : methodTree.block().body()) {
 			if (statementTree.is(Tree.Kind.RETURN_STATEMENT)) {
 				ReturnStatementTree returnStatementTree = (ReturnStatementTree) statementTree;
@@ -54,7 +52,8 @@ public class DeficientEncapsulationDetector implements Detector {
 		}
 	}
 
-	private void checkClass(ClassTree ct) {// get each modifier is a public field and it is in getter
+	// get the modifier of each field is public and it exists in the getter
+	private void checkClass(ClassTree ct) {
 		for (Tree tree : ct.members()) {
 			if (tree.is(Tree.Kind.VARIABLE)) {
 				VariableTree variableTree = (VariableTree) tree;
@@ -65,7 +64,7 @@ public class DeficientEncapsulationDetector implements Detector {
 		}
 	}
 
-	private Modifier getModifier(Tree tree) {// get modifier of each variable or class
+	private Modifier getModifier(Tree tree) {// get the modifier of each variable or class
 		Modifier modifier = Modifier.DEFAULT;
 		if (tree.is(Tree.Kind.VARIABLE)) {
 			VariableTree variableTree = (VariableTree) tree;
@@ -83,8 +82,7 @@ public class DeficientEncapsulationDetector implements Detector {
 		return modifier;
 	}
 
-	private void showSmell(DeficientEncapsulationNode node) {// show bad smell
-		node.getContext().addIssue(node.getStartLine(), node.getCheck(),
-				"Code smell \"Deficient Encapsulation\" occurred in Class \"" + node.getName() + "\" !");
+	public boolean check() {
+		return numOfPublicFields > 0;
 	}
 }
