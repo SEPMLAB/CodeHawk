@@ -4,7 +4,6 @@ import java.util.Collections;
 import java.util.List;
 
 import org.codehawk.smell.modler.DeficientEncapsulationDetector;
-import org.codehawk.smell.modler.DeficientEncapsulationNode;
 import org.sonar.check.Rule;
 import org.sonar.plugins.java.api.IssuableSubscriptionVisitor;
 import org.sonar.plugins.java.api.tree.ClassTree;
@@ -22,8 +21,13 @@ public class DeficientEncapsulation extends IssuableSubscriptionVisitor {
 	public void visitNode(Tree tree) {
 		ClassTree classTree = (ClassTree) tree;
 		DeficientEncapsulationDetector detector = new DeficientEncapsulationDetector();
-		DeficientEncapsulationNode node = new DeficientEncapsulationNode(classTree.openBraceToken().line(),
-				classTree.simpleName().name(), context, this);
-		detector.detect(classTree, node);
+		detector.detect(classTree);
+
+		Boolean b = detector.check();
+		if (Boolean.TRUE.equals(b)) {
+			int line = classTree.openBraceToken().line();
+			String className = classTree.simpleName().name();
+			addIssue(line, "Code smell \"Deficient Encapsulation\" occurred in Class \"" + className + "\" !");
+		}
 	}
 }
