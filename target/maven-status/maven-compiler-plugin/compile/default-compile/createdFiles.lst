@@ -18,12 +18,9 @@ org\codehawk\smell\smellruler\DataClump.class
 org\codehawk\plugin\java\checks\AvoidLargeClass.class
 org\codehawk\smell\modler\Smellable.class
 org\codehawk\smell\metricruler\ClumpMetrics.class
-org\codehawk\smell\modler\DeficientEncapsulationNode.class
 org\codehawk\smell\modler\DataClumpDetector.class
 org\codehawk\plugin\java\checks\AvoidUnutilizedAbstraction.class
 org\codehawk\smell\modler\DeficientEncapsulationDetector.class
-org\codehawk\smell\modler\ImperativeAbstractionNode.class
-org\codehawk\plugin\java\checks\InappropriateIntimacy.class
 org\codehawk\plugin\java\MyJavaFileCheckRegistrar.class
 org\codehawk\smell\metricruler\GetLines.class
 org\codehawk\smell\smellruler\LargeMethod.class

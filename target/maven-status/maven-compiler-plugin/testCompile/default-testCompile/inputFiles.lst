@@ -1,2 +1,8 @@
-C:\Users\jklui\Downloads\CodeHawk\src\test\java\org\sonar\samples\java\checks\MyCustomSubscriptionRuleTest.java
-C:\Users\jklui\Downloads\CodeHawk\src\test\java\org\sonar\samples\java\MyJavaRulesDefinitionTest.java
+D:\實驗室\sonarqube\codehawkgit\CodeHawk\src\test\java\org\sonar\samples\java\checks\AvoidLazyClassCheckTest.java
+D:\實驗室\sonarqube\codehawkgit\CodeHawk\src\test\java\org\sonar\samples\java\checks\AvoidLargeClassCheckTest.java
+D:\實驗室\sonarqube\codehawkgit\CodeHawk\src\test\java\org\sonar\samples\java\checks\AvoidMemberClumpsCheckTest.java
+D:\實驗室\sonarqube\codehawkgit\CodeHawk\src\test\java\org\sonar\samples\java\checks\AvoidUnutilizedAbstractionCheckTest.java
+D:\實驗室\sonarqube\codehawkgit\CodeHawk\src\test\java\org\sonar\samples\java\checks\AvoidUnnecessaryAbstractionCheckTest.java
+D:\實驗室\sonarqube\codehawkgit\CodeHawk\src\test\java\org\sonar\samples\java\checks\MyCustomSubscriptionRuleTest.java
+D:\實驗室\sonarqube\codehawkgit\CodeHawk\src\test\java\org\sonar\samples\java\MyJavaRulesDefinitionTest.java
+D:\實驗室\sonarqube\codehawkgit\CodeHawk\src\test\java\org\sonar\samples\java\checks\AvoidParamClumpsCheckTest.java

@@ -3,12 +3,9 @@ package org.codehawk.plugin.java.checks;
 import java.util.Collections;
 import java.util.List;
 
-import javax.lang.model.element.Modifier;
-
 import org.sonar.check.Rule;
 import org.sonar.plugins.java.api.IssuableSubscriptionVisitor;
 import org.sonar.plugins.java.api.tree.ClassTree;
-import org.sonar.plugins.java.api.tree.ModifierKeywordTree;
 import org.sonar.plugins.java.api.tree.Tree;
 import org.codehawk.smell.ThresholdDTO;
 import org.codehawk.smell.metricruler.ClassMetrics;
