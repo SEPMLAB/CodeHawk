@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.codehawk.plugin</groupId>
@@ -16,14 +18,7 @@
 		<gson.version>2.6.2</gson.version>
 
 		<sonar.version>7.9</sonar.version>
-		<sonarjava.version>5.12.1.17771</sonarjava.version>
-
-		<!-- 
-  		<sonar.projectKey>SDPMLab_CodeHawk</sonar.projectKey>
- 		<sonar.organization>codehawkv1.3</sonar.organization>
-  		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-		<sonar.login>60b6e30df5f34767cef912f69be82ea7ab5f96c0</sonar.login>
-		-->
+		<sonarjava.version>6.3.0.21585</sonarjava.version>
 	</properties>
 
 	<dependencies>
@@ -207,5 +202,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
