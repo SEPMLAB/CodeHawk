@@ -79,10 +79,11 @@ public class ShotgunSurgeryDetector implements Detector {
 		for (int i = 0; i < inHeritance.size(); i++) {
 			if (inHeritance.get(i).indexOf(thisClass) != -1 && inHeritance.get(i).indexOf(superClass) == -1) {
 				inHeritance.get(i).add(superClass);
+				return true;
 			} else if (inHeritance.get(i).indexOf(superClass) != -1 && inHeritance.get(i).indexOf(thisClass) == -1) {
 				inHeritance.get(i).add(thisClass);
+				return true;
 			}
-			return true;
 		}
 		return false;
 	}
