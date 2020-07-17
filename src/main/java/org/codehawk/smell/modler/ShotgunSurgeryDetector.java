@@ -38,7 +38,8 @@ import org.sonar.plugins.java.api.tree.VariableTree;
 import org.sonar.plugins.java.api.tree.WhileStatementTree;
 
 public class ShotgunSurgeryDetector implements Detector {
-	private final int CM = 7, CC = 10;
+	private static final int CM = 7;
+	private static final int CC = 10;
 	private Map<String, Map<String, List<String>>> usedInMethod = new HashMap<>();
 	private Map<String, Map<String, List<String>>> usedInVariable = new HashMap<>();
 	private Map<String, Map<String, List<String>>> classCount = new HashMap<>();

@@ -1,8 +1,0 @@
-org\sonar\samples\java\checks\AvoidMemberClumpsCheckTest.class
-org\sonar\samples\java\checks\AvoidParamClumpsCheckTest.class
-org\sonar\samples\java\checks\MyCustomSubscriptionRuleTest.class
-org\sonar\samples\java\checks\AvoidUnutilizedAbstractionCheckTest.class
-org\sonar\samples\java\MyJavaRulesDefinitionTest.class
-org\sonar\samples\java\checks\AvoidLazyClassCheckTest.class
-org\sonar\samples\java\checks\AvoidUnnecessaryAbstractionCheckTest.class
-org\sonar\samples\java\checks\AvoidLargeClassCheckTest.class
