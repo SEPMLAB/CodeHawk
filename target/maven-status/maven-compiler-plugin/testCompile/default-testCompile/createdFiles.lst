@@ -1,0 +1,10 @@
+org\codehawk\plugin\java\checks\AvoidMemberClumpsCheckTest.class
+org\codehawk\plugin\java\checks\AvoidUnutilizedAbstractionCheckTest.class
+org\codehawk\plugin\java\checks\AvoidLargeClassCheckTest.class
+org\codehawk\plugin\java\checks\ShotgunSurgeryRuleTest.class
+org\codehawk\plugin\java\checks\AvoidLazyClassCheckTest.class
+org\codehawk\plugin\java\checks\AvoidParamClumpsCheckTest.class
+org\codehawk\plugin\java\checks\AvoidUnnecessaryAbstractionCheckTest.class
+org\codehawk\plugin\java\checks\DeficientEncapsulationRuleTest.class
+org\codehawk\plugin\java\MyJavaRulesDefinitionTest.class
+org\codehawk\plugin\java\checks\ImperativeAbstractionRuleTest.class

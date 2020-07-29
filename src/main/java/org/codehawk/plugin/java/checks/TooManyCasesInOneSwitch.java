@@ -10,8 +10,8 @@ import org.sonar.plugins.java.api.IssuableSubscriptionVisitor;
 import org.sonar.plugins.java.api.tree.ClassTree;
 import org.sonar.plugins.java.api.tree.Tree;
 
-@Rule(key = "AvoidTooManyCasesInOneSwitch")
-public class AvoidTooManyCasesInOneSwitch extends IssuableSubscriptionVisitor {
+@Rule(key = "TooManyCasesInOneSwitch")
+public class TooManyCasesInOneSwitch extends IssuableSubscriptionVisitor {
 
 	@Override
 	public List<Tree.Kind> nodesToVisit() {
@@ -32,5 +32,4 @@ public class AvoidTooManyCasesInOneSwitch extends IssuableSubscriptionVisitor {
 			addIssue(node.getStartLine(), "Too many cases in this switch statement!(over 10)");
 		}
 	}
-
 }

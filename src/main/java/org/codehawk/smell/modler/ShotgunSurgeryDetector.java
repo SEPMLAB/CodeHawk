@@ -67,7 +67,7 @@ public class ShotgunSurgeryDetector implements Detector {
 
 	private void putInheritance(ClassTree classTree) {// Establish an inheritance relationship
 		Boolean b = checkIsNewInheritance(classTree.simpleName().name(),
-				classTree.superClass().symbolType().fullyQualifiedName());
+				classTree.superClass().symbolType().name());
 		if (Boolean.FALSE.equals(b)) {
 			List<String> innerInherit = new ArrayList<>();
 			innerInherit.add(classTree.superClass().symbolType().fullyQualifiedName());

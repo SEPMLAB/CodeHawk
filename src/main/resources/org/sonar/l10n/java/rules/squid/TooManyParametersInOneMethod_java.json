@@ -1,5 +1,5 @@
 {
-  "title": "Avoid Too Many Cases In One Switch",
+  "title": "Too Many Parameters In One Method",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

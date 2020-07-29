@@ -1,7 +1,7 @@
 package org.codehawk.smell.smellruler;
 
-public class TooManyParameters implements Smell{
-	private static final Smell.Type smellType = Smell.Type.TOOMANYPARAMETERS;
+public class TooManyCasesInOneSwitchSmellRuler implements Smell{
+	private static final Smell.Type smellType = Smell.Type.TOOMANYCASESINONESWITCH;
 
 	@Override
 	public boolean is(Type type) {

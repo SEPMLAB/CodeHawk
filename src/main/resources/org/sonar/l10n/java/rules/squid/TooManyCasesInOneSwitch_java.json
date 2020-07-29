@@ -1,5 +1,5 @@
 {
-  "title": "Avoid Too Many Cases In One Switch",
+  "title": "Too Many Cases In One Switch",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {
