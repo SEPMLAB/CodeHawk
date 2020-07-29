@@ -4,10 +4,11 @@ import org.junit.Test;
 import org.sonar.java.checks.verifier.JavaCheckVerifier;
 
 public class AvoidLazyClassCheckTest {
+	private static final String FILENAME = "src/test/files/AvoidLazyClassCheck.java";
+	private AvoidLazyClass check = new AvoidLazyClass();
 
 	@Test
 	public void detected() {
-		JavaCheckVerifier.newVerifier().onFile("src/test/files/AvoidLazyClassCheck.java")
-				.withCheck(new AvoidLazyClass()).verifyIssues();
+		JavaCheckVerifier.newVerifier().onFile(FILENAME).withCheck(check).verifyIssues();
 	}
 }
