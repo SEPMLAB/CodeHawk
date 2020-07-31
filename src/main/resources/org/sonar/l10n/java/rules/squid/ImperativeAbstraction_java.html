@@ -1,8 +1,66 @@
 <p>This rule avoids Imperative Abstraction</p>
 <h2>Noncompliant Example</h2>
 <p>
-    Lack of data members and too simple functions.
+    Too few data members and too large methods in one class.
 </p>
+<pre>
+    public class A {
+    	private int a = 1;
+		public static void main(String[] args) {
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+			a += 1;
+	}
+}
+</pre>
 <h2>Compliant Solution</h2>
 <p>
     1.Add more public methods.<br>

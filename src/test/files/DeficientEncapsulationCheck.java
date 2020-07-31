@@ -1,16 +1,15 @@
 public class DeficientEncapsulationCheck {// Noncompliant {{Code smell "Deficient Encapsulation" occurred in Class
-										// "DeficientEncapsulation" !}}
+											// "DeficientEncapsulation" !}}
 
-	public int b;
+	public int a = 1;
 
-	class c {
-		public int c = 0;
+	public int a() {
+		return a;
 	}
 
-	public int jk() {
+	private int b = 10;
+
+	public int b() {
 		return b;
 	}
-
-	private int a4 = 10;
-
 }
