@@ -3,6 +3,16 @@
 <p>
     When the declared accessibility of one or more members of an abstraction is more permissive than actually required.
 </p>
+<pre>
+	public class DeficientEncapsulation {
+
+		public int a = 1;
+
+		public int a() {
+			return a;
+		}
+	}
+</pre>
 <h2>Compliant Solution</h2>
 <p>
     1.If this parameter is to be used by other classes, change its modifier to "not public" and generate "a public
