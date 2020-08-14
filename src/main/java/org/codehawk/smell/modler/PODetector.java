@@ -15,9 +15,9 @@ import org.sonar.plugins.java.api.tree.VariableTree;
 
 public class PODetector implements Detector {
 
-  public static final String[] primitveWrappers = new String[] { "Character", "Byte", "Short", "Integer", "Float",
+  protected static final String[] primitveWrappers = new String[] { "Character", "Byte", "Short", "Integer", "Float",
       "Double", "Boolean" };
-  public static final Set<String> wrapperTypes = new HashSet<>(Arrays.asList(primitveWrappers));
+  protected static final Set<String> wrapperTypes = new HashSet<>(Arrays.asList(primitveWrappers));
 
   public static int[] getRatio(MethodTree mt) {
     int primitives = 0;
