@@ -31,6 +31,7 @@ org\codehawk\plugin\java\checks\RefusedBequest.class
 org\codehawk\smell\modler\DataMember.class
 org\codehawk\plugin\java\checks\AvoidMemberClumps.class
 org\codehawk\smell\smellruler\TooManyCasesInOneSwitchSmellRuler.class
+org\codehawk\plugin\java\checks\AvoidCyclicDependentModularization.class
 org\codehawk\plugin\java\checks\AvoidParamClumps.class
 org\codehawk\plugin\java\MyJavaRulesPlugin.class
 org\codehawk\smell\smellruler\LargeClass.class
@@ -39,6 +40,7 @@ org\codehawk\smell\modler\SmellableNode.class
 org\codehawk\plugin\java\checks\DeficientEncapsulation.class
 org\codehawk\plugin\java\checks\RefusedBequest$1.class
 org\codehawk\smell\modler\POMethodNode.class
+org\codehawk\plugin\java\checks\InsufficientModularation.class
 org\codehawk\smell\modler\ShotgunSurgeryDetector.class
 org\codehawk\plugin\java\checks\ExtendClassTree.class
 org\codehawk\plugin\java\checks\AvoidPrimitiveObsession.class
@@ -51,5 +53,6 @@ org\codehawk\smell\modler\Detector.class
 org\codehawk\smell\ThresholdDTO.class
 org\codehawk\smell\modler\Node.class
 org\codehawk\smell\modler\PODetector.class
+org\codehawk\plugin\java\checks\UnexploitedEncapsulation.class
 org\codehawk\plugin\java\checks\AvoidLazyClass.class
 org\codehawk\plugin\java\checks\ShotgunSurgery.class

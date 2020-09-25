@@ -1,3 +1,5 @@
+org\codehawk\plugin\java\checks\UnexploitedEncapsulationTest.class
+org\codehawk\plugin\java\checks\AvoidCyclicDependentModularizationCheckTest.class
 org\codehawk\plugin\java\checks\TooManyCasesInOneSwitchTest.class
 org\codehawk\plugin\java\checks\AvoidUnutilizedAbstractionCheckTest.class
 org\codehawk\plugin\java\checks\AvoidLargeClassCheckTest.class
@@ -8,8 +10,10 @@ org\codehawk\plugin\java\MyJavaRulesDefinitionTest.class
 org\codehawk\plugin\java\checks\ImperativeAbstractionRuleTest.class
 org\codehawk\plugin\java\checks\RefusedBequestCheckTest.class
 org\codehawk\plugin\java\checks\AvoidInappropriateIntimacyCheckTest.class
+org\codehawk\plugin\java\checks\AvoidCyclicDependentModularization.class
 org\codehawk\plugin\java\checks\TooManyParametersInOneMethodTest.class
 org\codehawk\plugin\java\checks\AvoidMemberClumpsCheckTest.class
+org\codehawk\plugin\java\checks\InsufficientModularationCheckTest.class
 org\codehawk\plugin\java\checks\AvoidLazyClassCheckTest.class
 org\codehawk\plugin\java\checks\AvoidParamClumpsCheckTest.class
 org\codehawk\plugin\java\checks\AvoidUnnecessaryAbstractionCheckTest.class

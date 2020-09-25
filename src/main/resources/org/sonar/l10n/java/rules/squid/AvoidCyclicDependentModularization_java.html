@@ -1,0 +1,17 @@
+<p>This rule detects class cyclic dependent. <br>When two or more abstractions have direct or indirect dependencies on each other, they will be detected as cyclic dependency.<p>
+<h2>Noncompliant Code Example</h2>
+<pre>
+    class A {
+        A(){}
+        B bb = new B();
+    }
+
+    class B {
+        B(){
+            A a = new A();
+        }
+    }
+</pre>
+<p>class B will be marked as cyclic dependent.</p>
+<h2>Recommended Solution</h2>
+<p>Redesign the components properly so their hierarchy is well designed and there is no need for circular dependencies.</p>
