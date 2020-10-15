@@ -66,8 +66,7 @@ public class ShotgunSurgeryDetector implements Detector {
 	}
 
 	private void putInheritance(ClassTree classTree) {// Establish an inheritance relationship
-		Boolean b = checkIsNewInheritance(classTree.simpleName().name(),
-				classTree.superClass().symbolType().name());
+		Boolean b = checkIsNewInheritance(classTree.simpleName().name(), classTree.superClass().symbolType().name());
 		if (Boolean.FALSE.equals(b)) {
 			List<String> innerInherit = new ArrayList<>();
 			innerInherit.add(classTree.superClass().symbolType().fullyQualifiedName());
@@ -128,92 +127,92 @@ public class ShotgunSurgeryDetector implements Detector {
 	private void checkStatementTree(List<StatementTree> list) {// check each of statement
 		for (StatementTree statementTree : list) {
 			switch (statementTree.kind()) {
-			case VARIABLE:// get variable in each method
-				VariableTree variableTree = (VariableTree) statementTree;
-				checkVariableTree(variableTree);
-				break;
+				case VARIABLE:// get variable in each method
+					VariableTree variableTree = (VariableTree) statementTree;
+					checkVariableTree(variableTree);
+					break;
 
-			case EXPRESSION_STATEMENT:// get expression statement in each method
-				ExpressionStatementTree expressionStatementTree = (ExpressionStatementTree) statementTree;
-				checkExpressionTree(expressionStatementTree.expression());
-				break;
+				case EXPRESSION_STATEMENT:// get expression statement in each method
+					ExpressionStatementTree expressionStatementTree = (ExpressionStatementTree) statementTree;
+					checkExpressionTree(expressionStatementTree.expression());
+					break;
 
-			case RETURN_STATEMENT:// get return statement in each method
-				ReturnStatementTree returnStatementTree = (ReturnStatementTree) statementTree;
-				checkExpressionTree(returnStatementTree.expression());
-				break;
+				case RETURN_STATEMENT:// get return statement in each method
+					ReturnStatementTree returnStatementTree = (ReturnStatementTree) statementTree;
+					checkReturnStatementTree(returnStatementTree);
+					break;
 
-			case ASSERT_STATEMENT:// get assert statement in each method
-				AssertStatementTree assertStatementTree = (AssertStatementTree) statementTree;
-				checkExpressionTree(assertStatementTree.condition());
-				break;
+				case ASSERT_STATEMENT:// get assert statement in each method
+					AssertStatementTree assertStatementTree = (AssertStatementTree) statementTree;
+					checkExpressionTree(assertStatementTree.condition());
+					break;
 
-			case THROW_STATEMENT:// get throw statement in each method
-				ThrowStatementTree throwStatementTree = (ThrowStatementTree) statementTree;
-				checkExpressionTree(throwStatementTree.expression());
-				break;
+				case THROW_STATEMENT:// get throw statement in each method
+					ThrowStatementTree throwStatementTree = (ThrowStatementTree) statementTree;
+					checkExpressionTree(throwStatementTree.expression());
+					break;
 
-			case SWITCH_STATEMENT:// get switch statement in each method
-				SwitchStatementTree switchStatementTree = (SwitchStatementTree) statementTree;
-				checkExpressionTree(switchStatementTree.expression());
-				List<CaseGroupTree> caseGroupTreeList = switchStatementTree.cases();
-				for (CaseGroupTree caseGroupTree : caseGroupTreeList) {
-					List<StatementTree> statementTreeList = caseGroupTree.body();
-					checkStatementTree(statementTreeList);
-				}
-				break;
+				case SWITCH_STATEMENT:// get switch statement in each method
+					SwitchStatementTree switchStatementTree = (SwitchStatementTree) statementTree;
+					checkExpressionTree(switchStatementTree.expression());
+					List<CaseGroupTree> caseGroupTreeList = switchStatementTree.cases();
+					for (CaseGroupTree caseGroupTree : caseGroupTreeList) {
+						List<StatementTree> statementTreeList = caseGroupTree.body();
+						checkStatementTree(statementTreeList);
+					}
+					break;
 
-			case IF_STATEMENT:// get if statement in each method
-				IfStatementTree ifStatementTree = (IfStatementTree) statementTree;
-				checkExpressionTree(ifStatementTree.condition());
-				checkInnerStatementTree(ifStatementTree.thenStatement());
-				checkElseIfStatementTree(ifStatementTree);
-				break;
+				case IF_STATEMENT:// get if statement in each method
+					IfStatementTree ifStatementTree = (IfStatementTree) statementTree;
+					checkExpressionTree(ifStatementTree.condition());
+					checkInnerStatementTree(ifStatementTree.thenStatement());
+					checkElseIfStatementTree(ifStatementTree);
+					break;
 
-			case WHILE_STATEMENT:// get while statement in each method
-				WhileStatementTree whileStatementTree = (WhileStatementTree) statementTree;
-				checkExpressionTree(whileStatementTree.condition());
-				checkInnerStatementTree(whileStatementTree.statement());
-				break;
+				case WHILE_STATEMENT:// get while statement in each method
+					WhileStatementTree whileStatementTree = (WhileStatementTree) statementTree;
+					checkExpressionTree(whileStatementTree.condition());
+					checkInnerStatementTree(whileStatementTree.statement());
+					break;
 
-			case FOR_STATEMENT:// get for statement in each method
-				ForStatementTree forStatementTree = (ForStatementTree) statementTree;
-				checkExpressionTree(forStatementTree.condition());
-				checkInnerStatementTree(forStatementTree.statement());
-				break;
+				case FOR_STATEMENT:// get for statement in each method
+					ForStatementTree forStatementTree = (ForStatementTree) statementTree;
+					checkExpressionTree(forStatementTree.condition());
+					checkInnerStatementTree(forStatementTree.statement());
+					break;
 
-			case DO_STATEMENT:// get do_while statement in each method
-				DoWhileStatementTree doWhileStatementTree = (DoWhileStatementTree) statementTree;
-				checkExpressionTree(doWhileStatementTree.condition());
-				checkInnerStatementTree(doWhileStatementTree.statement());
-				break;
+				case DO_STATEMENT:// get do_while statement in each method
+					DoWhileStatementTree doWhileStatementTree = (DoWhileStatementTree) statementTree;
+					checkExpressionTree(doWhileStatementTree.condition());
+					checkInnerStatementTree(doWhileStatementTree.statement());
+					break;
 
-			case FOR_EACH_STATEMENT:// get for_each statement in each method
-				ForEachStatement forEachStatement = (ForEachStatement) statementTree;
-				checkExpressionTree(forEachStatement.expression());
-				checkInnerStatementTree(forEachStatement.statement());
-				break;
+				case FOR_EACH_STATEMENT:// get for_each statement in each method
+					ForEachStatement forEachStatement = (ForEachStatement) statementTree;
+					checkExpressionTree(forEachStatement.expression());
+					checkInnerStatementTree(forEachStatement.statement());
+					break;
 
-			case LABELED_STATEMENT:// get labeled statement in each method
-				LabeledStatementTree labeledStatementTree = (LabeledStatementTree) statementTree;
-				List<StatementTree> labeledStatementTreeList = new ArrayList<>();
-				labeledStatementTreeList.add(labeledStatementTree.statement());
-				checkStatementTree(labeledStatementTreeList);
-				break;
+				case LABELED_STATEMENT:// get labeled statement in each method
+					LabeledStatementTree labeledStatementTree = (LabeledStatementTree) statementTree;
+					List<StatementTree> labeledStatementTreeList = new ArrayList<>();
+					labeledStatementTreeList.add(labeledStatementTree.statement());
+					checkStatementTree(labeledStatementTreeList);
+					break;
 
-			case SYNCHRONIZED_STATEMENT:// get synchronized statement in each method
-				SynchronizedStatementTree synchronizedStatementTree = (SynchronizedStatementTree) statementTree;
-				checkExpressionTree(synchronizedStatementTree.expression());
-				checkInnerBlockTree(synchronizedStatementTree.block());
-				break;
+				case SYNCHRONIZED_STATEMENT:// get synchronized statement in each method
+					SynchronizedStatementTree synchronizedStatementTree = (SynchronizedStatementTree) statementTree;
+					checkExpressionTree(synchronizedStatementTree.expression());
+					checkInnerBlockTree(synchronizedStatementTree.block());
+					break;
 
-			case TRY_STATEMENT:// get try statement in each method
-				TryStatementTree tryStatementTree = (TryStatementTree) statementTree;
-				checkTryStatementTree(tryStatementTree);
-				break;
+				case TRY_STATEMENT:// get try statement in each method
+					TryStatementTree tryStatementTree = (TryStatementTree) statementTree;
+					checkTryStatementTree(tryStatementTree);
+					break;
 
-			default:
-				break;
+				default:// get other statement in each method
+					break;
 			}
 		}
 	}
@@ -282,6 +281,12 @@ public class ShotgunSurgeryDetector implements Detector {
 		}
 	}
 
+	private void checkReturnStatementTree(ReturnStatementTree returnStatementTree) {// check each of return statement
+		if (returnStatementTree.expression() != null) {
+			checkExpressionTree(returnStatementTree.expression());
+		}
+	}
+
 	private void checkInnerStatementTree(StatementTree statementTree) {// check inner statement of each statement
 		if (statementTree.is(Tree.Kind.BLOCK)) {
 			BlockTree blockTree = (BlockTree) statementTree;
@@ -294,7 +299,7 @@ public class ShotgunSurgeryDetector implements Detector {
 		checkStatementTree(statementTreeList);
 	}
 
-	private void checkExpressionTree(ExpressionTree expressionTree) {
+	private void checkExpressionTree(ExpressionTree expressionTree) {// check each of expression
 		if (expressionTree.is(Tree.Kind.METHOD_INVOCATION)) {
 			MethodInvocationTree methodInvocationTree = (MethodInvocationTree) expressionTree;
 			checkMethodInvocationTree(methodInvocationTree);
