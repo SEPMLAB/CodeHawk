@@ -31,7 +31,7 @@ public class AvoidCyclicDependentModularization extends IssuableSubscriptionVisi
 		ClassTree classTree = (ClassTree) tree;
 		String className = classTree.simpleName().name();
 		int classLine = classTree.openBraceToken().line();
-		System.out.println("ClassName: " + className + " ClassLine: " + classLine);
+		// System.out.println("ClassName: " + className + " ClassLine: " + classLine);
 
 		ArrayList<String> varClass = new ArrayList<>(); // record
 		for (Tree member : classTree.members()) {

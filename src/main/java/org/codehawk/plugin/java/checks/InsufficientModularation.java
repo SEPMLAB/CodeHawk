@@ -42,9 +42,10 @@ public class InsufficientModularation extends IssuableSubscriptionVisitor {
 				for (ModifierKeywordTree mtkt : modkt) {
 					if (mtkt.modifier().equals(Modifier.PUBLIC)) {
 						publicMethodCount ++ ;
+					}else if (mtkt.modifier().equals(Modifier.PRIVATE)||mtkt.modifier().equals(Modifier.PROTECTED)){
+						methodCount ++ ;
 					}
 				}
-				methodCount ++ ;
 			}
 		}
 		classComplexity = context.getComplexityNodes(ct).size();

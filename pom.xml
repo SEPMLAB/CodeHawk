@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.codehawk.plugin</groupId>
   <artifactId>codehawk</artifactId>
-  <version>1.4</version>
+  <version>1.5</version>
   <packaging>sonar-plugin</packaging>
 
   <name>codehawk java plugin</name>
@@ -28,6 +26,11 @@
     <sonar.language>java</sonar.language>
 
     <argLine>-XX:MaxPermSize=512m</argLine>
+
+    <sonar.projectKey>SDPMLab_CodeHawk</sonar.projectKey>
+    <sonar.organization>codehawkv1</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <sonar.login>60b6e30df5f34767cef912f69be82ea7ab5f96c0</sonar.login>
   </properties>
 
   <dependencies>
