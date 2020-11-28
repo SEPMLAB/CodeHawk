@@ -10,7 +10,6 @@ org\codehawk\plugin\java\MyJavaRulesDefinitionTest.class
 org\codehawk\plugin\java\checks\ImperativeAbstractionRuleTest.class
 org\codehawk\plugin\java\checks\RefusedBequestCheckTest.class
 org\codehawk\plugin\java\checks\AvoidInappropriateIntimacyCheckTest.class
-org\codehawk\plugin\java\checks\AvoidCyclicDependentModularization.class
 org\codehawk\plugin\java\checks\TooManyParametersInOneMethodTest.class
 org\codehawk\plugin\java\checks\AvoidMemberClumpsCheckTest.class
 org\codehawk\plugin\java\checks\InsufficientModularationCheckTest.class
