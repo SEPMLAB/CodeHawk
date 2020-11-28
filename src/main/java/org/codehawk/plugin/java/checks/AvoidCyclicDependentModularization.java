@@ -60,9 +60,6 @@ public class AvoidCyclicDependentModularization extends IssuableSubscriptionVisi
 			String className = classTree.simpleName().name();
 			map.put(className, varClass);
 
-			for(int i = 0; i < map.size();i++) {
-				System.out.println(map.get(i));
-			}
 			String dependentClass = checkCyclicDependent(className);
 			if (dependentClass != null) {
 				addIssue(classTree.openBraceToken().line(),
