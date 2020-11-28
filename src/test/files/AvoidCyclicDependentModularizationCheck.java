@@ -16,7 +16,7 @@ class A {
 	
 }
 
-class B {// Noncompliant {{Class has Cyclic Dependent}}
+class B {// Noncompliant {{Class B has Cyclic Dependent with class A}}
 	
 	B(){
 		A a = new A();
@@ -30,7 +30,7 @@ class C{
 	}
 }
 
-class D{// Noncompliant {{Class has Cyclic Dependent}}
+class D{// Noncompliant {{Class D has Cyclic Dependent with class C}}
 	D(){
 		
 	}
