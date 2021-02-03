@@ -7,8 +7,6 @@ import java.util.List;
 
 import org.codehawk.plugin.java.checks.AvoidParamClumps;
 import org.codehawk.plugin.java.checks.ShotgunSurgery;
-import org.codehawk.plugin.java.checks.UnexploitedEncapsulation;
-import org.codehawk.plugin.java.checks.AvoidCyclicDependentModularization;
 import org.codehawk.plugin.java.checks.AvoidInappropriateIntimacy;
 import org.codehawk.plugin.java.checks.AvoidLargeClass;
 import org.codehawk.plugin.java.checks.AvoidLazyClass;
@@ -19,6 +17,8 @@ import org.codehawk.plugin.java.checks.AvoidUnutilizedAbstraction;
 import org.codehawk.plugin.java.checks.DeficientEncapsulation;
 import org.codehawk.plugin.java.checks.ImperativeAbstraction;
 import org.codehawk.plugin.java.checks.InsufficientModularation;
+import org.codehawk.plugin.java.checks.AvoidCyclicDependentModularization;
+import org.codehawk.plugin.java.checks.UnexploitedEncapsulation;
 import org.sonar.plugins.java.api.JavaCheck;
 import org.codehawk.plugin.java.checks.RefusedBequest;
 
@@ -38,7 +38,7 @@ public final class RulesList {
     return Collections.unmodifiableList(Arrays.asList(AvoidLargeClass.class, RefusedBequest.class, AvoidLazyClass.class,
         AvoidParamClumps.class, AvoidMemberClumps.class, ShotgunSurgery.class, AvoidInappropriateIntimacy.class,
         AvoidPrimitiveObsession.class, AvoidUnnecessaryAbstraction.class, AvoidUnutilizedAbstraction.class,
-        ImperativeAbstraction.class, DeficientEncapsulation.class,AvoidCyclicDependentModularization.class,InsufficientModularation.class,UnexploitedEncapsulation.class));
+        ImperativeAbstraction.class, DeficientEncapsulation.class, InsufficientModularation.class, AvoidCyclicDependentModularization.class, UnexploitedEncapsulation.class));
   }
 
   public static List<Class<? extends JavaCheck>> getJavaTestChecks() {

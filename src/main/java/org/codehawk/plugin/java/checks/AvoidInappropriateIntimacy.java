@@ -39,8 +39,8 @@ public class AvoidInappropriateIntimacy extends IssuableSubscriptionVisitor {
 	@Override
 	public void visitNode(Tree tree) {
 
-		ArrayList<MethodTree> vtUseList = new ArrayList<>();// 紀錄Class中的Private變數被哪些METHOD使用
-		ArrayList<String> mtUseList = new ArrayList<>(); // 紀錄vtUseList中的方法被哪些Class使用
+		ArrayList<MethodTree> vtUseList = new ArrayList<>();// 
+		ArrayList<String> mtUseList = new ArrayList<>(); //
 
 		// to count the number of classTrees
 		if (classCount == 0) {
@@ -51,7 +51,7 @@ public class AvoidInappropriateIntimacy extends IssuableSubscriptionVisitor {
 		String className = ct.simpleName().name();
 		int classLine = ct.openBraceToken().line();
 
-		// 取得Private變數，並執行vtuseCheck()
+		// 
 		for (Tree t : ct.members()) {
 			if (t.is(Tree.Kind.VARIABLE)) {
 				VariableTree vt = (VariableTree) t;
@@ -87,7 +87,7 @@ public class AvoidInappropriateIntimacy extends IssuableSubscriptionVisitor {
 		}
 	}
 
-	// 紀錄Class中的Private變數被哪些METHOD使用
+	// 
 	public void vtuseCheck(List<IdentifierTree> trees, ArrayList<MethodTree> vtuseList) {
 		for (Tree target : trees) {
 			while (target.parent() != null) {
@@ -106,7 +106,7 @@ public class AvoidInappropriateIntimacy extends IssuableSubscriptionVisitor {
 		}
 	}
 
-	// 紀錄vtUseList中的方法被那些Class使用到
+	//
 	public void rlListUpdate(ArrayList<MethodTree> vtuseList, String className, ArrayList<String> mtUseList) {
 
 		for (MethodTree mt : vtuseList) {
@@ -120,7 +120,7 @@ public class AvoidInappropriateIntimacy extends IssuableSubscriptionVisitor {
 						System.out.println("use in:" + ct.simpleName().name());
 						if (!(ct.simpleName().name()).equals(className)) {
 							mtUseList.add(ct.simpleName().name());
-							System.out.println("成功存入Class");
+							System.out.println("Storage into Class successfully");
 						}
 						break;
 					} else {
@@ -131,10 +131,10 @@ public class AvoidInappropriateIntimacy extends IssuableSubscriptionVisitor {
 		}
 	}
 
-	// 結算Private變數被使用的次數
+	// 
 	public void finalCheck(String className, int classLine, ArrayList<String> mtUseList) {
 
-		ArrayList<String> temp = new ArrayList<>(); // 紀錄使用3次以上的CLASS
+		ArrayList<String> temp = new ArrayList<>(); // 
 
 		while (mtUseList.size() > 2) {
 			System.out.println("list size: " + mtUseList.size());
@@ -155,7 +155,7 @@ public class AvoidInappropriateIntimacy extends IssuableSubscriptionVisitor {
 					classList.add(className);
 					classLineList.add(classLine);
 				}
-				System.out.println("超過3個");
+				System.out.println("exceed 3");
 			}
 			if (num > 1) {
 				for (int i = position.size() - 1; i >= 0; i--) {
