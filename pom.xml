@@ -162,6 +162,7 @@
           <pluginName>Codehawk Java</pluginName>
           <pluginClass>org.codehawk.plugin.java.MyJavaRulesPlugin</pluginClass>
           <sonarLintSupported>true</sonarLintSupported>
+          <requirePlugins>java:6.3</requirePlugins>
           <sonarQubeMinVersion>6.7</sonarQubeMinVersion>
         </configuration>
       </plugin>
