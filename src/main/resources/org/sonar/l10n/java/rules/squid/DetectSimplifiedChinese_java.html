@@ -1,0 +1,16 @@
+<p>This rule detects Simplified Chinese in your code</p>
+<h2>Noncompliant Example</h2>
+<pre>
+	public void A(){
+        /*
+         * $SimplifiedChinese comments will be found here
+         * 写字楼里写字间
+         */
+        System.out.println("Bam!");
+    }
+</pre>
+<h2>Recommended Solution</h2>
+<p>You have to remove or revise your comment.</p>
+<pre>
+1.Remove the Simplified Chinese comments.
+</pre>
