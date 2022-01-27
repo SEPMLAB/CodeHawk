@@ -36,11 +36,23 @@ public final class RulesList {
   }
 
   public static List<Class<? extends JavaCheck>> getJavaChecks() {
-    return Collections.unmodifiableList(Arrays.asList(AvoidLargeClass.class, RefusedBequest.class, AvoidLazyClass.class,
-        AvoidParamClumps.class, AvoidMemberClumps.class, ShotgunSurgery.class, AvoidInappropriateIntimacy.class,
-        AvoidPrimitiveObsession.class, AvoidUnnecessaryAbstraction.class, AvoidUnutilizedAbstraction.class,
-        ImperativeAbstraction.class, DeficientEncapsulation.class, InsufficientModularation.class, AvoidCyclicDependentModularization.class, UnexploitedEncapsulation.class,
-        DetectSimplifiedChinese.class));
+    return Collections.unmodifiableList(Arrays.asList(
+      AvoidLargeClass.class,
+      RefusedBequest.class,
+      AvoidLazyClass.class,
+      AvoidParamClumps.class,
+      AvoidMemberClumps.class,
+      ShotgunSurgery.class,
+      AvoidInappropriateIntimacy.class,
+      AvoidPrimitiveObsession.class,
+      AvoidUnnecessaryAbstraction.class,
+      AvoidUnutilizedAbstraction.class,
+      ImperativeAbstraction.class,
+      DeficientEncapsulation.class,
+      InsufficientModularation.class, 
+      AvoidCyclicDependentModularization.class,
+      UnexploitedEncapsulation.class,
+      DetectSimplifiedChinese.class));
   }
 
   public static List<Class<? extends JavaCheck>> getJavaTestChecks() {

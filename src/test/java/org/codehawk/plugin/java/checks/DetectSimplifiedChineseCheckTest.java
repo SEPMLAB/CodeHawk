@@ -11,4 +11,5 @@ public class DetectSimplifiedChineseCheckTest {
 	public void detected() {
 		JavaCheckVerifier.newVerifier().onFile(FILENAME).withCheck(check).verifyIssues();
 	}
+	
 }
