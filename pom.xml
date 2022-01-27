@@ -6,7 +6,7 @@
 
   <groupId>org.codehawk.plugin</groupId>
   <artifactId>codehawk</artifactId>
-  <version>1.5</version>
+  <version>1.6</version>
   <packaging>sonar-plugin</packaging>
 
   <name>codehawk java plugin</name>
