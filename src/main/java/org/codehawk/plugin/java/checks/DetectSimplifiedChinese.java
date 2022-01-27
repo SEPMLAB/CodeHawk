@@ -62,34 +62,34 @@ public class DetectSimplifiedChinese extends IssuableSubscriptionVisitor {
                         }
                     }
                 }
-            // }else if (t.is(Tree.Kind.VARIABLE)){
-            //     for(SyntaxTrivia syntaxTrivia: t.firstToken().trivias()){ 
-            //         String comment = syntaxTrivia.comment();
-            //         if(comment != null && comment.trim().startsWith("/*")){// <= get /** */
-            //             if (isSimplifiedChinese(comment) == true){
-            //                 addIssue(syntaxTrivia.startLine(), "Found Simplified Chinese");
-            //             }
-            //         }
-            //         else if (comment != null && comment.trim().startsWith("//")){ // <= get //
-            //             if (isSimplifiedChinese(comment) == true){
-            //                 addIssue(syntaxTrivia.startLine(), "Found Simplified Chinese");
-            //             }
-            //         }
-            //     }
-            // }else if (t.is(Tree.Kind.ENUM)){
-            //     for(SyntaxTrivia syntaxTrivia: t.firstToken().trivias()){ 
-            //         String comment = syntaxTrivia.comment();
-            //         if(comment != null && comment.trim().startsWith("/*")){// <= get /** */
-            //             if (isSimplifiedChinese(comment) == true){
-            //                 addIssue(syntaxTrivia.startLine(), "Found Simplified Chinese");
-            //             }
-            //         }
-            //         else if (comment != null && comment.trim().startsWith("//")){ // <= get //
-            //             if (isSimplifiedChinese(comment) == true){
-            //                 addIssue(syntaxTrivia.startLine(), "Found Simplified Chinese");
-            //             }
-            //         }
-            //     }
+            }else if (t.is(Tree.Kind.VARIABLE)){
+                for(SyntaxTrivia syntaxTrivia: t.firstToken().trivias()){ 
+                    String comment = syntaxTrivia.comment();
+                    if(comment != null && comment.trim().startsWith("/*")){// <= get /** */
+                        if (isSimplifiedChinese(comment) == true){
+                            addIssue(syntaxTrivia.startLine(), "Found Simplified Chinese");
+                        }
+                    }
+                    else if (comment != null && comment.trim().startsWith("//")){ // <= get //
+                        if (isSimplifiedChinese(comment) == true){
+                            addIssue(syntaxTrivia.startLine(), "Found Simplified Chinese");
+                        }
+                    }
+                }
+            }else if (t.is(Tree.Kind.ENUM)){
+                for(SyntaxTrivia syntaxTrivia: t.firstToken().trivias()){ 
+                    String comment = syntaxTrivia.comment();
+                    if(comment != null && comment.trim().startsWith("/*")){// <= get /** */
+                        if (isSimplifiedChinese(comment) == true){
+                            addIssue(syntaxTrivia.startLine(), "Found Simplified Chinese");
+                        }
+                    }
+                    else if (comment != null && comment.trim().startsWith("//")){ // <= get //
+                        if (isSimplifiedChinese(comment) == true){
+                            addIssue(syntaxTrivia.startLine(), "Found Simplified Chinese");
+                        }
+                    }
+                }
             }
         }
     }
